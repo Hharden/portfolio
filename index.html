@@ -27,7 +27,7 @@
       display: block !important;
     }
 
-    /* Active Link Highlighting (Home excluded so top name/title container stays unstyled) */
+    /* Active Link Highlighting */
     #tab-about:checked ~ div header label[for="tab-about"],
     #tab-contact:checked ~ div header label[for="tab-contact"],
     #tab-jai-global:checked ~ div aside label[for="tab-jai-global"],
@@ -50,10 +50,10 @@
 <body class="h-full font-sans antialiased text-slate-800 bg-slate-50 flex flex-col min-h-screen">
 
   <!-- Hidden State Controllers -->
-  <input type="radio" name="page-route" id="tab-home" class="hidden" checked>
+  <input type="radio" name="page-route" id="tab-home" class="hidden">
   <input type="radio" name="page-route" id="tab-about" class="hidden">
   <input type="radio" name="page-route" id="tab-contact" class="hidden">
-  <input type="radio" name="page-route" id="tab-jai-global" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-global" class="hidden" checked>
   <input type="radio" name="page-route" id="tab-jai-hitl" class="hidden">
   <input type="radio" name="page-route" id="tab-jai-intent" class="hidden">
   <input type="radio" name="page-route" id="tab-jai-search" class="hidden">
@@ -71,7 +71,7 @@
     <!-- ================= TOP BAR NAVIGATION ================= -->
     <header class="h-16 bg-white border-b border-slate-200 sticky top-0 z-50 flex items-center justify-between px-6 shrink-0">
       <div class="flex items-center space-x-3">
-        <!-- Persistent Header Branding (No active grey background) -->
+        <!-- Persistent Header Branding -->
         <label for="tab-home" class="flex items-center gap-3 text-left group cursor-pointer">
           <div class="w-9 h-9 rounded-lg bg-slate-900 text-white font-mono font-bold text-base flex items-center justify-center shadow-sm group-hover:bg-indigo-600 transition-colors shrink-0">
             HH
@@ -92,7 +92,6 @@
           About Me
         </label>
         
-        <!-- Direct Root PDF Link -->
         <a href="resume.pdf" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all inline-flex items-center gap-1">
           Resume
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -102,7 +101,6 @@
           Contact
         </label>
         
-        <!-- LinkedIn Link -->
         <a href="https://linkedin.com/in/herb-harden-30b337374" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
           <svg class="w-4 h-4 fill-current text-slate-500" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
           LinkedIn
@@ -113,7 +111,7 @@
     <!-- ================= MAIN BODY LAYOUT ================= -->
     <div class="flex flex-1 overflow-hidden">
 
-      <!-- ================= LEFT SIDE TREE NAVIGATION ================= -->
+      <!-- ================= LEFT SIDE NAVIGATION ================= -->
       <aside class="w-80 bg-white border-r border-slate-200 overflow-y-auto flex flex-col shrink-0">
         <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
           <span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">PROJECTS & CASE STUDIES</span>
@@ -157,7 +155,7 @@
           <!-- 03. Claude Prototyping & Engineering Handoff -->
           <div class="space-y-1">
             <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
-              <span>03. Claude Prototyping & Engineering Handoff</span>
+              <span>03. Claude Prototyping & Handoff</span>
             </div>
             <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
               <label for="tab-claude-audit" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
@@ -190,7 +188,7 @@
           <!-- 05. Jaggaer Direct B2B Enterprise Platform Group -->
           <div class="space-y-1">
             <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
-              <span>05. Jaggaer Direct B2B Enterprise Platform</span>
+              <span>05. Jaggaer Direct B2B Platform</span>
             </div>
             <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
               <label for="tab-jaggaer-direct" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
@@ -210,11 +208,10 @@
           <section id="page-home" class="page-view space-y-8">
             <div class="border-b border-slate-100 pb-6">
               <div class="flex flex-col md:flex-row gap-6 items-start">
-                <!-- Profile Image -->
                 <img 
-                  src="profile-pic.jpeg" 
-                  alt="Herb Harden" 
-                  class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover border border-slate-200 shadow-sm shrink-0"
+                  src="images/profile-pic.jpeg" 
+                  alt="Herb Harden Profile Picture" 
+                  class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover border border-slate-200 shadow-sm shrink-0 bg-slate-100"
                 />
 
                 <div class="space-y-2">
@@ -241,23 +238,6 @@
                 <div class="text-xs text-slate-500 font-medium mt-0.5">State-Driven Front-End Engineering</div>
               </div>
             </div>
-
-            <div class="space-y-4 pt-2">
-              <h3 class="text-base font-bold text-slate-900">Featured System Case Studies</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label for="tab-jai-global" class="block p-5 border border-slate-200 rounded-lg hover:border-indigo-500 hover:shadow-md transition-all cursor-pointer bg-white">
-                  <span class="text-xs font-bold text-indigo-600 uppercase">01. JAI Platform</span>
-                  <h4 class="font-bold text-slate-900 mt-1 text-base">Conversational AI Specs</h4>
-                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">System specifications and non-deterministic state modeling across global enterprise squads.</p>
-                </label>
-
-                <label for="tab-behavioral-contracts" class="block p-5 border border-slate-200 rounded-lg hover:border-indigo-500 hover:shadow-md transition-all cursor-pointer bg-white">
-                  <span class="text-xs font-bold text-indigo-600 uppercase">02. JSON Schemas</span>
-                  <h4 class="font-bold text-slate-900 mt-1 text-base">UI Behavioral Contracts</h4>
-                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">Defining machine-readable JSON schemas for error-free dynamic rendering during AI streaming.</p>
-                </label>
-              </div>
-            </div>
           </section>
 
           <!-- PAGE: ABOUT -->
@@ -270,23 +250,6 @@
               <p>
                 Enterprise Product Designer with 20+ years of experience bridging the gap between product vision and technical implementation across complex enterprise SaaS environments. Specialist in Figma, Claude Design, human-AI interaction patterns, stateful UI behavioral contracts, and design system strategy.
               </p>
-              <p>
-                Leverages rapid interactive sandboxing, visual low-code/no-code orchestrations, and front-end state modeling to specify edge cases and de-risk complex front-end logic—enabling engineering teams to build faster, cleaner production software without rework.
-              </p>
-            </div>
-
-            <div class="pt-4 border-t border-slate-100">
-              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">Core Expertise</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="p-3 bg-slate-50 border border-slate-200/60 rounded-md">
-                  <span class="font-bold text-slate-900 block mb-1">AI Systems & Interaction</span>
-                  Human-in-the-Loop (HITL) Workflows, Non-Deterministic State Design, Confidence & XAI Visuals, Conversational Search & RAG UI.
-                </div>
-                <div class="p-3 bg-slate-50 border border-slate-200/60 rounded-md">
-                  <span class="font-bold text-slate-900 block mb-1">Systems & Architecture</span>
-                  W3C Design Token Architecture, AI UI Behavioral Contracts, Generative Layout Systems, Component API Alignment.
-                </div>
-              </div>
             </div>
           </section>
 
@@ -300,36 +263,183 @@
                 <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Direct Contact</span>
                 <p class="text-sm font-bold text-slate-900">Email: <a href="mailto:harden.herb@gmail.com" class="text-indigo-600 hover:underline">harden.herb@gmail.com</a></p>
                 <p class="text-sm text-slate-700">Phone: (402) 490-0851</p>
-                <p class="text-sm text-slate-700">Location: Omaha, NE (Open to Remote)</p>
-              </div>
-              <div class="p-5 bg-slate-50 border border-slate-200/80 rounded-lg space-y-2">
-                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Online Presence</span>
-                <p class="text-sm"><a href="https://linkedin.com/in/herb-harden-30b337374" target="_blank" class="text-indigo-600 font-medium hover:underline">LinkedIn Profile</a></p>
-                <p class="text-sm"><a href="http://herbharden.com" target="_blank" class="text-indigo-600 font-medium hover:underline">herbharden.com</a></p>
               </div>
             </div>
           </section>
 
-          <!-- PAGE: JAI GLOBAL -->
-          <section id="page-jai-global" class="page-view space-y-6">
-            <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
-              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Global UI/UX Design & System Specs</h2>
+          <!-- ================= PAGE: JAI GLOBAL ================= -->
+          <section id="page-jai-global" class="page-view space-y-8">
+            
+            <!-- Header & Context -->
+            <div class="border-b border-slate-100 pb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">01. JAI Conversational AI Platform</span>
+                <span class="text-slate-300">•</span>
+                <span class="text-xs font-semibold text-slate-500">Design Systems & Architectural Specs</span>
+              </div>
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Global UI/UX Design & System Specifications</h2>
+              <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
+                Building a production-ready enterprise conversational platform from scratch—transitioning legacy procurement workflows into a deterministic "Intent &rarr; Insight &rarr; Action" model using strict component state machines and zero-reflow layout rules.
+              </p>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Collaborated with the global UI/UX team to design and document the complete library of conversational UI component specifications, interaction models, and non-deterministic user states.
-            </p>
-            <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-2">
-              <div class="font-bold text-slate-900">Key Architectural Deliverables:</div>
-              <ul class="list-disc pl-4 space-y-1 text-slate-600">
-                <li>Defined unified conversational interfaces capable of rendering LLM outputs cleanly.</li>
-                <li>Handled dynamic layout expansions without causing unexpected visual reflows.</li>
-                <li>Standardized cross-squad component libraries across global development divisions.</li>
-              </ul>
+
+            <!-- Executive Impact Bar -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Role & Leadership</div>
+                <div class="text-base font-bold text-slate-900 mt-0.5">Staff Enterprise Designer</div>
+                <div class="text-xs text-slate-500 mt-1">Cross-squad spec ownership & core design system lead.</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Core Architecture</div>
+                <div class="text-base font-bold text-indigo-600 mt-0.5">Intent &rarr; Insight &rarr; Action</div>
+                <div class="text-xs text-slate-500 mt-1">Replaced complex manual forms with guided conversational loops.</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Engineering Impact</div>
+                <div class="text-base font-bold text-slate-900 mt-0.5">Zero Front-End Rework</div>
+                <div class="text-xs text-slate-500 mt-1">Machine-readable JSON schema specs & state machines.</div>
+              </div>
             </div>
+
+            <!-- Problem & Strategy -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">The Problem: Bringing Order to Non-Deterministic AI</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                In complex enterprise SaaS platforms like JAGGAER, raw LLM outputs present a major design challenge: streaming text is non-deterministic, causing visual reflows, unstable containers, and unpredictable user actions. Standard conversational UI elements are insufficient for high-stakes B2B procurement operations.
+              </p>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                As Staff Enterprise Product Designer, I collaborated with global engineering squads to design, architect, and document the complete <strong>JAI Global UI/UX Component & Specification Library</strong>. This framework defines explicit layout bounds, dynamic rendering state matrices, and structured input controls so engineering teams can build zero-defect React interfaces directly from JSON payloads.
+              </p>
+            </div>
+
+            <!-- Pipeline System Flow Diagram Image -->
+            <div class="space-y-3 pt-4 border-t border-slate-100">
+              <div class="flex items-center justify-between">
+                <h3 class="text-base font-bold text-slate-900">System Architecture: AI Agent to UI Component Pipeline</h3>
+                <span class="text-xs font-mono text-slate-400">images/jai-system-pipeline-diagram.png</span>
+              </div>
+              
+              <!-- Real HTML Image Container with Sizing & Styling -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-100/60 p-3 flex justify-center">
+                <img 
+                  src="images/jai-system-pipeline-diagram.png" 
+                  alt="System Architecture Diagram mapping Trigger Request to UI Component Mapper" 
+                  class="w-full max-w-3xl h-auto rounded-lg border border-slate-200/80 shadow-sm object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Architectural Capabilities Grid -->
+            <div class="space-y-4 pt-4 border-t border-slate-100">
+              <h3 class="text-lg font-bold text-slate-900">Core Design System Deliverables</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-slate-900 text-sm">1. Siderail Card Matrix & State Machine</span>
+                    <span class="px-2 py-0.5 bg-slate-200 text-slate-700 text-[10px] rounded font-mono font-bold">STRICT SPEC</span>
+                  </div>
+                  <p class="text-slate-600 leading-relaxed">
+                    Engineered a complete matrix of responsive card behaviors (No Card, Compact 5-row view, Expanded 10-row view, Action Button variants, Pagination, and Graph Summaries) to guarantee container heights and prevent layout reflows during LLM streaming.
+                  </p>
+                </div>
+
+                <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-slate-900 text-sm">2. Explicit Intent Modes ("Act" vs. "Ask")</span>
+                    <span class="px-2 py-0.5 bg-slate-200 text-slate-700 text-[10px] rounded font-mono font-bold">UX PATTERN</span>
+                  </div>
+                  <p class="text-slate-600 leading-relaxed">
+                    Designed input controls that allow enterprise users to explicitly signal intent before issuing a prompt—separating transactional execution ("Act" - e.g., Create Invoice) from policy guidance ("Ask" - e.g., Purchase Request rules).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Asset Showcase Section -->
+            <div class="space-y-6 pt-4 border-t border-slate-100">
+              <h3 class="text-lg font-bold text-slate-900">Visual Specification Showcase</h3>
+              
+              <!-- Image 1: Card Matrix -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">A. Component Matrix: Large Qty Results & Siderail State Variations</span>
+                  <span class="text-[11px] font-mono text-slate-400">images/large-qty-results-siderail.png</span>
+                </div>
+                
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <img 
+                    src="images/large-qty-results-siderail.png" 
+                    alt="JAI Global UI Component Matrix showing card states and layouts" 
+                    class="w-full max-w-4xl max-h-[500px] h-auto rounded object-contain"
+                  />
+                </div>
+              </div>
+
+              <!-- Images 2 & 3 Side-by-Side Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Image 2: Multi-Modal "Act" vs "Ask" Controls -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-3 space-y-2">
+                  <div class="flex items-center justify-between px-1">
+                    <span class="text-xs font-bold text-slate-800">B. Multimodal Input ("Act" vs "Ask")</span>
+                    <span class="text-[10px] font-mono text-slate-400">images/act-vs-ask-input.png</span>
+                  </div>
+                  <div class="bg-white border border-slate-200/80 rounded-lg p-2 flex justify-center">
+                    <img 
+                      src="images/act-vs-ask-input.png" 
+                      alt="Input container with Act vs Ask mode switchers and pill menus" 
+                      class="w-full max-h-[260px] h-auto object-contain rounded"
+                    />
+                  </div>
+                </div>
+
+                <!-- Image 3: Guided Visual Intake -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-3 space-y-2">
+                  <div class="flex items-center justify-between px-1">
+                    <span class="text-xs font-bold text-slate-800">C. Guided Category Intake</span>
+                    <span class="text-[10px] font-mono text-slate-400">images/guided-intake-options.png</span>
+                  </div>
+                  <div class="bg-white border border-slate-200/80 rounded-lg p-2 flex justify-center">
+                    <img 
+                      src="images/guided-intake-options.png" 
+                      alt="Guided intake grid cards with category images" 
+                      class="w-full max-h-[260px] h-auto object-contain rounded"
+                    />
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Image 4: Knowledge Graph Architecture -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">D. LLM Knowledge Graph & Orchestration Architecture</span>
+                  <span class="text-[11px] font-mono text-slate-400">images/knowledge-graph-orchestration.png</span>
+                </div>
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <img 
+                    src="images/knowledge-graph-orchestration.png" 
+                    alt="Knowledge Graph flow diagram to LLM engine" 
+                    class="w-full max-w-3xl max-h-[420px] h-auto rounded object-contain"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Summary Footer -->
+            <div class="p-4 bg-indigo-50/60 border border-indigo-100 rounded-lg space-y-1 text-xs">
+              <span class="font-bold text-indigo-950 uppercase tracking-wider text-[10px]">Architectural Outcome</span>
+              <p class="text-indigo-900 leading-relaxed">
+                By standardizing these UI specifications across global squads, JAI achieved a unified conversational interaction language that eliminated design fragmentation, prevented front-end engineering reflow defects, and established the design system foundation for all subsequent AI features in the enterprise suite.
+              </p>
+            </div>
+
           </section>
 
-          <!-- PAGE: JAI HITL -->
+          <!-- PLACEHOLDER SECTIONS FOR OTHER TABS -->
           <section id="page-jai-hitl" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
@@ -340,103 +450,67 @@
             </p>
           </section>
 
-          <!-- PAGE: JAI INTENT -->
           <section id="page-jai-intent" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Intent-Driven Interaction Model</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Modeled and specified the core Intent &rarr; Insight &rarr; Action user-search interaction pattern, defining precise user intent use cases and dynamic interface behaviors.
-            </p>
           </section>
 
-          <!-- PAGE: JAI SEARCH -->
           <section id="page-jai-search" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Conversational Search Specs</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Formulated and specified a 5-phase conversational interaction framework for JAI.
-            </p>
           </section>
 
-          <!-- PAGE: BEHAVIORAL CONTRACTS -->
           <section id="page-behavioral-contracts" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">System Architecture</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI UI Component Behavioral Contracts</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Authored comprehensive UI behavioral contracts and schema expectations that govern how dynamic components render in response to real-time LLM outputs, ensuring design system integrity across AI-driven flows.
-            </p>
           </section>
 
-          <!-- PAGE: CLAUDE AUDIT -->
           <section id="page-claude-audit" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping & Engineering Handoff</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Audit Management</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Utilized Claude Design for rapid interactive prototyping and front-end state modeling across Audit Management.
-            </p>
           </section>
 
-          <!-- PAGE: CLAUDE CBD -->
           <section id="page-claude-cbd" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping & Engineering Handoff</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Cost-Breakdown Frameworks (CBD)</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Engineered interactive cost-breakdown matrix prototypes for rapid front-end sandboxing.
-            </p>
           </section>
 
-          <!-- PAGE: AI BID ANALYZER -->
           <section id="page-ai-bid-analyzer" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Bid Analyzer Agent</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Designed side-panel human-in-the-loop interfaces within the JAI framework.
-            </p>
           </section>
 
-          <!-- PAGE: AI SUMMARIES -->
           <section id="page-ai-summaries" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">In-Context AI Summary Framework</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Designed a scalable enterprise UI framework for in-context AI synthesis across core workflows.
-            </p>
           </section>
 
-          <!-- PAGE: AI EVALS -->
           <section id="page-ai-evals" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Evaluations Redesign</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Led the UI/UX redesign of the AI Evals platform, transforming raw accuracy metrics into actionable dashboards.
-            </p>
           </section>
 
-          <!-- PAGE: JAGGAER DIRECT -->
           <section id="page-jaggaer-direct" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Jaggaer Direct B2B Enterprise Platform</span>
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Jaggaer Direct</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">End-to-End UI/UX Ownership</h2>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Served as the single UI/UX owner for JAGGAER Direct, driving end-to-end product design across multiple concurrent modules while collaborating directly with Product Managers and Engineering leads.
-            </p>
           </section>
 
         </div>
@@ -446,7 +520,7 @@
     <!-- ================= FOOTER ================= -->
     <footer class="h-10 bg-white border-t border-slate-200 px-6 flex items-center justify-end text-xs text-slate-500 shrink-0">
       <span class="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 border border-slate-200/80 rounded font-semibold">
-        Last Updated: August 2, 2026 at 11:53 AM CST
+        Last Updated: August 2, 2026 at 6:20 PM CST
       </span>
     </footer>
 
