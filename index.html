@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herb Harden - Staff Enterprise Product Designer & AI UI/UX Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Pure CSS Tab Routing Logic (No JS Required) */
+    .page-view { display: none; }
+    
+    #tab-home:checked ~ div main #page-home,
+    #tab-about:checked ~ div main #page-about,
+    #tab-contact:checked ~ div main #page-contact,
+    #tab-jai-global:checked ~ div main #page-jai-global,
+    #tab-jai-hitl:checked ~ div main #page-jai-hitl,
+    #tab-jai-intent:checked ~ div main #page-jai-intent,
+    #tab-jai-search:checked ~ div main #page-jai-search,
+    #tab-behavioral-contracts:checked ~ div main #page-behavioral-contracts,
+    #tab-claude-audit:checked ~ div main #page-claude-audit,
+    #tab-claude-cbd:checked ~ div main #page-claude-cbd,
+    #tab-ai-bid-analyzer:checked ~ div main #page-ai-bid-analyzer,
+    #tab-ai-summaries:checked ~ div main #page-ai-summaries,
+    #tab-ai-evals:checked ~ div main #page-ai-evals,
+    #tab-jaggaer-direct:checked ~ div main #page-jaggaer-direct {
+      display: block !important;
+    }
+
+    /* Active Link Highlighting (Home excluded so top name/title container stays unstyled) */
+    #tab-about:checked ~ div header label[for="tab-about"],
+    #tab-contact:checked ~ div header label[for="tab-contact"],
+    #tab-jai-global:checked ~ div aside label[for="tab-jai-global"],
+    #tab-jai-hitl:checked ~ div aside label[for="tab-jai-hitl"],
+    #tab-jai-intent:checked ~ div aside label[for="tab-jai-intent"],
+    #tab-jai-search:checked ~ div aside label[for="tab-jai-search"],
+    #tab-behavioral-contracts:checked ~ div aside label[for="tab-behavioral-contracts"],
+    #tab-claude-audit:checked ~ div aside label[for="tab-claude-audit"],
+    #tab-claude-cbd:checked ~ div aside label[for="tab-claude-cbd"],
+    #tab-ai-bid-analyzer:checked ~ div aside label[for="tab-ai-bid-analyzer"],
+    #tab-ai-summaries:checked ~ div aside label[for="tab-ai-summaries"],
+    #tab-ai-evals:checked ~ div aside label[for="tab-ai-evals"],
+    #tab-jaggaer-direct:checked ~ div aside label[for="tab-jaggaer-direct"] {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-800 bg-slate-50 flex flex-col min-h-screen">
+
+  <!-- Hidden State Controllers -->
+  <input type="radio" name="page-route" id="tab-home" class="hidden" checked>
+  <input type="radio" name="page-route" id="tab-about" class="hidden">
+  <input type="radio" name="page-route" id="tab-contact" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-global" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-hitl" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-intent" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-search" class="hidden">
+  <input type="radio" name="page-route" id="tab-behavioral-contracts" class="hidden">
+  <input type="radio" name="page-route" id="tab-claude-audit" class="hidden">
+  <input type="radio" name="page-route" id="tab-claude-cbd" class="hidden">
+  <input type="radio" name="page-route" id="tab-ai-bid-analyzer" class="hidden">
+  <input type="radio" name="page-route" id="tab-ai-summaries" class="hidden">
+  <input type="radio" name="page-route" id="tab-ai-evals" class="hidden">
+  <input type="radio" name="page-route" id="tab-jaggaer-direct" class="hidden">
+
+  <!-- App Wrapper -->
+  <div class="flex flex-col h-screen overflow-hidden">
+
+    <!-- ================= TOP BAR NAVIGATION ================= -->
+    <header class="h-16 bg-white border-b border-slate-200 sticky top-0 z-50 flex items-center justify-between px-6 shrink-0">
+      <div class="flex items-center space-x-3">
+        <!-- Persistent Header Branding (No active grey background) -->
+        <label for="tab-home" class="flex items-center gap-3 text-left group cursor-pointer">
+          <div class="w-9 h-9 rounded-lg bg-slate-900 text-white font-mono font-bold text-base flex items-center justify-center shadow-sm group-hover:bg-indigo-600 transition-colors shrink-0">
+            HH
+          </div>
+          <div>
+            <h1 class="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-none">Herb Harden</h1>
+            <p class="text-xs text-slate-500 mt-1">Staff Enterprise Product Designer | AI UI/UX Systems</p>
+          </div>
+        </label>
+        <span class="text-slate-300 hidden sm:inline">|</span>
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
+          Omaha, NE (Open to Remote)
+        </span>
+      </div>
+
+      <nav class="flex items-center space-x-1">
+        <label for="tab-about" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all cursor-pointer">
+          About Me
+        </label>
+        
+        <!-- Direct Root PDF Link -->
+        <a href="resume.pdf" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all inline-flex items-center gap-1">
+          Resume
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+        
+        <label for="tab-contact" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all cursor-pointer">
+          Contact
+        </label>
+        
+        <!-- LinkedIn Link -->
+        <a href="https://linkedin.com/in/herb-harden-30b337374" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+          <svg class="w-4 h-4 fill-current text-slate-500" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+      </nav>
+    </header>
+
+    <!-- ================= MAIN BODY LAYOUT ================= -->
+    <div class="flex flex-1 overflow-hidden">
+
+      <!-- ================= LEFT SIDE TREE NAVIGATION ================= -->
+      <aside class="w-80 bg-white border-r border-slate-200 overflow-y-auto flex flex-col shrink-0">
+        <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+          <span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">PROJECTS & CASE STUDIES</span>
+        </div>
+
+        <nav class="p-3 space-y-4 text-xs font-medium">
+          
+          <!-- 01. JAI Platform Group -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
+              <span>01. JAI Conversational AI Platform</span>
+            </div>
+            <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
+              <label for="tab-jai-global" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Global UI/UX Design & Specs
+              </label>
+              <label for="tab-jai-hitl" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Customer Care HITL Workflows
+              </label>
+              <label for="tab-jai-intent" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                AI Intent-Driven Interaction Model
+              </label>
+              <label for="tab-jai-search" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                AI Conversational Search Specs
+              </label>
+            </div>
+          </div>
+
+          <!-- 02. AI Behavioral Contracts Group -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
+              <span>02. AI UI Behavioral Contracts</span>
+            </div>
+            <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
+              <label for="tab-behavioral-contracts" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Project Overview
+              </label>
+            </div>
+          </div>
+
+          <!-- 03. Claude Prototyping & Engineering Handoff -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
+              <span>03. Claude Prototyping & Engineering Handoff</span>
+            </div>
+            <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
+              <label for="tab-claude-audit" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Audit Management
+              </label>
+              <label for="tab-claude-cbd" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Cost-Breakdown Frameworks
+              </label>
+            </div>
+          </div>
+
+          <!-- 04. AI Agents & Evals -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
+              <span>04. AI Agents, Summaries & Evals</span>
+            </div>
+            <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
+              <label for="tab-ai-bid-analyzer" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                AI Bid Analyzer Agent
+              </label>
+              <label for="tab-ai-summaries" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                In-Context AI Summaries
+              </label>
+              <label for="tab-ai-evals" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                AI Evaluations Redesign
+              </label>
+            </div>
+          </div>
+
+          <!-- 05. Jaggaer Direct B2B Enterprise Platform Group -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
+              <span>05. Jaggaer Direct B2B Enterprise Platform</span>
+            </div>
+            <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
+              <label for="tab-jaggaer-direct" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                End-to-End UI/UX Ownership
+              </label>
+            </div>
+          </div>
+
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN CONTENT VIEWPORT ================= -->
+      <main class="flex-1 overflow-y-auto bg-slate-50/50 p-6 md:p-10">
+        <div class="max-w-4xl mx-auto bg-white border border-slate-200/80 rounded-xl shadow-sm p-8 min-h-[calc(100vh-12rem)]">
+
+          <!-- PAGE: HOME -->
+          <section id="page-home" class="page-view space-y-8">
+            <div class="border-b border-slate-100 pb-6">
+              <div class="flex flex-col md:flex-row gap-6 items-start">
+                <!-- Profile Image -->
+                <img 
+                  src="profile-pic.jpeg" 
+                  alt="Herb Harden" 
+                  class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover border border-slate-200 shadow-sm shrink-0"
+                />
+
+                <div class="space-y-2">
+                  <span class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs font-semibold tracking-wide uppercase">AI UI/UX Product Design Portfolio</span>
+                  <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Overview</h2>
+                  <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                    Enterprise Product Designer with 20+ years of experience bridging the gap between product vision and technical implementation across complex enterprise SaaS environments. Specialist in Figma, Claude Design, human-AI interaction patterns, stateful UI behavioral contracts, and design system strategy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 bg-slate-50 border border-slate-200/70 rounded-lg">
+                <div class="text-2xl font-bold text-slate-900">20+ Years</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">Enterprise SaaS Design & Architecture</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/70 rounded-lg">
+                <div class="text-2xl font-bold text-slate-900">Sole Lead</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">JAGGAER Direct (4+ Yrs Dedicated)</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/70 rounded-lg">
+                <div class="text-2xl font-bold text-indigo-600">Zero Rework</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">State-Driven Front-End Engineering</div>
+              </div>
+            </div>
+
+            <div class="space-y-4 pt-2">
+              <h3 class="text-base font-bold text-slate-900">Featured System Case Studies</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="tab-jai-global" class="block p-5 border border-slate-200 rounded-lg hover:border-indigo-500 hover:shadow-md transition-all cursor-pointer bg-white">
+                  <span class="text-xs font-bold text-indigo-600 uppercase">01. JAI Platform</span>
+                  <h4 class="font-bold text-slate-900 mt-1 text-base">Conversational AI Specs</h4>
+                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">System specifications and non-deterministic state modeling across global enterprise squads.</p>
+                </label>
+
+                <label for="tab-behavioral-contracts" class="block p-5 border border-slate-200 rounded-lg hover:border-indigo-500 hover:shadow-md transition-all cursor-pointer bg-white">
+                  <span class="text-xs font-bold text-indigo-600 uppercase">02. JSON Schemas</span>
+                  <h4 class="font-bold text-slate-900 mt-1 text-base">UI Behavioral Contracts</h4>
+                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">Defining machine-readable JSON schemas for error-free dynamic rendering during AI streaming.</p>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- PAGE: ABOUT -->
+          <section id="page-about" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-6">
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Herb Harden</h2>
+              <p class="text-slate-600 text-sm mt-1 font-medium">Staff Enterprise Product Designer & AI UI/UX Systems Architect</p>
+            </div>
+            <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+              <p>
+                Enterprise Product Designer with 20+ years of experience bridging the gap between product vision and technical implementation across complex enterprise SaaS environments. Specialist in Figma, Claude Design, human-AI interaction patterns, stateful UI behavioral contracts, and design system strategy.
+              </p>
+              <p>
+                Leverages rapid interactive sandboxing, visual low-code/no-code orchestrations, and front-end state modeling to specify edge cases and de-risk complex front-end logic—enabling engineering teams to build faster, cleaner production software without rework.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100">
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">Core Expertise</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-3 bg-slate-50 border border-slate-200/60 rounded-md">
+                  <span class="font-bold text-slate-900 block mb-1">AI Systems & Interaction</span>
+                  Human-in-the-Loop (HITL) Workflows, Non-Deterministic State Design, Confidence & XAI Visuals, Conversational Search & RAG UI.
+                </div>
+                <div class="p-3 bg-slate-50 border border-slate-200/60 rounded-md">
+                  <span class="font-bold text-slate-900 block mb-1">Systems & Architecture</span>
+                  W3C Design Token Architecture, AI UI Behavioral Contracts, Generative Layout Systems, Component API Alignment.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PAGE: CONTACT -->
+          <section id="page-contact" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-6">
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Contact & Professional Links</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-5 bg-slate-50 border border-slate-200/80 rounded-lg space-y-2">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Direct Contact</span>
+                <p class="text-sm font-bold text-slate-900">Email: <a href="mailto:harden.herb@gmail.com" class="text-indigo-600 hover:underline">harden.herb@gmail.com</a></p>
+                <p class="text-sm text-slate-700">Phone: (402) 490-0851</p>
+                <p class="text-sm text-slate-700">Location: Omaha, NE (Open to Remote)</p>
+              </div>
+              <div class="p-5 bg-slate-50 border border-slate-200/80 rounded-lg space-y-2">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Online Presence</span>
+                <p class="text-sm"><a href="https://linkedin.com/in/herb-harden-30b337374" target="_blank" class="text-indigo-600 font-medium hover:underline">LinkedIn Profile</a></p>
+                <p class="text-sm"><a href="http://herbharden.com" target="_blank" class="text-indigo-600 font-medium hover:underline">herbharden.com</a></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- PAGE: JAI GLOBAL -->
+          <section id="page-jai-global" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Global UI/UX Design & System Specs</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Collaborated with the global UI/UX team to design and document the complete library of conversational UI component specifications, interaction models, and non-deterministic user states.
+            </p>
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-2">
+              <div class="font-bold text-slate-900">Key Architectural Deliverables:</div>
+              <ul class="list-disc pl-4 space-y-1 text-slate-600">
+                <li>Defined unified conversational interfaces capable of rendering LLM outputs cleanly.</li>
+                <li>Handled dynamic layout expansions without causing unexpected visual reflows.</li>
+                <li>Standardized cross-squad component libraries across global development divisions.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- PAGE: JAI HITL -->
+          <section id="page-jai-hitl" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Customer Care HITL Workflows</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Mapped end-to-end Human-in-the-Loop (HITL) approval flows, override mechanisms, and edge cases for global enterprise customer support operations.
+            </p>
+          </section>
+
+          <!-- PAGE: JAI INTENT -->
+          <section id="page-jai-intent" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Intent-Driven Interaction Model</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Modeled and specified the core Intent &rarr; Insight &rarr; Action user-search interaction pattern, defining precise user intent use cases and dynamic interface behaviors.
+            </p>
+          </section>
+
+          <!-- PAGE: JAI SEARCH -->
+          <section id="page-jai-search" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Conversational Search Specs</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Formulated and specified a 5-phase conversational interaction framework for JAI.
+            </p>
+          </section>
+
+          <!-- PAGE: BEHAVIORAL CONTRACTS -->
+          <section id="page-behavioral-contracts" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">System Architecture</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI UI Component Behavioral Contracts</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Authored comprehensive UI behavioral contracts and schema expectations that govern how dynamic components render in response to real-time LLM outputs, ensuring design system integrity across AI-driven flows.
+            </p>
+          </section>
+
+          <!-- PAGE: CLAUDE AUDIT -->
+          <section id="page-claude-audit" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping & Engineering Handoff</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Audit Management</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Utilized Claude Design for rapid interactive prototyping and front-end state modeling across Audit Management.
+            </p>
+          </section>
+
+          <!-- PAGE: CLAUDE CBD -->
+          <section id="page-claude-cbd" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping & Engineering Handoff</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Cost-Breakdown Frameworks (CBD)</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Engineered interactive cost-breakdown matrix prototypes for rapid front-end sandboxing.
+            </p>
+          </section>
+
+          <!-- PAGE: AI BID ANALYZER -->
+          <section id="page-ai-bid-analyzer" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Bid Analyzer Agent</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Designed side-panel human-in-the-loop interfaces within the JAI framework.
+            </p>
+          </section>
+
+          <!-- PAGE: AI SUMMARIES -->
+          <section id="page-ai-summaries" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">In-Context AI Summary Framework</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Designed a scalable enterprise UI framework for in-context AI synthesis across core workflows.
+            </p>
+          </section>
+
+          <!-- PAGE: AI EVALS -->
+          <section id="page-ai-evals" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents, Summaries & Evals</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Evaluations Redesign</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Led the UI/UX redesign of the AI Evals platform, transforming raw accuracy metrics into actionable dashboards.
+            </p>
+          </section>
+
+          <!-- PAGE: JAGGAER DIRECT -->
+          <section id="page-jaggaer-direct" class="page-view space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Jaggaer Direct B2B Enterprise Platform</span>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">End-to-End UI/UX Ownership</h2>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              Served as the single UI/UX owner for JAGGAER Direct, driving end-to-end product design across multiple concurrent modules while collaborating directly with Product Managers and Engineering leads.
+            </p>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="h-10 bg-white border-t border-slate-200 px-6 flex items-center justify-end text-xs text-slate-500 shrink-0">
+      <span class="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 border border-slate-200/80 rounded font-semibold">
+        Last Updated: August 2, 2026 at 11:53 AM CST
+      </span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
