@@ -132,11 +132,11 @@
                 Global Customer Care HITL Workflows & Edge Cases
               </label>
               <label for="tab-jai-intent" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                AI Intent-Driven Interaction Model
+                AI Conversation-Based Search: User Intent Framework & Search Spec Use Cases
               </label>
-              <label for="tab-jai-search" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+              <!--<label for="tab-jai-search" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
                 AI Conversational Search Specs
-              </label>
+              </label>-->
             </div>
           </div>
 
@@ -742,7 +742,7 @@
                 <span class="text-slate-300">•</span>
                 <span class="text-xs font-semibold text-slate-500">5-Phase Interaction Framework & Specs</span>
               </div>
-              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">AI Intent-Driven Interaction Model</h2>
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">AI Conversation-Based Search: User Intent Framework & Search Spec Use Cases</h2>
               <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
                 Architecting a structured 5-phase conversational loop—Request, Intent Confirmation, Search Results, Insight, and Action—to transition enterprise users from dense manual filters to deterministic, high-velocity natural language workflows.
               </p>
@@ -1111,10 +1111,908 @@ Goals
 
           </section>
 
-          <section id="page-jai-search" class="page-view space-y-6">
+          <!-- AI UI COMPONENTS SECTION -->
+          <section id="page-behavioral-contracts" class="page-view space-y-6">
+  <!-- Header -->
+  <div class="border-b border-slate-100 pb-4">
+    <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">System Architecture</span>
+    <h2 class="text-2xl font-extrabold text-slate-900 mt-1">JAGGAER Direct: AI UI Component Behavioral Contracts</h2>
+    <p class="text-slate-600 text-sm mt-1">Defining a scalable component design framework that explicitly scopes, bounds, and governs AI behavior within enterprise user interfaces.</p>
+  </div>
+
+  <!-- Standard Enterprise Overview Card (Aligned to Site Design System) -->
+  <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100 mb-2">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Enterprise Design System Framework
+        </span>
+        <h3 class="text-xl font-bold text-slate-900">From Traditional UI Specs to AI Behavioral Contracts</h3>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">Flagship Pilot: Button Component</span>
+      </div>
+    </div>
+
+    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+      Traditional design systems document <em>how components look</em>, but fail to document <em>how components behave once AI is in the loop</em>. This framework transforms traditional visual UI specs into explicit, testable behavioral contracts that enforce an unyielding control hierarchy (<strong class="text-slate-900">User &gt; System &gt; AI</strong>) and eliminate engineering interpretation drift.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 rounded-lg p-4 border border-slate-100">
+      <div>
+        <div class="text-xs font-medium text-slate-500">Control Hierarchy</div>
+        <div class="text-sm font-bold text-slate-900 mt-0.5">User &gt; System &gt; AI</div>
+      </div>
+      <div>
+        <div class="text-xs font-medium text-slate-500">Primary Artifact</div>
+        <div class="text-sm font-bold text-slate-900 mt-0.5">Deterministic State Machine</div>
+      </div>
+      <div>
+        <div class="text-xs font-medium text-slate-500">Failure Modes Addressed</div>
+        <div class="text-sm font-bold text-slate-900 mt-0.5">AI Overreach &amp; Ambiguity</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visual Asset Comparison Gallery (Placeholder Images) -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Traditional UI Spec Image Container -->
+    <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <h4 class="text-sm font-bold text-slate-900">1. Traditional UI Component Spec</h4>
+        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Visual Baseline</span>
+      </div>
+      <p class="text-xs text-slate-500">Static Figma documentation focusing purely on visual anatomy, variants, and colors.</p>
+      
+      <div class="aspect-video w-full bg-slate-100 rounded-lg border border-slate-200 flex flex-col items-center justify-center p-4 text-center group hover:border-slate-300 transition-all">
+        <svg class="w-10 h-10 text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span class="text-xs font-semibold text-slate-700">Traditional Button Anatomy Spec</span>
+        <span class="text-[10px] text-slate-400 mt-0.5">Asset: Screenshot 2026-05-12 at 9.50.13 AM.png</span>
+      </div>
+    </div>
+
+    <!-- AI Behavioral Spec Image Container -->
+    <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <h4 class="text-sm font-bold text-slate-900">2. AI Component Behavioral Spec</h4>
+        <span class="text-[11px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">Behavioral Contract</span>
+      </div>
+      <p class="text-xs text-slate-500">Side-by-side mapping of visual states directly to machine-readable behavioral markdown specs.</p>
+      
+      <div class="aspect-video w-full bg-slate-100 rounded-lg border border-slate-200 flex flex-col items-center justify-center p-4 text-center group hover:border-slate-300 transition-all">
+        <svg class="w-10 h-10 text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span class="text-xs font-semibold text-slate-700">Behavioral Contract Handoff Spec</span>
+        <span class="text-[10px] text-slate-400 mt-0.5">Asset: Screen Shot 2026-07-16 at 10.16.39 AM.png</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Grid: Visual Specs vs AI Behavioral Spec -->
+  <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+    <h3 class="text-base font-bold text-slate-900 mb-1">Architectural Paradigm Shift</h3>
+    <p class="text-slate-500 text-xs mb-4">Comparing traditional design system specs against enterprise AI behavioral contracts.</p>
+    
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs text-slate-600 border-collapse">
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-200 text-slate-800 font-semibold uppercase tracking-wider">
+            <th class="py-3 px-4">Dimension</th>
+            <th class="py-3 px-4 border-l border-slate-200 bg-slate-100/50">Traditional UI Spec</th>
+            <th class="py-3 px-4 border-l border-slate-200 bg-indigo-50/50 text-indigo-900">AI Behavioral Spec</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Primary Artifact</td>
+            <td class="py-3 px-4 border-l border-slate-200">Visual states (default, hover, disabled)</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Explicit state machine with valid/invalid states &amp; transitions</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Source of Truth</td>
+            <td class="py-3 px-4 border-l border-slate-200">Figma / visual style guide</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Behavioral contract document</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">AI's Role</td>
+            <td class="py-3 px-4 border-l border-slate-200">Undefined — bolted on post-hoc</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Explicitly scoped: suggest only, never execute</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Control Hierarchy</td>
+            <td class="py-3 px-4 border-l border-slate-200">Implicit, assumed</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Explicit &amp; enforced: User &gt; System &gt; AI</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Confidence Handling</td>
+            <td class="py-3 px-4 border-l border-slate-200">N/A</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">High/Medium/Low confidence mapped directly to UI bounds</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Reversibility</td>
+            <td class="py-3 px-4 border-l border-slate-200">N/A</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Mandatory: all AI influence must be reversible &amp; explainable</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Engineering Handoff</td>
+            <td class="py-3 px-4 border-l border-slate-200">"Match the design visually"</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Acceptance criteria — every state &amp; transition testable</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-semibold text-slate-900">Failure Modes Addressed</td>
+            <td class="py-3 px-4 border-l border-slate-200">Visual inconsistency</td>
+            <td class="py-3 px-4 border-l border-slate-200 font-medium text-slate-900 bg-indigo-50/30">Unintended execution, AI overreach, non-determinism</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Core Pillars Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+      <div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm mb-3">1</div>
+      <h4 class="text-sm font-bold text-slate-900 mb-1">Control Hierarchy</h4>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Strict rule where <strong>User &gt; System &gt; AI</strong>. User actions override AI suggestions unconditionally, system limits override user invalid actions, and AI never overrides system constraints.
+      </p>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+      <div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm mb-3">2</div>
+      <h4 class="text-sm font-bold text-slate-900 mb-1">Confidence-Tiered Scope</h4>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        AI influence is explicitly bounded to suggestion scopes (Data &amp; Presentation levels). High, medium, and low model confidence scores map deterministically to specific UI treatments.
+      </p>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+      <div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm mb-3">3</div>
+      <h4 class="text-sm font-bold text-slate-900 mb-1">Deterministic States</h4>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Specifies precise valid/invalid state pairings, allowed state transition vectors, and guarantees safe failure paths with loading locks to prevent duplicate submissions.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Document Viewer Section (Markdown Files) -->
+  <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+    <!-- Header Controls -->
+    <div class="border-b border-slate-200 bg-slate-50 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <h3 class="text-sm font-bold text-slate-900">Specification &amp; Rationale Artifacts</h3>
+        <p class="text-xs text-slate-500">Select an enterprise contract file to view the raw markdown specification code.</p>
+      </div>
+      <!-- Tab Buttons -->
+      <div class="flex items-center gap-1 bg-slate-200/70 p-1 rounded-lg text-xs font-medium">
+        <button onclick="switchTab('spec-btn')" id="tab-btn-spec-btn" class="px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm font-semibold transition-all">
+          button-spec.md
+        </button>
+        <button onclick="switchTab('spec-template')" id="tab-btn-spec-template" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all">
+          spec-template.md
+        </button>
+        <button onclick="switchTab('spec-rationale')" id="tab-btn-spec-rationale" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all">
+          rationale.md
+        </button>
+      </div>
+    </div>
+
+    <!-- Code Block Panes -->
+    <div class="bg-slate-900 p-4 text-slate-100 font-mono text-xs overflow-x-auto max-h-[600px]">
+      
+      <!-- Pane 1: button-spec.md -->
+      <div id="tab-pane-spec-btn" class="space-y-1">
+        <pre><code class="language-markdown"># AI Button Component Behavioral Specification
+
+---
+
+## 0. Intent of This Document
+
+This document defines a **complete behavioral contract** for an AI-enabled Button component.
+
+It MUST:
+- Define behavior as the primary source of truth (NOT visuals)
+- Eliminate ambiguity between design, engineering, and AI systems
+- Enforce deterministic outcomes
+- Establish control hierarchy: **User > System > AI**
+- Enable direct implementation without interpretation
+
+---
+
+## 1. Component Definition
+
+### 1.1 Name
+Button (AI-Enabled)
+
+### 1.2 Purpose
+Trigger a discrete, user-initiated action with optional AI-assisted labeling, prioritization, or suggestion.
+
+### 1.3 When to Use
+- MUST be used when a user needs to explicitly trigger an action
+- SHOULD be used for primary, secondary, or destructive actions
+- CAN be used for AI-suggested actions where user confirmation is required
+
+### 1.4 When NOT to Use
+- MUST NOT be used for navigation that changes context without action
+- MUST NOT replace passive indicators (e.g., labels, badges)
+
+---
+
+## 2. Behavioral Model (Source of Truth)
+
+### 2.1 Supported Actions
+
+**User-triggered:**
+- Click / tap
+- Keyboard activation (Enter / Space)
+
+**System-triggered:**
+- Enable / disable
+- Loading state activation
+
+**AI-triggered (non-executing unless explicitly allowed):**
+- Suggest label
+- Suggest priority (primary/secondary/danger)
+
+### 2.2 Action Outcomes
+
+**Activate Button**
+- Result: Executes bound action
+- Side effects: May trigger loading state, async operations
+- Dependencies: Must be enabled
+
+**Disable Button**
+- Result: Prevents interaction
+- Side effects: Visual state update
+- Dependencies: System conditions
+
+**Trigger Loading**
+- Result: Replaces label with loader or locks interaction
+- Side effects: Prevents repeated activation
+- Dependencies: Async process
+
+---
+
+## 3. State Model (Explicit State Machine)
+
+### 3.1 Valid States
+- Enabled
+- Hover
+- Focused
+- Disabled
+- Loading
+
+### 3.2 Invalid States
+- MUST NOT be Enabled and Disabled simultaneously
+- MUST NOT be Interactive while Loading
+
+### 3.3 State Transitions
+- Enabled → Hover
+- Hover → Focused
+- Focused → Enabled
+- Enabled → Loading
+- Loading → Enabled
+- Enabled → Disabled
+
+### 3.4 State Priority Rules
+- User actions MUST override AI
+- System constraints MUST override invalid user actions
+- AI MUST NOT override system constraints
+
+---
+
+## 4. Interaction Model
+
+### 4.1 Pointer Interaction
+- MUST trigger action on click/tap when enabled
+- MUST NOT trigger when disabled or loading
+
+### 4.2 Keyboard Interaction
+- MUST activate on Enter and Space
+- MUST support tab navigation
+- MUST support arrow navigation for segmented/split buttons
+
+### 4.3 Focus Management
+- MUST show visible focus state
+- MUST move focus predictably across grouped buttons
+- MUST retain focus after action unless context changes
+
+---
+
+## 5. Data Contract
+
+### 5.1 Input Schema
+
+Required:
+- label: string
+- intent: enum (primary, secondary, danger)
+
+Optional:
+- icon: string
+- disabled: boolean
+- loading: boolean
+- actions: array (for split buttons)
+
+### 5.2 Constraints
+- MUST have a label or accessible name
+- MUST NOT allow empty label
+- MUST enforce intent consistency
+
+### 5.3 Output Events
+- onClick
+- onFocus
+- onBlur
+- onOpen (split button)
+
+### 5.4 Error Handling
+- MUST fail safely (no action execution)
+- MUST log invalid state transitions
+
+---
+
+## 6. System Behavior
+
+### 6.1 Initialization
+- MUST default to Enabled unless specified
+
+### 6.2 Async Behavior
+- MUST enter Loading on async trigger
+- MUST prevent duplicate execution
+
+### 6.3 External Updates
+- MUST respond to state updates deterministically
+
+---
+
+## 7. AI Interaction Rules (Component-Level)
+
+### 7.1 AI Capabilities
+AI CAN:
+- Suggest button labels
+- Suggest intent hierarchy
+- Suggest grouping (segmented/split)
+
+### 7.2 AI Restrictions
+AI MUST NOT:
+- Override user-defined values
+- Violate system constraints
+- Introduce non-deterministic UI behavior
+
+### 7.3 AI Influence Scope
+- Data-level (labels)
+- Presentation-level (priority)
+- Decision-level (suggest actions ONLY)
+
+### 7.4 AI Confidence Handling
+
+- High confidence → Suggest primary action
+- Medium confidence → Suggest secondary action
+- Low confidence → Provide optional suggestions only
+
+### 7.5 Explainability
+- AI SHOULD provide reasoning when influencing output
+- AI influence MUST be reversible
+
+---
+
+## 8. Layout Behavior (Non-Visual)
+
+### 8.1 Flow Rules
+- MUST be placed horizontally
+
+### 8.2 Ordering Rules
+- MUST place primary action on the right
+- MUST place secondary actions on the left
+
+### 8.3 Grouping
+- MUST group related actions
+- MUST support segmented and split configurations
+
+### 8.4 Overflow Handling
+- MUST collapse into split button when exceeding 3 actions
+
+---
+
+## 9. Content Rules
+
+### 9.1 Labels / Values
+- MUST be capitalized
+- MUST be concise
+
+### 9.2 Consistency
+- MUST follow consistent verb usage
+
+### 9.3 Truncation
+- MUST truncate with ellipsis when exceeding width
+
+---
+
+## 10. Accessibility Contract
+
+### 10.1 Roles
+- role="button"
+
+### 10.2 Announcements
+- MUST announce label and state
+
+### 10.3 Keyboard Support
+- MUST support tab, enter, space
+
+### 10.4 Focus Behavior
+- MUST be clearly visible
+
+---
+
+## 11. Edge Case Handling
+
+- Empty data: MUST render disabled
+- Invalid data: MUST not render interactive state
+- Rapid updates: MUST debounce execution
+- Extreme values: MUST truncate labels
+
+---
+
+## 12. Constraints & Limits
+
+- Minimum width: 80px
+- Border radius: 3px
+- Max actions (segmented): 6
+
+---
+
+## 13. Permissions & Governance
+
+- MUST respect user permissions
+- MUST NOT expose restricted actions
+
+---
+
+## 14. Performance Behavior
+
+- Interaction latency MUST be &lt;100ms
+- Rendering MUST be synchronous for state changes
+
+---
+
+## 15. Do / Don’t Guidelines
+
+### DO
+- Use primary button for key action
+- Keep labels short
+
+### DON’T
+- Stack buttons vertically
+- Overuse primary styling
+
+---
+
+## 16. Acceptance Criteria (Engineering Ready)
+
+- All states MUST be testable
+- All transitions MUST be deterministic
+- All constraints MUST be enforceable
+
+---
+
+## 17. Summary
+
+The Button component guarantees deterministic, accessible, and user-controlled action triggering with safe AI augmentation for labeling and prioritization.</code></pre>
+      </div>
+
+      <!-- Pane 2: spec-template.md -->
+      <div id="tab-pane-spec-template" class="hidden space-y-1">
+        <pre><code class="language-markdown"># AI Component Behavioral Specification Template (Enterprise)
+
+---
+
+## 0. Intent of This Document
+
+This document defines a **complete behavioral contract** for an AI-enabled UI component.
+
+It MUST:
+- Define behavior as the primary source of truth (NOT visuals)
+- Eliminate ambiguity between design, engineering, and AI systems
+- Enforce deterministic outcomes
+- Establish control hierarchy: **User > System > AI**
+- Enable direct implementation without interpretation
+
+---
+
+## 1. Component Definition
+
+### 1.1 Name
+&lt;Component Name&gt;
+
+### 1.2 Purpose
+Describe what the component does in **one clear sentence**.
+
+### 1.3 When to Use
+- MUST be used when...
+- SHOULD be used when...
+- CAN be used when...
+
+### 1.4 When NOT to Use
+- MUST NOT be used when...
+- MUST NOT replace...
+
+---
+
+## 2. Behavioral Model (Source of Truth)
+
+### 2.1 Supported Actions
+
+**User-triggered:**
+- &lt;action&gt;
+
+**System-triggered:**
+- &lt;action&gt;
+
+**AI-triggered (non-executing unless explicitly allowed):**
+- &lt;action&gt;
+
+### 2.2 Action Outcomes
+
+For each action define:
+
+**Action Name**
+- Result:
+- Side effects:
+- Dependencies:
+
+---
+
+## 3. State Model (Explicit State Machine)
+
+### 3.1 Valid States
+- &lt;state&gt;
+
+### 3.2 Invalid States
+- MUST NOT...
+
+### 3.3 State Transitions
+
+&lt;State A&gt; → &lt;State B&gt;
+
+### 3.4 State Priority Rules
+- User actions MUST override AI
+- System constraints MUST override invalid user actions
+- AI MUST NOT override system constraints
+
+---
+
+## 4. Interaction Model
+
+### 4.1 Pointer Interaction
+- MUST...
+- MUST NOT...
+
+### 4.2 Keyboard Interaction
+- MUST...
+- MUST NOT...
+
+### 4.3 Focus Management
+- MUST...
+- MUST NOT...
+
+---
+
+## 5. Data Contract
+
+### 5.1 Input Schema
+
+Required:
+- &lt;field&gt;: &lt;type&gt;
+
+Optional:
+- &lt;field&gt;: &lt;type&gt;
+
+### 5.2 Constraints
+- MUST...
+- MUST NOT...
+
+### 5.3 Output Events
+- &lt;event&gt;
+
+### 5.4 Error Handling
+- MUST...
+
+---
+
+## 6. System Behavior
+
+### 6.1 Initialization
+- MUST...
+
+### 6.2 Async Behavior
+- MUST...
+
+### 6.3 External Updates
+- MUST...
+
+---
+
+## 7. AI Interaction Rules (Component-Level)
+
+### 7.1 AI Capabilities
+AI CAN:
+- &lt;capability&gt;
+
+### 7.2 AI Restrictions
+AI MUST NOT:
+- Override user-defined values
+- Violate system constraints
+- Introduce non-deterministic UI behavior
+
+### 7.3 AI Influence Scope
+Define where AI is allowed to operate:
+
+- Data-level (e.g., labels, values)
+- Presentation-level (e.g., ordering, highlighting)
+- Decision-level (ONLY for interactive components)
+
+### 7.4 AI Confidence Handling (ONLY if applicable)
+
+- High confidence → &lt;behavior&gt;
+- Medium confidence → &lt;behavior&gt;
+- Low confidence → &lt;behavior&gt;
+
+NOTE: This section MUST be omitted for non-decision components (e.g., Badge, Label).
+
+### 7.5 Explainability
+- AI SHOULD provide reasoning when influencing output
+- AI influence MUST be reversible
+
+---
+
+## 8. Layout Behavior (Non-Visual)
+
+### 8.1 Flow Rules
+- MUST...
+
+### 8.2 Ordering Rules
+- MUST...
+
+### 8.3 Grouping
+- MUST...
+
+### 8.4 Overflow Handling
+- MUST...
+
+---
+
+## 9. Content Rules
+
+### 9.1 Labels / Values
+- MUST...
+
+### 9.2 Consistency
+- MUST...
+
+### 9.3 Truncation
+- MUST...
+
+---
+
+## 10. Accessibility Contract
+
+### 10.1 Roles
+- role="&lt;role&gt;"
+
+### 10.2 Announcements
+- MUST...
+
+### 10.3 Keyboard Support
+- MUST...
+
+### 10.4 Focus Behavior
+- MUST...
+
+---
+
+## 11. Edge Case Handling
+
+- MUST define behavior for:
+ - Empty data
+ - Invalid data
+ - Rapid updates
+ - Extreme values
+
+---
+
+## 12. Constraints & Limits
+
+- Define hard limits (length, size, count, etc.)
+
+---
+
+## 13. Permissions & Governance
+
+- MUST respect user permissions
+- MUST NOT expose restricted data
+
+---
+
+## 14. Performance Behavior
+
+- Interaction latency MUST be defined
+- Rendering constraints MUST be defined
+
+---
+
+## 15. Do / Don’t Guidelines
+
+### DO
+- &lt;best practices&gt;
+
+### DON’T
+- &lt;anti-patterns&gt;
+
+---
+
+## 16. Acceptance Criteria (Engineering Ready)
+
+- All states MUST be testable
+- All transitions MUST be deterministic
+- All constraints MUST be enforceable
+
+---
+
+## 17. Summary
+
+Summarize:
+- What the component guarantees
+- How AI is safely integrated
+- Why it is enterprise-ready</code></pre>
+      </div>
+
+      <!-- Pane 3: rationale.md -->
+      <div id="tab-pane-spec-rationale" class="hidden space-y-1">
+        <pre><code class="language-markdown"># Rationale: AI Button Component Behavioral Specification
+
+---
+
+## 1. Design System Alignment
+
+The specification directly reflects the provided design system:
+- Horizontal layout enforcement
+- Primary action on the right
+- Split and segmented button behavior
+- Explicit state definitions (hover, focus, disabled, loading)
+
+This ensures parity between visual system and behavioral logic.
+
+---
+
+## 2. Why Behavior is Prioritized Over Visuals
+
+Buttons are action triggers. In AI systems:
+- Incorrect behavior leads to unintended execution
+- Visual ambiguity is secondary to action correctness
+
+Therefore:
+- State machine is strictly defined
+- Invalid states are explicitly prohibited
+
+---
+
+## 3. AI Integration Strategy
+
+AI is intentionally constrained:
+- It influences labeling and prioritization
+- It NEVER executes actions
+- It NEVER overrides user intent
+
+This prevents:
+- Accidental automation
+- Loss of user trust
+
+---
+
+## 4. Determinism Guarantees
+
+The spec enforces:
+- Explicit state transitions
+- Clear action dependencies
+- Strict input/output contracts
+
+This removes ambiguity for engineering and ensures consistent runtime behavior.
+
+---
+
+## 5. Accessibility Considerations
+
+Accessibility rules are elevated to first-class requirements:
+- Keyboard-first interaction model
+- Screen reader compatibility
+- Non-reliance on color
+
+This aligns with enterprise compliance requirements.
+
+---
+
+## 6. Handling Complexity (Split & Segmented Buttons)
+
+Complex button types are normalized:
+- Split buttons separate primary and secondary actions
+- Segmented buttons behave as grouped discrete actions
+
+Each is treated as a predictable extension of the base button model.
+
+---
+
+## 7. Risk Mitigation
+
+The spec prevents common failure modes:
+- Duplicate submissions → loading lock
+- Hidden destructive actions → explicit danger intent
+- AI hallucination → restricted scope
+
+---
+
+## 8. Enterprise Readiness
+
+This component is enterprise-ready because it:
+- Enforces governance (permissions, constraints)
+- Supports scalability (grouping, overflow rules)
+- Ensures performance (<100ms interaction)
+
+---
+
+## 9. Why This Matters for AI Systems
+
+In AI-driven interfaces:
+- Buttons become decision surfaces
+- Mis-prioritization leads to user error
+
+This spec ensures:
+- AI assists but does not decide
+- Users retain full control
+
+---
+
+## 10. Summary
+
+This specification transforms a traditional button into a:
+- Deterministic
+- Governed
+- AI-safe
+
+interaction primitive suitable for enterprise AI systems.</code></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Inline Tab Switcher JavaScript -->
+  <script>
+    function switchTab(tabId) {
+      // Hide all panes
+      document.getElementById('tab-pane-spec-btn').classList.add('hidden');
+      document.getElementById('tab-pane-spec-template').classList.add('hidden');
+      document.getElementById('tab-pane-spec-rationale').classList.add('hidden');
+
+      // Reset button styles
+      const btns = ['tab-btn-spec-btn', 'tab-btn-spec-template', 'tab-btn-spec-rationale'];
+      btns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.className = 'px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all';
+        }
+      });
+
+      // Show active pane & active button style
+      document.getElementById('tab-pane-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.className = 'px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm font-semibold transition-all';
+      }
+    }
+  </script>
+</section>
+
+<!--
+<section id="page-jai-search" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
-              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Conversational Search Specs</h2>
+              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Search Conversational Search Specs</h2>
             </div>
           </section>
 
@@ -1124,7 +2022,7 @@ Goals
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI UI Component Behavioral Contracts</h2>
             </div>
           </section>
-
+-->
           <section id="page-claude-audit" class="page-view space-y-6">
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Claude Prototyping</span>
