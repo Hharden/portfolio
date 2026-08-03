@@ -53,8 +53,8 @@
   <input type="radio" name="page-route" id="tab-home" class="hidden">
   <input type="radio" name="page-route" id="tab-about" class="hidden">
   <input type="radio" name="page-route" id="tab-contact" class="hidden">
-  <input type="radio" name="page-route" id="tab-jai-global" class="hidden" checked>
-  <input type="radio" name="page-route" id="tab-jai-hitl" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-global" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-hitl" class="hidden" checked>
   <input type="radio" name="page-route" id="tab-jai-intent" class="hidden">
   <input type="radio" name="page-route" id="tab-jai-search" class="hidden">
   <input type="radio" name="page-route" id="tab-behavioral-contracts" class="hidden">
@@ -129,7 +129,7 @@
                 Global UI/UX Design & Specs
               </label>
               <label for="tab-jai-hitl" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                Customer Care HITL Workflows
+                Global Customer Care HITL Workflows & Edge Cases
               </label>
               <label for="tab-jai-intent" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
                 AI Intent-Driven Interaction Model
@@ -361,19 +361,27 @@
             <div class="space-y-6 pt-4 border-t border-slate-100">
               <h3 class="text-lg font-bold text-slate-900">Visual Specification Showcase</h3>
               
-              <!-- Image 1: Card Matrix -->
+              <!-- Image 1: Card Matrix (LINKED TO FULL SIZE) -->
               <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
                 <div class="flex items-center justify-between px-1">
                   <span class="text-xs font-bold text-slate-800">A. Component Matrix: Large Qty Results & Siderail State Variations</span>
-                  <span class="text-[11px] font-mono text-slate-400">images/large-qty-results-siderail.png</span>
+                  <a href="images/large-qty-results-siderail.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                    <span>images/large-qty-results-siderail.png</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
                 </div>
                 
                 <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
-                  <img 
-                    src="images/large-qty-results-siderail.png" 
-                    alt="JAI Global UI Component Matrix showing card states and layouts" 
-                    class="w-full max-w-4xl max-h-[500px] h-auto rounded object-contain"
-                  />
+                  <a href="images/large-qty-results-siderail.png" target="_blank" class="block w-full group relative">
+                    <img 
+                      src="images/large-qty-results-siderail.png" 
+                      alt="JAI Global UI Component Matrix showing card states and layouts" 
+                      class="w-full max-w-4xl max-h-[500px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+                    />
+                    <span class="absolute bottom-2 right-2 px-2 py-1 bg-slate-900/80 text-white text-[10px] font-medium rounded shadow backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      Click to open full size ↗
+                    </span>
+                  </a>
                 </div>
               </div>
 
@@ -439,15 +447,272 @@
 
           </section>
 
-          <!-- PLACEHOLDER SECTIONS FOR OTHER TABS -->
-          <section id="page-jai-hitl" class="page-view space-y-6">
-            <div class="border-b border-slate-100 pb-4">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">JAI Conversational AI Platform</span>
-              <h2 class="text-2xl font-extrabold text-slate-900 mt-1">Customer Care HITL Workflows</h2>
+         <!-- ================= PAGE: JAI HITL WORKFLOWS ================= -->
+          <section id="page-jai-hitl" class="page-view space-y-8">
+            <!-- Header & Context -->
+            <div class="border-b border-slate-100 pb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">01. JAI Conversational AI Platform</span>
+                <span class="text-slate-300">•</span>
+                <span class="text-xs font-semibold text-slate-500">Human-in-the-Loop & Edge Cases</span>
+              </div>
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Global Customer Care HITL Workflows & Edge Cases</h2>
+              <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
+                Architecting end-to-end Human-in-the-Loop (HITL) handoff protocols, multi-attempt failure handling, ticket generation workflows, and state-driven UI/UX components to ensure zero dead-ends for enterprise support operations.
+              </p>
             </div>
-            <p class="text-slate-700 text-sm leading-relaxed">
-              Mapped end-to-end Human-in-the-Loop (HITL) approval flows, override mechanisms, and edge cases for global enterprise customer support operations.
-            </p>
+
+            <!-- Impact Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Core Problem</div>
+                <div class="text-base font-bold text-slate-900 mt-0.5">Non-Deterministic Failure</div>
+                <div class="text-xs text-slate-500 mt-1">Preventing dead-end loops when the AI agent fails to resolve complex user requests.</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Solution Strategy</div>
+                <div class="text-base font-bold text-indigo-600 mt-0.5">Deterministic Escalation</div>
+                <div class="text-xs text-slate-500 mt-1">Structured state branches for Live Agent Handoff, Ticket Creation, and Fallback loops.</div>
+              </div>
+              <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">UX & Component Impact</div>
+                <div class="text-base font-bold text-slate-900 mt-0.5">Zero Lost Context</div>
+                <div class="text-xs text-slate-500 mt-1">Full interaction history passed seamlessly to support agents and ticketing systems.</div>
+              </div>
+            </div>
+
+            <!-- Overview Section -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Case Study Overview</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                In high-stakes enterprise SaaS customer care, an AI assistant must recognize its limitations. When an AI agent encounters unresolvable queries or repeated failure loops, leaving users without a clear path forward leads to severe customer churn and operational friction.
+              </p>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                I designed and architected the complete <strong>Global Customer Care HITL Workflows & Edge Cases</strong> system. This framework maps every logic node, decision threshold, and state transition required to detect AI failure states, escalate gracefully to human representatives, pre-fill structured support forms, and provide transparent confirmation patterns for the user.
+              </p>
+            </div>
+
+            <!-- Primary Workflow & UI Artifact Showcase -->
+            <div class="space-y-6 pt-4 border-t border-slate-100">
+              <h3 class="text-lg font-bold text-slate-900">Core Architecture & Primary Workflow Artifacts</h3>
+
+              <!-- Artifact A: Logic Architecture Flowchart -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">A. Complete HITL Escalation & Decision Tree Architecture</span>
+                  <a href="images/hitl-workflow-architecture.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                    <span>images/hitl-workflow-architecture.png</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <a href="images/hitl-workflow-architecture.png" target="_blank" class="block w-full group relative">
+                    <img 
+                      src="images/hitl-workflow-architecture.png" 
+                      alt="HITL Flowchart showing complete node network for live agent handoff and support tickets" 
+                      class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+                    />
+                    <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                      <span>View Original Image</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Artifact B: Conversation UI States -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">B. AI Agent State Variations: Fallback, Handoff & Transfer Prompts</span>
+                  <a href="images/hitl-ui-states.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                    <span>images/hitl-ui-states.png</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <a href="images/hitl-ui-states.png" target="_blank" class="block w-full group relative">
+                    <img 
+                      src="images/hitl-ui-states.png" 
+                      alt="UI mocks illustrating AI failure responses and transfer options" 
+                      class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+                    />
+                    <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                      <span>View Original Image</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Artifact C: Ticket Form Intake Flow -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">C. Context-Aware Support Ticket Generation & Confirmation</span>
+                  <a href="images/hitl-ticket-intake.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                    <span>images/hitl-ticket-intake.png</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <a href="images/hitl-ticket-intake.png" target="_blank" class="block w-full group relative">
+                    <img 
+                      src="images/hitl-ticket-intake.png" 
+                      alt="Step-by-step form progression for submitting a support ticket in-line" 
+                      class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+                    />
+                    <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                      <span>View Original Image</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Artifact D: State Machine Diagram -->
+              <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+                <div class="flex items-center justify-between px-1">
+                  <span class="text-xs font-bold text-slate-800">D. High-Density State & Edge Case Transition Diagram</span>
+                  <a href="images/hitl-state-transitions.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                    <span>images/hitl-state-transitions.png</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+                <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+                  <a href="images/hitl-state-transitions.png" target="_blank" class="block w-full group relative">
+                    <img 
+                      src="images/hitl-state-transitions.png" 
+                      alt="Detailed node diagram showing edge case paths, disconnects, and retry options" 
+                      class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+                    />
+                    <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                      <span>View Original Image</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ADDITIONAL IMAGES SECTION -->
+            <div class="space-y-6 pt-8 border-t border-slate-200">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Additional HITL & Workflow UI Artifacts</h3>
+                <p class="text-xs text-slate-500 mt-1">
+                  Supplementary interaction designs, edge-case states, and alternate workflow variations for this project.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <!-- Additional Image 1 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">UI Triggers & Qualifiers</div>
+                  <a href="images/ui-triggers-qualifiers.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/ui-triggers-qualifiers.png" alt="UI Triggers & Qualifiers" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 2 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Connect to Live Agent UI</div>
+                  <a href="images/ui-connect-live-agent.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/ui-connect-live-agent.png" alt="UI Connect to Live Agent" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 3 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Live Agent Connection State</div>
+                  <a href="images/state2a-live-agent.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/state2a-live-agent.png" alt="State 2A Successful Connection" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 4 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Connected to Live Rep Indicator</div>
+                  <a href="images/connected-live-rep.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/connected-live-rep.png" alt="Connected to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 5 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Connection Attempt State</div>
+                  <a href="images/connection-attempt-live-rep.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/connection-attempt-live-rep.png" alt="Connection Attempt to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 6 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Gather Information Webform V2</div>
+                  <a href="images/webform-intake-v2.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/webform-intake-v2.png" alt="Gather Required Information Webform" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 7 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Create Support Ticket Variant</div>
+                  <a href="images/create-support-ticket-alt.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/create-support-ticket-alt.png" alt="Create Support Ticket Variant" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 8 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Return to AI Chat Mode</div>
+                  <a href="images/ui-return-to-ai-mode.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/ui-return-to-ai-mode.png" alt="Return to AI Chat Agent Mode" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Additional Image 9 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-slate-700 truncate">Workflow & User Journey Map</div>
+                  <a href="images/workflow-user-journey.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="images/workflow-user-journey.png" alt="Workflow & User Journey" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+                      Open Original ↗
+                    </span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="p-4 bg-indigo-50/60 border border-indigo-100 rounded-lg space-y-1 text-xs">
+              <span class="font-bold text-indigo-950 uppercase tracking-wider text-[10px]">Strategic Business Impact</span>
+              <p class="text-indigo-900 leading-relaxed">
+                By designing robust HITL handoffs and capturing edge cases upfront, the system drastically reduced support ticket abandonment, improved customer satisfaction during AI failure states, and provided live support teams with richer, actionable context for faster issue resolution.
+              </p>
+            </div>
           </section>
 
           <section id="page-jai-intent" class="page-view space-y-6">
@@ -520,7 +785,7 @@
     <!-- ================= FOOTER ================= -->
     <footer class="h-10 bg-white border-t border-slate-200 px-6 flex items-center justify-end text-xs text-slate-500 shrink-0">
       <span class="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 border border-slate-200/80 rounded font-semibold">
-        Last Updated: August 2, 2026 at 6:20 PM CST
+        Last Updated: August 2, 2026 at 7:26 PM CST
       </span>
     </footer>
 
