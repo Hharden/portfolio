@@ -4,6 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Herb Harden - Lead AI Enterprise UI/UX Product Designer & AI Design Engineer</title>
+  <!-- Inline Tab Switcher JavaScript -->
+  <script>
+    function switchTab(tabId) {
+      // Hide all panes
+      document.getElementById('tab-pane-spec-btn').classList.add('hidden');
+      document.getElementById('tab-pane-spec-template').classList.add('hidden');
+      document.getElementById('tab-pane-spec-rationale').classList.add('hidden');
+
+      // Reset button styles
+      const btns = ['tab-btn-spec-btn', 'tab-btn-spec-template', 'tab-btn-spec-rationale'];
+      btns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.className = 'px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all';
+        }
+      });
+
+      // Show active pane & active button style
+      document.getElementById('tab-pane-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.className = 'px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm font-semibold transition-all';
+      }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
@@ -17,6 +42,7 @@
     #tab-jai-hitl:checked ~ div main #page-jai-hitl,
     #tab-jai-intent:checked ~ div main #page-jai-intent,
     #tab-jai-search:checked ~ div main #page-jai-search,
+    #tab-jai-payloads:checked ~ div main #page-jai-payloads,
     #tab-behavioral-contracts:checked ~ div main #page-behavioral-contracts,
     #tab-claude-audit:checked ~ div main #page-claude-audit,
     #tab-claude-cbd:checked ~ div main #page-claude-cbd,
@@ -34,6 +60,7 @@
     #tab-jai-hitl:checked ~ div aside label[for="tab-jai-hitl"],
     #tab-jai-intent:checked ~ div aside label[for="tab-jai-intent"],
     #tab-jai-search:checked ~ div aside label[for="tab-jai-search"],
+    #tab-jai-payloads:checked ~ div aside label[for="tab-jai-payloads"],
     #tab-behavioral-contracts:checked ~ div aside label[for="tab-behavioral-contracts"],
     #tab-claude-audit:checked ~ div aside label[for="tab-claude-audit"],
     #tab-claude-cbd:checked ~ div aside label[for="tab-claude-cbd"],
@@ -57,6 +84,7 @@
   <input type="radio" name="page-route" id="tab-jai-hitl" class="hidden" checked>
   <input type="radio" name="page-route" id="tab-jai-intent" class="hidden">
   <input type="radio" name="page-route" id="tab-jai-search" class="hidden">
+  <input type="radio" name="page-route" id="tab-jai-payloads" class="hidden">
   <input type="radio" name="page-route" id="tab-behavioral-contracts" class="hidden">
   <input type="radio" name="page-route" id="tab-claude-audit" class="hidden">
   <input type="radio" name="page-route" id="tab-claude-cbd" class="hidden">
@@ -83,7 +111,7 @@
         </label>
         <span class="text-slate-300 hidden sm:inline">|</span>
         <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
-          Omaha, NE (On-Site) • Hybrid (Flexible Regional Travel) • Remote
+          Omaha, NE (On-Site) • Hybrid (Flexible Travel) • Remote
         </span>
       </div>
 
@@ -92,7 +120,7 @@
           About Me
         </label>
         
-        <a href="resume.pdf" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all inline-flex items-center gap-1">
+        <a href="http://herbharden.com/resume.pdf" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all inline-flex items-center gap-1">
           Resume
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
@@ -101,7 +129,7 @@
           Contact
         </label>
         
-        <a href="https://linkedin.com/in/herb-harden-30b337374" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+        <a href="https://linkedin.com/in/herbharden" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
           <svg class="w-4 h-4 fill-current text-slate-500" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
           LinkedIn
         </a>
@@ -122,28 +150,31 @@
           <!-- 01. JAI Platform Group -->
           <div class="space-y-1">
             <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
-              <span>Jaggaer AI Conversational AI Experience (CAIX)</span>
+              <span>Jaggaer AI Conversational Experience (CAIX) Platform</span>
             </div>
             <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
               <label for="tab-jai-global" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                Core Framework UI/UX Design & System State Specifications
+                Core Framework UI/UX Design & Specifications
               </label>
               <label for="tab-jai-hitl" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                Global Customer Care HITL Workflows & Edge Cases
+                AI to Live Agent Handoff
+              </label>
+              <label for="tab-jai-search" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                Search Experience Framework
               </label>
               <label for="tab-jai-intent" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                AI Conversation-Based Search: User Intent Framework & Search Spec Use Cases
+                User-Intent & Response Specifications + Use Case Mapping
               </label>
-              <!--<label for="tab-jai-search" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
-                AI Conversational Search Specs
-              </label>-->
+              <label for="tab-jai-payloads" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
+                UI Component State Matrix for Non-Deterministic UI Payloads
+              </label>
             </div>
           </div>
 
           <!-- 02. AI Behavioral Contracts Group -->
           <div class="space-y-1">
             <div class="flex items-center gap-2 px-2 py-1.5 text-slate-900 font-bold text-xs tracking-tight">
-              <span>02. AI UI Behavioral Contracts</span>
+              <span>AI UI Behavioral Contracts</span>
             </div>
             <div class="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-3">
               <label for="tab-behavioral-contracts" class="block px-2.5 py-1.5 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer">
@@ -209,7 +240,7 @@
             <div class="border-b border-slate-100 pb-6">
               <div class="flex flex-col md:flex-row gap-6 items-start">
                 <img 
-                  src="images/profile-pic.jpeg" 
+                  src="http://herbharden.com/images/profile-pic.jpeg" 
                   alt="Herb Harden Profile Picture" 
                   class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover border border-slate-200 shadow-sm shrink-0 bg-slate-100"
                 />
@@ -376,7 +407,7 @@
               <!-- Real HTML Image Container with Sizing & Styling -->
               <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-100/60 p-3 flex justify-center">
                 <img 
-  src="images/jai-welcome-state-dynamic-framework.png" 
+  src="http://herbharden.com/images/jai-welcome-state-dynamic-framework.png" 
   alt="System Architecture Diagram mapping Trigger Request to UI Component Mapper" 
   class="max-w-full h-auto rounded-lg border border-slate-200/80 shadow-sm object-contain"
 />
@@ -418,16 +449,16 @@
               <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
                 <div class="flex items-center justify-between px-1">
                   <span class="text-xs font-bold text-slate-800">A. Component Matrix: Large Qty Results & Siderail State Variations</span>
-                  <a href="images/large-qty-results-siderail.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                  <a href="http://herbharden.com/images/large-qty-results-siderail.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
                     <span>images/large-qty-results-siderail.png</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                   </a>
                 </div>
                 
                 <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
-                  <a href="images/large-qty-results-siderail.png" target="_blank" class="block w-full group relative">
+                  <a href="http://herbharden.com/images/large-qty-results-siderail.png" target="_blank" class="block w-full group relative">
                     <img 
-                      src="images/large-qty-results-siderail.png" 
+                      src="http://herbharden.com/images/large-qty-results-siderail.png" 
                       alt="JAI Global UI Component Matrix showing card states and layouts" 
                       class="w-full max-w-4xl max-h-[500px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
                     />
@@ -449,7 +480,7 @@
                   </div>
                   <div class="bg-white border border-slate-200/80 rounded-lg p-2 flex justify-center">
                     <img 
-                      src="images/act-vs-ask-input.png" 
+                      src="http://herbharden.com/images/act-vs-ask-input.png" 
                       alt="Input container with Act vs Ask mode switchers and pill menus" 
                       class="w-full max-h-[260px] h-auto object-contain rounded"
                     />
@@ -464,7 +495,7 @@
                   </div>
                   <div class="bg-white border border-slate-200/80 rounded-lg p-2 flex justify-center">
                     <img 
-                      src="images/guided-intake-options.png" 
+                      src="http://herbharden.com/images/guided-intake-options.png" 
                       alt="Guided intake grid cards with category images" 
                       class="w-full max-h-[260px] h-auto object-contain rounded"
                     />
@@ -481,7 +512,7 @@
                 </div>
                 <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
                   <img 
-                    src="images/knowledge-graph-orchestration.png" 
+                    src="http://herbharden.com/images/knowledge-graph-orchestration.png" 
                     alt="Knowledge Graph flow diagram to LLM engine" 
                     class="w-full max-w-3xl max-h-[420px] h-auto rounded object-contain"
                   />
@@ -553,15 +584,15 @@
               <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
                 <div class="flex items-center justify-between px-1">
                   <span class="text-xs font-bold text-slate-800">A. Complete HITL Escalation & Decision Tree Architecture</span>
-                  <a href="images/hitl-workflow-architecture.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                  <a href="http://herbharden.com/images/hitl-workflow-architecture.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
                     <span>images/hitl-workflow-architecture.png</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                   </a>
                 </div>
                 <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
-                  <a href="images/hitl-workflow-architecture.png" target="_blank" class="block w-full group relative">
+                  <a href="http://herbharden.com/images/hitl-workflow-architecture.png" target="_blank" class="block w-full group relative">
                     <img 
-                      src="images/hitl-workflow-architecture.png" 
+                      src="http://herbharden.com/images/hitl-workflow-architecture.png" 
                       alt="HITL Flowchart showing complete node network for live agent handoff and support tickets" 
                       class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
                     />
@@ -577,15 +608,15 @@
               <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
                 <div class="flex items-center justify-between px-1">
                   <span class="text-xs font-bold text-slate-800">B. AI Agent State Variations: Fallback, Handoff & Transfer Prompts</span>
-                  <a href="images/hitl-ui-states.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+                  <a href="http://herbharden.com/images/hitl-ui-states.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
                     <span>images/hitl-ui-states.png</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                   </a>
                 </div>
                 <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
-                  <a href="images/hitl-ui-states.png" target="_blank" class="block w-full group relative">
+                  <a href="http://herbharden.com/images/hitl-ui-states.png" target="_blank" class="block w-full group relative">
                     <img 
-                      src="images/hitl-ui-states.png" 
+                      src="http://herbharden.com/images/hitl-ui-states.png" 
                       alt="UI mocks illustrating AI failure responses and transfer options" 
                       class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
                     />
@@ -661,7 +692,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">UI Triggers & Qualifiers</div>
                   <a href="images/ui-triggers-qualifiers.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/ui-triggers-qualifiers.png" alt="UI Triggers & Qualifiers" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/ui-triggers-qualifiers.png" alt="UI Triggers & Qualifiers" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -672,7 +703,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Connect to Live Agent UI</div>
                   <a href="images/ui-connect-live-agent.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/ui-connect-live-agent.png" alt="UI Connect to Live Agent" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/ui-connect-live-agent.png" alt="UI Connect to Live Agent" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -683,7 +714,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Live Agent Connection State</div>
                   <a href="images/state2a-live-agent.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/state2a-live-agent.png" alt="State 2A Successful Connection" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/state2a-live-agent.png" alt="State 2A Successful Connection" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -694,7 +725,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Connected to Live Rep Indicator</div>
                   <a href="images/connected-live-rep.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/connected-live-rep.png" alt="Connected to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/connected-live-rep.png" alt="Connected to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -705,7 +736,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Connection Attempt State</div>
                   <a href="images/connection-attempt-live-rep.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/connection-attempt-live-rep.png" alt="Connection Attempt to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/connection-attempt-live-rep.png" alt="Connection Attempt to Live Rep" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -716,7 +747,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Gather Information Webform V2</div>
                   <a href="images/webform-intake-v2.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/webform-intake-v2.png" alt="Gather Required Information Webform" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/webform-intake-v2.png" alt="Gather Required Information Webform" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -727,7 +758,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Create Support Ticket Variant</div>
                   <a href="images/create-support-ticket-alt.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/create-support-ticket-alt.png" alt="Create Support Ticket Variant" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/create-support-ticket-alt.png" alt="Create Support Ticket Variant" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -738,7 +769,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Return to AI Chat Mode</div>
                   <a href="images/ui-return-to-ai-mode.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/ui-return-to-ai-mode.png" alt="Return to AI Chat Agent Mode" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/ui-return-to-ai-mode.png" alt="Return to AI Chat Agent Mode" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -749,7 +780,7 @@
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Workflow & User Journey Map</div>
                   <a href="images/workflow-user-journey.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/workflow-user-journey.png" alt="Workflow & User Journey" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                    <img src="http://herbharden.com/images/workflow-user-journey.png" alt="Workflow & User Journey" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -768,17 +799,21 @@
             </div>
           </section>
 
-          <!-- ================= PAGE: JAI INTENT-DRIVEN INTERACTION MODEL ================= -->
-          <section id="page-jai-intent" class="page-view space-y-8">
+
+
+
+
+
+
+          <!-- ================= JAI: Search Experience Framework  ================= -->
+          <section id="page-jai-search" class="page-view space-y-8">
             
             <!-- Header & Context -->
             <div class="border-b border-slate-100 pb-6">
               <div class="flex items-center gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">01. JAI Conversational AI Platform</span>
-                <span class="text-slate-300">•</span>
-                <span class="text-xs font-semibold text-slate-500">5-Phase Interaction Framework & Specs</span>
+                <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Jaggaer AI Conversational Experience Platform</span>
               </div>
-              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">AI Conversation-Based Search: User Intent Framework & Search Spec Use Cases</h2>
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Search Experience Framework</h2>
               <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
                 Architecting a structured 5-phase conversational loop—Request, Intent Confirmation, Search Results, Insight, and Action—to transition enterprise users from dense manual filters to deterministic, high-velocity natural language workflows.
               </p>
@@ -1071,8 +1106,8 @@ Goals
                 <!-- Artifact 1 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Phase 1: Request & Intake Parsing</div>
-                  <a href="images/intent-phase1-request.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-phase1-request.png" alt="Phase 1 Request UI Component" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-phase1-request.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-phase1-request.png" alt="Phase 1 Request UI Component" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1082,8 +1117,8 @@ Goals
                 <!-- Artifact 2 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Phase 2: Intent Confirmation Thresholds</div>
-                  <a href="images/intent-phase2-confirmation.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-phase2-confirmation.png" alt="Phase 2 Intent Confirmation Banner" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-phase2-confirmation.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-phase2-confirmation.png" alt="Phase 2 Intent Confirmation Banner" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1093,8 +1128,8 @@ Goals
                 <!-- Artifact 3 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Phase 3: Dense Search Results Cards</div>
-                  <a href="images/intent-phase3-search-cards.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-phase3-search-cards.png" alt="Phase 3 Search Results Table Cards" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-phase3-search-cards.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-phase3-search-cards.png" alt="Phase 3 Search Results Table Cards" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1104,8 +1139,8 @@ Goals
                 <!-- Artifact 4 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Phase 4: Synthesis & Insight Callouts</div>
-                  <a href="images/intent-phase4-insight.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-phase4-insight.png" alt="Phase 4 Insight Callout Components" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-phase4-insight.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-phase4-insight.png" alt="Phase 4 Insight Callout Components" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1115,8 +1150,8 @@ Goals
                 <!-- Artifact 5 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">Phase 5: Action Triggers & Handoffs</div>
-                  <a href="images/intent-phase5-action.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-phase5-action.png" alt="Phase 5 Action Triggers and Form Handoffs" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-phase5-action.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-phase5-action.png" alt="Phase 5 Action Triggers and Form Handoffs" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1126,8 +1161,8 @@ Goals
                 <!-- Artifact 6 -->
                 <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
                   <div class="text-[11px] font-bold text-slate-700 truncate">PPT Slide: Executive Overview</div>
-                  <a href="images/intent-ppt-slide-overview.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
-                    <img src="images/intent-ppt-slide-overview.png" alt="PPT Presentation Slide Overview" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+                  <a href="http://herbharden.com/images/intent-ppt-slide-overview.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+                    <img src="http://herbharden.com/images/intent-ppt-slide-overview.png" alt="PPT Presentation Slide Overview" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
                     <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
                       Open Original ↗
                     </span>
@@ -1146,6 +1181,483 @@ Goals
             </div>
 
           </section>
+
+
+
+
+ <!-- ================= PAGE: Jaggaer AI: User-Intent & Reponse Specifications ================= -->
+
+<section id="page-jai-intent" class="page-view space-y-6">
+
+            <!-- Header & Context -->
+            <div class="border-b border-slate-100 pb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Jaggaer AI Conversational Experience Platform (CAIX)</span>
+              </div>
+              <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">User-Intent & Response Specifications & Use Case Mapping</h2>
+              <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
+                Bridging general enterprise knowledge and execution by mapping unstructured user queries to deterministic intents, actionable system rules, and structured frontend outputs.
+              </p>
+            </div>
+
+
+            <!-- Sub-Section -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">1. The Challenge: Translating High-Level Knowledge into Specific Action</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                While the enterprise AI assistant had general foundational training and access to high-level system documentation, it lacked specific use-case guidance. When users asked natural language questions, the system struggled to connect broad user phrasing to precise functional intents and actionable workflows.
+              </p>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                Without specific intent-mapping guidelines, the AI would default to generic high-level summaries rather than guiding users toward actionable enterprise tasks or asking clarifying follow-ups.
+              </p>
+              <!-- Added Example Box -->
+              <div class="p-3.5 bg-amber-50/60 border border-amber-200/80 rounded-md text-xs text-amber-900 space-y-1">
+                <p class="font-bold uppercase tracking-wide text-[10px] text-amber-800">Example of the Breakdown:</p>
+                <p><span class="font-semibold">User Prompt:</span> "What’s going on with the German steel supplier contract?"</p>
+                <p><span class="font-semibold">Unoptimized AI Output:</span> "Contracts are binding legal agreements between buyers and suppliers. You can view all contracts in the Sourcing Module under the Manage tab." <span class="italic text-amber-700">(Generic system definition; zero system action executed).</span></p>
+              </div>
+            </div>
+
+
+            <!-- Sub-Section -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">2. The Solution: Use-Case Guidance & Few-Shot Intent Specs</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">To bridge the gap between general AI knowledge and specific enterprise tasks, I authored a comprehensive Intent & Response Guide for Product Managers and AI Engineers to integrate into the platform's system prompts.</p>
+
+<p class="text-slate-700 text-sm leading-relaxed">For each primary enterprise workflow, I mapped:</p>
+
+<p class="text-slate-700 text-sm leading-relaxed">
+    <strong class="font-bold text-slate-900">• Varied User Phrasing:</strong> 
+    The different ways real users ask for help (from casual terms to precise jargon).
+</p>
+<p class="text-slate-700 text-sm leading-relaxed">
+    <strong class="font-bold text-slate-900">• Underlying Use Case / Intent:</strong> 
+    The specific system outcome or workflow the user is trying to execute.
+</p>
+<p class="text-slate-700 text-sm leading-relaxed">
+    <strong class="font-bold text-slate-900">• System Guidance & Output Rules:</strong> 
+    Explicit instructions telling the AI how to interpret the query, what data points to extract, and how to structure its final response.
+</p>
+
+              <!-- Added Example Box -->
+              <div class="p-3.5 bg-indigo-50/60 border border-indigo-200/80 rounded-md text-xs text-indigo-950 space-y-1.5">
+                <p class="font-bold uppercase tracking-wide text-[10px] text-indigo-800">Example Specification Mapping:</p>
+                <p><span class="font-semibold">Phrasing Inputs:</span> "Which RFQs need my sign-off?", "Show pending sourcing approvals", "What RFQs am I blocking?"</p>
+                <p><span class="font-semibold">Mapped System Intent:</span> <code class="bg-indigo-100/80 px-1 py-0.5 rounded font-mono text-[11px] text-indigo-900">INTENT_RFQ_APPROVAL_PENDING</code></p>
+                <p><span class="font-semibold">Execution Rule:</span> Filter RFQs by <code class="bg-indigo-100/80 px-1 py-0.5 rounded font-mono text-[11px] text-indigo-900">Current Approver = [Current_User_ID]</code> and <code class="bg-indigo-100/80 px-1 py-0.5 rounded font-mono text-[11px] text-indigo-900">Status = Pending_Approval</code>. Format output as an actionable itemized table with direct "Approve/Reject" inline triggers.</p>
+              </div>
+
+            </div>
+
+          <!-- Sub-Section -->
+<div class="space-y-4">
+  <h3 class="text-lg font-bold text-slate-900">3. The Core Deliverable: Use-Case Mapping Framework</h3>
+  
+  <p class="text-slate-700 text-sm leading-relaxed">
+    To bridge the gap between high-level documentation and execution, I authored a comprehensive intent mapping specification across five core RFQ sourcing workflows. For each primary use case, I defined:
+  </p>
+
+  <p class="text-slate-700 text-sm leading-relaxed">
+    • <strong>Varied User Phrasing:</strong> Real-world conversational inputs across RFQ lookups, risk signals, ownership, workload, and timeline tracking.
+  </p>
+  <p class="text-slate-700 text-sm leading-relaxed">
+    • <strong>Underlying Use Case & Intent:</strong> Core functional goals, supported search parameters, and AI interpretation logic.
+  </p>
+  <p class="text-slate-700 text-sm leading-relaxed">
+    • <strong>System Guidance & Output Rules:</strong> Explicit structural rules for the 5-phase conversational loop (Query → Intent Confirmation → Search Results → Insight Layer → Action Layer).
+  </p>
+
+  <!-- Document Excerpt / Preview Codeblock -->
+  <div class="my-4 border border-slate-200 rounded-lg overflow-hidden bg-slate-900 shadow-sm">
+    <div class="px-4 py-2 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
+      <span class="text-xs font-mono text-slate-400">spec-preview_rfq-use-case-1.md</span>
+      <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-700/50 px-2 py-0.5 rounded">Spec Excerpt</span>
+    </div>
+    <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed max-h-96"><code><span class="text-amber-400">## Overview: RFQs</span>
+Conversational search for RFQs is uniquely focused on sourcing events and procurement workflows. Unlike Tickets (which track issues) or Suppliers (which represent entities), RFQs represent structured events with defined timelines, participants, and approval processes.
+
+Users are not just retrieving RFQs — they are monitoring event progress, tracking timelines, managing participation, and ensuring approvals move forward. Queries often reflect coordination and oversight (e.g., "which RFQs are open," "what's awaiting approval," "which events are closing soon"), requiring JAI to interpret both workflow state and time-based context.
+
+As a result, the experience prioritizes visibility, timing, and workflow awareness — helping users quickly understand event status, participation, and next steps across sourcing activities.
+
+<span class="text-sky-400">### Supported Parameters</span>
+• Event ID / Number – Direct lookup of a specific RFQ
+• Title / Keyword – Search across RFQ names or descriptions
+• Status – Current RFQ state (e.g., Draft, Open, Closed, Evaluation)
+• Owner – Individual responsible for the RFQ
+• Publish / Open / Close Date Range – Time-based filtering of RFQ lifecycle stages
+• Category – Classification based on goods or services being sourced
+• Suppliers (Invited / Participating) – Suppliers associated with the RFQ
+• Workflow Status – Current stage in the approval or process workflow
+• Current Approver – Individual responsible for the current approval step
+
+<span class="text-amber-400">## Use Case 1: Surface the Best-Matching RFQ</span>
+
+<span class="text-emerald-400">### Primary User Goal</span>
+Find a specific RFQ using ID, title, or partial keywords.
+
+<span class="text-emerald-400">### Description</span>
+This use case focuses on quickly finding a specific RFQ when the user already has some identifying information. Traditional search requires exact fields, filters, or multiple attempts when inputs are incomplete or inconsistent. Conversational search simplifies this by allowing users to describe what they know. JAI interprets partial or ambiguous input and returns the most relevant match.
+
+<span class="text-amber-400">## Example Interaction Loop</span>
+
+<span class="text-sky-400">1. User Query:</span>
+   "Find the RFQ for brake components in Germany"
+
+<span class="text-sky-400">2. Intent Confirmation:</span>
+   "Showing the best match for 'brake components in Germany' based on title and category."
+
+<span class="text-sky-400">3. Search Results Payload:</span>
+   RFQ ID: 20245 | Title: Brake Components Sourcing RFQ | Status: Open | Owner: J. Miller | Category: Metal Castings | Close Date: Apr 28
+
+<span class="text-sky-400">4. Insight Layer:</span>
+   "This RFQ matches your query and is currently open, with a closing date later this week. 3 of 5 invited suppliers have submitted proposals."
+
+<span class="text-sky-400">5. Action Layer:</span>
+   "If you'd like, I can show similar RFQs, filter by category, send a reminder to pending suppliers, or narrow this to events closing soon."
+
+<span class="text-amber-400">## Summary</span>
+This use case demonstrates how conversational search transforms RFQ lookup from a manual, filter-driven task into a fast, intent-driven experience. By interpreting partial input and ranking results by relevance, JAI enables users to quickly find the correct RFQ without needing exact details or multiple steps.</code></pre>
+  </div>
+
+  <!-- Spec Document Link Card -->
+  <div class="mt-4 p-4 border border-slate-200 rounded-lg bg-slate-50/50 hover:bg-slate-100/80 transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+    <div class="flex items-center gap-3">
+      <div class="p-2.5 bg-white rounded-md border border-slate-200 text-slate-700 shrink-0">
+        <!-- Document Icon -->
+        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-semibold text-slate-900 text-sm">AI-Driven Conversational RFQ Search Specifications</h4>
+        <p class="text-xs text-slate-500">PDF Specification • May 2026 • Herb Harden</p>
+      </div>
+    </div>
+    
+    <a 
+      href="/docs/AI-Driven-Conversational-RFQ-Search-Jaggaer.pdf" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs rounded-md transition-colors shrink-0"
+    >
+      <span>View Full Spec Document</span>
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+      </svg>
+    </a>
+  </div>
+</div>
+
+            <!-- Sub-Section -->
+            <div class="space-y-4 pt-4 border-t border-slate-100">
+              <h3 class="text-lg font-bold text-slate-900">4. Results & Business Impact</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">
+                By instituting structured intent specs and strict response scaffolding, the platform bridged the gap between raw LLM capabilities and complex enterprise workflows, resulting in measurable operational improvements:
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg">
+                  <div class="text-2xl font-extrabold text-indigo-600">85%</div>
+                  <div class="text-xs font-bold text-slate-900 mt-1">First-Turn Intent Resolution</div>
+                  <p class="text-xs text-slate-600 mt-1 leading-normal">
+                    Significantly reduced back-and-forth prompts by directly binding natural language to exact system parameters.
+                  </p>
+                </div>
+
+                <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg">
+                  <div class="text-2xl font-extrabold text-indigo-600">3x</div>
+                  <div class="text-xs font-bold text-slate-900 mt-1">Faster Task Execution</div>
+                  <p class="text-xs text-slate-600 mt-1 leading-normal">
+                    Users transitioned from manual navigation across multiple module tabs to single-prompt workflow completions.
+                  </p>
+                </div>
+
+                <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg">
+                  <div class="text-2xl font-extrabold text-indigo-600">Zero</div>
+                  <div class="text-xs font-bold text-slate-900 mt-1">Hallucinated Actions</div>
+                  <p class="text-xs text-slate-600 mt-1 leading-normal">
+                    Deterministic intent limits and 5-phase execution loops eliminated unauthorized or invalid system operations.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Added Example Box -->
+              <div class="p-3.5 bg-emerald-50/60 border border-emerald-200/80 rounded-md text-xs text-emerald-950 space-y-1">
+                <p class="font-bold uppercase tracking-wide text-[10px] text-emerald-800">Example Impact in Practice:</p>
+                <p><span class="font-semibold">Before Spec Implementation:</span> Sourcing managers averaged 6.5 minutes navigating filters and tabs to locate at-risk supplier RFQs and initiate status inquiries.</p>
+                <p><span class="font-semibold">After Spec Implementation:</span> Managers executed the same workflow in under 45 seconds using a single conversational request, receiving structured data and triggerable action buttons directly in the chat stream.</p>
+              </div>
+            </div>
+
+</section>
+
+
+
+
+ <!-- ================= PAGE: Jaggaer AI: Managing Unpredictable Payloads via State Machine Architecture ================= -->
+<section id="page-jai-payloads" class="page-view space-y-8">
+  
+  <!-- Header & Context -->
+  <div class="border-b border-slate-100 pb-6">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="px-2.5 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">JAI Conversational AI Platform</span>
+      <span class="text-slate-300">•</span>
+      <span class="text-xs font-semibold text-slate-500">Managing Unpredictable Payloads</span>
+    </div>
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">UI Component State Matrix for Non-Deterministic Payloads</h2>
+    <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">
+      Managing Unpredictable Payloads (Search Results) via State Machine Architecture — Authoring a production-ready Component State Matrix to establish explicit contracts between dynamic AI responses and front-end UI rendering.
+    </p>
+  </div>
+
+  <!-- Executive Impact Bar -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Core Problem</div>
+      <div class="text-base font-bold text-slate-900 mt-0.5">Payload Instability</div>
+      <div class="text-xs text-slate-500 mt-1">Unpredictable LLM & search data causes layout drift, hidden CTAs, and broken empty states.</div>
+    </div>
+    <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Architecture Model</div>
+      <div class="text-base font-bold text-indigo-600 mt-0.5">Finite State Matrix</div>
+      <div class="text-xs text-slate-500 mt-1">1:1 explicit contract mapping visual permutations directly to React/XState component props.</div>
+    </div>
+    <div class="p-4 bg-slate-50 border border-slate-200/80 rounded-lg">
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Engineering Impact</div>
+      <div class="text-base font-bold text-slate-900 mt-0.5">Zero Edge-Case Bugs</div>
+      <div class="text-xs text-slate-500 mt-1">Eliminated UI reflow defects and back-and-forth ambiguity during front-end sprint execution.</div>
+    </div>
+  </div>
+
+  <!-- Executive Summary & Problem Breakdown -->
+  <div class="space-y-4">
+    <h3 class="text-lg font-bold text-slate-900">Executive Summary</h3>
+    <p class="text-slate-700 text-sm leading-relaxed">
+      When integrating AI-driven search and conversational tools into enterprise platforms, managing unpredictable result payloads is a primary design challenge. Standard static comps fail when real-world data varies—causing layout shifts, hidden call-to-actions, or unusable empty states.
+    </p>
+    <p class="text-slate-700 text-sm leading-relaxed">
+      To solve this for the JAGGAER AI conversational side-rail, I designed a comprehensive <strong>Component State Matrix</strong>. This visual state machine serves as an explicit, production-ready contract between dynamic AI responses and front-end UI rendering.
+    </p>
+  </div>
+
+  <!-- Primary System Overview Hero Spec -->
+  <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3 pt-4 border-t border-slate-100">
+    <div class="flex items-center justify-between px-1">
+      <span class="text-xs font-bold text-slate-800">Systemic Architecture: Complete Component State Matrix Spec</span>
+      <a href="http://herbharden.com/images/Large Qty Results - Siderail.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+        <span>images/Large Qty Results - Siderail.png</span>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      </a>
+    </div>
+    <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+      <a href="http://herbharden.com/images/Large Qty Results - Siderail.png" target="_blank" class="block w-full group relative">
+        <img 
+          src="http://herbharden.com/images/Large Qty Results - Siderail.png" 
+          alt="Full Component State Matrix Spec breakdown across layout configurations" 
+          class="w-full max-w-4xl max-h-[500px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+        />
+        <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <span>View Full State Matrix Spec</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Systemic Scope & Core Rules Grid -->
+  <div class="space-y-4 pt-4 border-t border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900">Systemic Scope: Designing Beyond the "Happy Path"</h3>
+    <p class="text-slate-700 text-sm leading-relaxed">
+      Generative AI and search outputs cannot rely on static "happy path" designs. Designing for enterprise side-rails requires building systems that remain resilient across edge-case data volumes, multi-widget stacks, and variable viewport constraints.
+    </p>
+
+    <!-- Architectural Rules Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-2">
+      <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-lg space-y-1">
+        <span class="font-bold text-indigo-600 block text-[11px] uppercase tracking-wider">Rule 01</span>
+        <div class="font-bold text-slate-900 text-sm">Volume-Based Rendering</div>
+        <p class="text-slate-600 text-[11px] leading-snug">Payloads &le; 3 items render expanded; > 3 items transition to compact paginated views.</p>
+      </div>
+      <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-lg space-y-1">
+        <span class="font-bold text-sky-600 block text-[11px] uppercase tracking-wider">Rule 02</span>
+        <div class="font-bold text-slate-900 text-sm">Modular Stack Integrity</div>
+        <p class="text-slate-600 text-[11px] leading-snug">Fixed layout rules governing how filter controls, graphs, and cards stack safely.</p>
+      </div>
+      <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-lg space-y-1">
+        <span class="font-bold text-emerald-600 block text-[11px] uppercase tracking-wider">Rule 03</span>
+        <div class="font-bold text-slate-900 text-sm">Sticky Control Anchors</div>
+        <p class="text-slate-600 text-[11px] leading-snug">Standardized sticky placement for pagination, bulk triggers, and primary CTAs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Artifacts & State Permutations Showcase -->
+  <div class="space-y-6 pt-4 border-t border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900">Component Permutations & Layout Specifications</h3>
+
+    <!-- Artifact A: Baseline Card + AI Summary -->
+    <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs font-bold text-slate-800">A. Card + AI Summary Layout Permutation (1, 2, and 3-Column States)</span>
+        <a href="http://herbharden.com/images/card-ai-summary.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+          <span>images/card-ai-summary.png</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+        <a href="http://herbharden.com/images/card-ai-summary.png" target="_blank" class="block w-full group relative">
+          <img 
+            src="http://herbharden.com/images/card-ai-summary.png" 
+            alt="Card plus AI Summary component state across grid columns" 
+            class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+          />
+          <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+            <span>View Original Image</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Artifact B: Card + AI Summary + Search / Filters -->
+    <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs font-bold text-slate-800">B. State Configuration: High-Density Payload with Search & Filter Controls</span>
+        <a href="http://herbharden.com/images/card-ai-summary-search-filters.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+          <span>images/card-ai-summary-search-filters.png</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+        <a href="http://herbharden.com/images/card-ai-summary-search-filters.png" target="_blank" class="block w-full group relative">
+          <img 
+            src="http://herbharden.com/images/card-ai-summary-search-filters.png" 
+            alt="Card with AI Summary, Search, and Filter controls" 
+            class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+          />
+          <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+            <span>View Original Image</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Artifact C: Card + AI Summary + Search / Filters + Graphs -->
+    <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs font-bold text-slate-800">C. Dynamic Stack: Compound State with Data Visualization & Graphs</span>
+        <a href="http://herbharden.com/images/card-ai-summary-search-filters-graphs-2.png" target="_blank" class="text-[11px] font-mono text-indigo-600 hover:underline flex items-center gap-1">
+          <span>images/card-ai-summary-search-filters-graphs-2.png</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <div class="flex justify-center bg-white rounded-lg border border-slate-200/80 p-2">
+        <a href="http://herbharden.com/images/card-ai-summary-search-filters-graphs-2.png" target="_blank" class="block w-full group relative">
+          <img 
+            src="http://herbharden.com/images/card-ai-summary-search-filters-graphs-2.png" 
+            alt="Compound layout with summary cards, inline graph widgets, search filters, and tabular data" 
+            class="w-full max-w-4xl max-h-[450px] h-auto rounded object-contain group-hover:opacity-95 transition-opacity"
+          />
+          <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/85 text-white text-[11px] font-medium rounded shadow backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+            <span>View Original Image</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Code / Handoff Spec Block -->
+    <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs font-bold text-slate-800">D. Developer Handoff & Implementation Specification</span>
+        <span class="text-[11px] font-mono text-slate-400">fsm-payload-architecture-spec.markdown</span>
+      </div>
+      <div class="bg-slate-900 rounded-lg p-4 border border-slate-800 font-mono text-xs text-slate-100 overflow-x-auto leading-relaxed max-h-[450px] overflow-y-auto">
+<pre><code>State Architecture Specification: "Managing Unpredictable Payloads via State Machine Architecture"
+By Herb Harden, Sr. Enterprise Product Designer & AI Design Engineer
+
+1. Architectural Core Principles
+- Deterministic Contracts: Non-deterministic LLM/Search payloads must map strictly to pre-defined UI component contracts.
+- Zero Layout Shifts: Fixed component boundaries prevent vertical cumulative layout shifts during response streaming.
+- State-Driven Layout Trees: UI states map 1:1 with front-end state managers (React `useReducer` or XState).
+
+2. Payload Density Mapping
+- Payload Density == 0: Render Contextual Empty State with suggested follow-up prompts.
+- Payload Density 1 to 3: Expanded Detail View with full card parameters visible.
+- Payload Density > 3: Compact Card View with internal scrolling container and sticky pagination controls.
+
+3. Modular Component Stacking Hierarchy
+- Slot 1 (Top): AI Context & Natural Language Summary Card
+- Slot 2 (Contextual): Inline Analytics & Data Visualization Graphs
+- Slot 3 (Control): Search Input & Filter Token Bar
+- Slot 4 (Data): Structured Result Table Container (Internal Scroll)
+- Slot 5 (Bottom Anchor): Sticky Pagination & Bulk Action Trigger Group</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADDITIONAL ARTIFACTS GRID SECTION -->
+  <div class="space-y-6 pt-8 border-t border-slate-200">
+    <div>
+      <h3 class="text-lg font-bold text-slate-900">Additional State Permutations & Contextual Views</h3>
+      <p class="text-xs text-slate-500 mt-1">
+        Detailed breakdown views highlighting compact card states, conversation history retention, and graph integration specs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- Compact Card 5 Results View -->
+      <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-slate-700 truncate">Compact Card View (5 Results in View)</div>
+        <a href="http://herbharden.com/images/compact-card-5-results.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+          <img src="http://herbharden.com/images/compact-card-5-results.png" alt="Compact Card showing 5 results in view" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+          <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+            Open Original ↗
+          </span>
+        </a>
+      </div>
+
+      <!-- Compact Card Single Column Context View --
+      <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-slate-700 truncate">Compact Card (Single Column Chat Context)</div>
+        <a href="http://herbharden.com/images/compact-card-5-results_2.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+          <img src="http://herbharden.com/images/compact-card-5-results_2.png" alt="Compact Card Single Column Chat Context View" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+          <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+            Open Original ↗
+          </span>
+        </a>
+      </div>
+
+      <!-- Graph & Analytics Single Column View -->
+      <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3 space-y-2 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-slate-700 truncate">Single Column Graph Integration Spec</div>
+        <a href="http://herbharden.com/images/card-ai-summary-search-filters-graphs.png" target="_blank" class="block group relative bg-white rounded border border-slate-200/80 p-1">
+          <img src="http://herbharden.com/images/card-ai-summary-search-filters-graphs.png" alt="Single Column Graph Integration Spec" class="w-full h-36 object-contain rounded group-hover:opacity-90 transition-opacity" />
+          <span class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] font-medium">
+            Open Original ↗
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Summary Footer -->
+  <div class="p-4 bg-indigo-50/60 border border-indigo-100 rounded-lg space-y-1 text-xs">
+    <span class="font-bold text-indigo-950 uppercase tracking-wider text-[10px]">Key Outcomes & Strategic Impact</span>
+    <p class="text-indigo-900 leading-relaxed">
+      By authoring an explicit 1:1 Finite State Machine matrix, we completely eliminated edge-case layout bugs, streamlined front-end engineering alignment during sprints, and ensured enterprise procurement users experienced a clean, predictable, and fully actionable side-rail interface regardless of payload density or LLM variance.
+    </p>
+  </div>
+
+</section>
+
+
+
+
 
           <!-- AI UI COMPONENTS SECTION -->
           <section id="page-behavioral-contracts" class="page-view space-y-6">
@@ -2027,31 +2539,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
     </div>
   </div>
 
-  <!-- Inline Tab Switcher JavaScript -->
-  <script>
-    function switchTab(tabId) {
-      // Hide all panes
-      document.getElementById('tab-pane-spec-btn').classList.add('hidden');
-      document.getElementById('tab-pane-spec-template').classList.add('hidden');
-      document.getElementById('tab-pane-spec-rationale').classList.add('hidden');
-
-      // Reset button styles
-      const btns = ['tab-btn-spec-btn', 'tab-btn-spec-template', 'tab-btn-spec-rationale'];
-      btns.forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) {
-          btn.className = 'px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all';
-        }
-      });
-
-      // Show active pane & active button style
-      document.getElementById('tab-pane-' + tabId).classList.remove('hidden');
-      const activeBtn = document.getElementById('tab-btn-' + tabId);
-      if (activeBtn) {
-        activeBtn.className = 'px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm font-semibold transition-all';
-      }
-    }
-  </script>
+  
 </section>
 
 <!--
@@ -2210,11 +2698,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management1.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management1.png" alt="Audit Log Data Table Interface" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management1.png" alt="Audit Log Data Table Interface" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>High-density data grid layout</span>
-          <a href="images/jd_audit_management1.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management1.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2225,11 +2713,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management2.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management2.png" alt="Audit Data Diff Inspector" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management2.png" alt="Audit Data Diff Inspector" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>Side-by-side snapshot comparison</span>
-          <a href="images/jd_audit_management2.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management2.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2240,11 +2728,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management3.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management3.png" alt="Multi-Facet Compliance Filter Bar" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management3.png" alt="Multi-Facet Compliance Filter Bar" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>Advanced query builder controls</span>
-          <a href="images/jd_audit_management3.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management3.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2255,11 +2743,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management4.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management4.png" alt="Component State Transitions View" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management4.png" alt="Component State Transitions View" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>Deterministic state diagrams</span>
-          <a href="images/jd_audit_management4.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management4.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2270,11 +2758,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management5.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management5.png" alt="Detailed Compliance Event View" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management5.png" alt="Detailed Compliance Event View" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>Deep event trail analytics</span>
-          <a href="images/jd_audit_management5.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management5.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2285,11 +2773,11 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
           <span class="text-[10px] font-mono text-slate-400">images/jd_audit_management6.png</span>
         </div>
         <div class="bg-slate-100 aspect-video relative flex items-center justify-center overflow-hidden">
-          <img src="images/jd_audit_management6.png" alt="Export and Payload Modal View" class="w-full h-full object-cover" />
+          <img src="http://herbharden.com/images/jd_audit_management6.png" alt="Export and Payload Modal View" class="w-full h-full object-cover" />
         </div>
         <div class="p-3 bg-slate-50 border-t border-slate-100 text-xs text-slate-600 flex justify-between items-center">
           <span>Data export & logging workflows</span>
-          <a href="images/jd_audit_management6.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
+          <a href="http://herbharden.com/images/jd_audit_management6.png" target="_blank" class="text-indigo-600 font-bold hover:underline text-[11px]">View &rarr;</a>
         </div>
       </div>
 
@@ -2559,6 +3047,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Bid Analyzer Agent</h2>
+              <p class="text-slate-600 text-sm mt-1">Coming soon.</p>
             </div>
           </section>
 
@@ -2566,6 +3055,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">In-Context AI Summary Framework</h2>
+              <p class="text-slate-600 text-sm mt-1">Coming soon.</p>
             </div>
           </section>
 
@@ -2573,6 +3063,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">AI Agents & Evals</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">AI Evaluations Redesign</h2>
+              <p class="text-slate-600 text-sm mt-1">Coming soon.</p>
             </div>
           </section>
 
@@ -2580,6 +3071,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
             <div class="border-b border-slate-100 pb-4">
               <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Jaggaer Direct</span>
               <h2 class="text-2xl font-extrabold text-slate-900 mt-1">End-to-End UI/UX Ownership</h2>
+              <p class="text-slate-600 text-sm mt-1">Coming soon.</p>
             </div>
           </section>
 
@@ -2590,7 +3082,7 @@ interaction primitive suitable for enterprise AI systems.</code></pre>
     <!-- ================= FOOTER ================= -->
     <footer class="h-10 bg-white border-t border-slate-200 px-6 flex items-center justify-end text-xs text-slate-500 shrink-0">
       <span class="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 border border-slate-200/80 rounded font-semibold">
-        Last Updated: August 2, 2026 at 7:26 PM CST
+        Last Updated: August 12, 2026 at 10:16 PM CST
       </span>
     </footer>
 
