@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
         
         <nav class="hidden md:flex items-center gap-1 bg-zinc-900/90 p-1 rounded-full border border-zinc-800">
-          <a href="https://herbharden.com/herbert_harden_ii_resume.docx" target="_blank" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">Resume</a>
+          <a href="https://herbharden.com/herbert_harden_resume.docx" target="_blank" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">Resume</a>
           <a href="https://linkedin.com/in/herbharden" target="_blank" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">LinkedIn ↗</a>
         </nav>
 
