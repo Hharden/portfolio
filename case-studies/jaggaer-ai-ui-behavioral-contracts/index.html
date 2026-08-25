@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herb Harden | AI UI Behavioral Contracts & System Governance</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { purple: '#7C3AED', cyan: '#06B6D4' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      background-color: #09090b !important;
+      color: #f4f4f5 !important;
+    }
+
+    /* Spec Tab Radio Controllers */
+    #tab-spec:checked ~ .spec-container .content-spec,
+    #tab-template:checked ~ .spec-container .content-template,
+    #tab-rationale:checked ~ .spec-container .content-rationale,
+    #tab-prompt:checked ~ .spec-container .content-prompt {
+      display: block;
+    }
+
+    #tab-spec:checked ~ .spec-container .btn-spec,
+    #tab-template:checked ~ .spec-container .btn-template,
+    #tab-rationale:checked ~ .spec-container .btn-rationale,
+    #tab-prompt:checked ~ .spec-container .btn-prompt {
+      background-color: #3f3f46;
+      color: #ffffff;
+      border-color: #a855f7;
+    }
+
+    /* Interactive Demo Radio Controllers */
+    #demo-user:checked ~ .demo-stage .state-user { display: flex; }
+    #demo-system:checked ~ .demo-stage .state-system { display: flex; }
+    #demo-ai:checked ~ .demo-stage .state-ai { display: flex; }
+
+    #demo-user:checked ~ .demo-nav .btn-demo-user {
+      border-color: #a855f7;
+      background-color: rgba(124, 58, 237, 0.15);
+      color: #f4f4f5;
+    }
+    #demo-system:checked ~ .demo-nav .btn-demo-system {
+      border-color: #06b6d4;
+      background-color: rgba(6, 182, 212, 0.15);
+      color: #f4f4f5;
+    }
+    #demo-ai:checked ~ .demo-nav .btn-demo-ai {
+      border-color: #f59e0b;
+      background-color: rgba(245, 158, 11, 0.15);
+      color: #f4f4f5;
+    }
+
+    /* Custom Code Scrollbar styling */
+    .code-scroll::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    .code-scroll::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    .code-scroll::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+    .code-scroll::-webkit-scrollbar-thumb:hover {
+      background: #3f3f46;
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#09090b] text-zinc-100 font-['Inter',sans-serif] antialiased min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+  <!-- Background Ambience -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-purple-900/30 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-0 w-[500px] h-[500px] bg-cyan-950/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <div id="global-header"></div>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-6 pt-12 pb-24 space-y-16">
+
+    <!-- HERO SECTION -->
+    <section id="hero-spec" class="space-y-8">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+          Design Leadership • AI System Architecture
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-3xl">
+            Authoring Design.MD & AI UI <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">Behavioral Contracts for Jaggaer Enterprise Systems</span>
+          </h1>
+          <span class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-purple-500/40 font-mono text-xs text-purple-300 self-start md:self-auto shrink-0 shadow-lg">
+            Phase 1 Rollout • 12+ Core Specs
+          </span>
+        </div>
+
+        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal max-w-4xl">
+          Leading the design architecture initiative to transform standard visual component specs into explicit, machine-readable behavioral contracts across our core UI library. While traditional design systems document static visual states, this framework governs how UI components behave when AI acts within the loop—enforcing a deterministic control hierarchy (<strong class="text-white">User &gt; System &gt; AI</strong>) to eliminate engineering interpretation drift and realign AI output with our enterprise standards.
+        </p>
+
+        <!-- Architectural Control Pills -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800/80 space-y-1">
+            <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Control Hierarchy</div>
+            <div class="text-sm font-bold text-purple-300 font-mono">User &gt; System &gt; AI</div>
+          </div>
+          <div class="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800/80 space-y-1">
+            <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Phase 1 Integration Scope</div>
+            <div class="text-sm font-bold text-cyan-300 font-mono">12+ Core Component Specs</div>
+          </div>
+          <div class="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800/80 space-y-1">
+            <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Primary System Win</div>
+            <div class="text-sm font-bold text-emerald-300 font-mono">Design System Alignment</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO SPECIFICATION VIEWER -->
+      <div class="space-y-3 pt-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="text-xs font-bold text-purple-400 uppercase tracking-wider">// Reference Contract Artifact (Featured: Button Component)</div>
+          <span class="text-[11px] font-mono text-zinc-400">Scroll to inspect spec contract architecture ↓</span>
+        </div>
+
+        <!-- Pure CSS Dynamic Tab Selectors -->
+        <input type="radio" name="spec-tabs" id="tab-spec" class="hidden" checked>
+        <input type="radio" name="spec-tabs" id="tab-template" class="hidden">
+        <input type="radio" name="spec-tabs" id="tab-prompt" class="hidden">
+        <input type="radio" name="spec-tabs" id="tab-rationale" class="hidden">
+
+        <div class="spec-container rounded-2xl bg-zinc-950 border border-purple-500/30 shadow-2xl overflow-hidden relative group">
+          
+          <!-- Header Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-zinc-900 border-b border-zinc-800/90">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="ml-2 font-mono text-xs text-purple-300 font-semibold">contracts /</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 font-mono text-xs">
+              <label for="tab-spec" class="btn-spec px-3 py-1 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white cursor-pointer transition">
+                button-spec.md
+              </label>
+              <label for="tab-template" class="btn-template px-3 py-1 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white cursor-pointer transition">
+                spec-template.md
+              </label>
+              <label for="tab-prompt" class="btn-prompt px-3 py-1 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white cursor-pointer transition">
+                cursor-llm-rules.md
+              </label>
+              <label for="tab-rationale" class="btn-rationale px-3 py-1 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white cursor-pointer transition">
+                architecture-rationale.md
+              </label>
+            </div>
+          </div>
+
+          <!-- Spec Code Content Stage -->
+          <div class="code-scroll p-6 font-mono text-xs leading-relaxed text-zinc-300 bg-[#070709] overflow-y-auto max-h-[620px] space-y-4">
+            
+            <!-- Complete button-spec.md Content -->
+            <div class="content-spec hidden space-y-6">
+              
+              <div class="border-b border-zinc-800 pb-3">
+                <div class="text-purple-400 text-base font-bold"># AI Button Component Behavioral Specification</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 0. Intent of This Document</div>
+                <p class="text-zinc-300 pl-4">This document defines a <strong class="text-white">complete behavioral contract</strong> for an AI-enabled Button component.</p>
+                <div class="text-zinc-400 pl-4 space-y-1">
+                  <div>It MUST:</div>
+                  <div>• Define behavior as the primary source of truth (NOT visuals)</div>
+                  <div>• Eliminate ambiguity between design, engineering, and AI systems</div>
+                  <div>• Enforce deterministic outcomes</div>
+                  <div>• Establish control hierarchy: <span class="text-purple-300 font-bold">User &gt; System &gt; AI</span></div>
+                  <div>• Enable direct implementation without interpretation</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 1. Component Definition</div>
+                <div class="pl-4 space-y-2">
+                  <div><span class="text-amber-400 font-bold">### 1.1 Name</span><br><span class="text-zinc-300">Button (AI-Enabled)</span></div>
+                  <div><span class="text-amber-400 font-bold">### 1.2 Purpose</span><br><span class="text-zinc-300">Trigger a discrete, user-initiated action with optional AI-assisted labeling, prioritization, or suggestion.</span></div>
+                  <div>
+                    <span class="text-amber-400 font-bold">### 1.3 When to Use</span>
+                    <ul class="text-zinc-400 list-disc list-inside">
+                      <li>MUST be used when a user needs to explicitly trigger an action</li>
+                      <li>SHOULD be used for primary, secondary, or destructive actions</li>
+                      <li>CAN be used for AI-suggested actions where user confirmation is required</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="text-amber-400 font-bold">### 1.4 When NOT to Use</span>
+                    <ul class="text-zinc-400 list-disc list-inside">
+                      <li>MUST NOT be used for navigation that changes context without action</li>
+                      <li>MUST NOT replace passive indicators (e.g., labels, badges)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 2. Behavioral Model (Source of Truth)</div>
+                <div class="pl-4 space-y-3">
+                  <div>
+                    <span class="text-amber-400 font-bold">### 2.1 Supported Actions</span>
+                    <div class="text-zinc-300 mt-1"><strong>User-triggered:</strong> Click / tap | Keyboard activation (Enter / Space)</div>
+                    <div class="text-zinc-300"><strong>System-triggered:</strong> Enable / disable | Loading state activation</div>
+                    <div class="text-zinc-300"><strong>AI-triggered (non-executing unless explicitly allowed):</strong> Suggest label | Suggest priority (primary/secondary/danger)</div>
+                  </div>
+                  <div>
+                    <span class="text-amber-400 font-bold">### 2.2 Action Outcomes</span>
+                    <div class="text-zinc-400 space-y-1 mt-1">
+                      <div><strong class="text-zinc-200">Activate Button:</strong> Executes bound action (Side effects: May trigger loading state; Dependencies: Must be enabled)</div>
+                      <div><strong class="text-zinc-200">Disable Button:</strong> Prevents interaction (Dependencies: System conditions)</div>
+                      <div><strong class="text-zinc-200">Trigger Loading:</strong> Replaces label with loader or locks interaction (Side effects: Prevents repeated activation)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 3. State Model (Explicit State Machine)</div>
+                <div class="pl-4 space-y-2">
+                  <div><span class="text-amber-400 font-bold">### 3.1 Valid States:</span> <span class="text-emerald-400">Enabled, Hover, Focused, Disabled, Loading</span></div>
+                  <div><span class="text-amber-400 font-bold">### 3.2 Invalid States:</span> <span class="text-rose-400">MUST NOT be Enabled &amp; Disabled simultaneously | MUST NOT be Interactive while Loading</span></div>
+                  <div><span class="text-amber-400 font-bold">### 3.3 State Transitions:</span> <span class="text-zinc-300">Enabled → Hover → Focused → Enabled | Enabled ↔ Loading | Enabled ↔ Disabled</span></div>
+                  <div><span class="text-amber-400 font-bold">### 3.4 State Priority Rules:</span> <span class="text-purple-300 font-semibold">User actions MUST override AI | System constraints MUST override invalid user actions | AI MUST NOT override system constraints</span></div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 4. Interaction Model</div>
+                <div class="pl-4 text-zinc-400 space-y-1">
+                  <div><strong class="text-zinc-200">4.1 Pointer Interaction:</strong> MUST trigger action on click/tap when enabled; MUST NOT trigger when disabled or loading.</div>
+                  <div><strong class="text-zinc-200">4.2 Keyboard Interaction:</strong> MUST activate on Enter and Space; MUST support tab navigation and arrow navigation for segmented/split buttons.</div>
+                  <div><strong class="text-zinc-200">4.3 Focus Management:</strong> MUST show visible focus state; MUST move focus predictably across grouped buttons; MUST retain focus after action unless context changes.</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 5. Data Contract</div>
+                <div class="pl-4 text-zinc-400 space-y-2">
+                  <div><strong class="text-zinc-200">5.1 Input Schema:</strong> Required: <code class="text-purple-300">label: string</code>, <code class="text-purple-300">intent: enum(primary, secondary, danger)</code> | Optional: <code class="text-cyan-300">icon</code>, <code class="text-cyan-300">disabled</code>, <code class="text-cyan-300">loading</code>, <code class="text-cyan-300">actions[]</code></div>
+                  <div><strong class="text-zinc-200">5.2 Constraints:</strong> MUST have a label or accessible name; MUST NOT allow empty label; MUST enforce intent consistency.</div>
+                  <div><strong class="text-zinc-200">5.3 Output Events:</strong> <code class="text-indigo-300">onClick</code>, <code class="text-indigo-300">onFocus</code>, <code class="text-indigo-300">onBlur</code>, <code class="text-indigo-300">onOpen</code></div>
+                  <div><strong class="text-zinc-200">5.4 Error Handling:</strong> MUST fail safely (no action execution); MUST log invalid state transitions.</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 6. System Behavior &amp; 7. AI Interaction Rules</div>
+                <div class="pl-4 text-zinc-400 space-y-1">
+                  <div><strong class="text-zinc-200">6.1 Initialization &amp; Async:</strong> MUST default to Enabled; MUST enter Loading on async trigger and prevent duplicate execution.</div>
+                  <div><strong class="text-purple-300">7.1 AI Capabilities:</strong> AI CAN suggest button labels, intent hierarchy, and grouping (segmented/split).</div>
+                  <div><strong class="text-rose-400">7.2 AI Restrictions:</strong> AI MUST NOT override user-defined values, violate system constraints, or introduce non-deterministic UI behavior.</div>
+                  <div><strong class="text-cyan-300">7.3 AI Influence Scope:</strong> Data-level (labels), Presentation-level (priority), Decision-level (suggest actions ONLY).</div>
+                  <div><strong class="text-amber-300">7.4 Confidence Handling:</strong> High confidence → Suggest primary action | Medium confidence → Suggest secondary action | Low confidence → Provide optional suggestions only.</div>
+                  <div><strong class="text-emerald-300">7.5 Explainability:</strong> AI SHOULD provide reasoning when influencing output; AI influence MUST be reversible.</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 8. Layout, 9. Content &amp; 10. Accessibility Contract</div>
+                <div class="pl-4 text-zinc-400 space-y-1">
+                  <div><strong class="text-zinc-200">Layout Rules:</strong> MUST be placed horizontally; primary action on the right, secondary actions on the left; collapse into split button when exceeding 3 actions.</div>
+                  <div><strong class="text-zinc-200">Content Rules:</strong> MUST be capitalized; MUST be concise; MUST truncate with ellipsis when exceeding width.</div>
+                  <div><strong class="text-zinc-200">Accessibility:</strong> <code class="text-cyan-300">role="button"</code>; MUST announce label and state; MUST support tab, enter, space; focus MUST be clearly visible.</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 11. Edge Cases, 12. Limits &amp; 16. Acceptance Criteria</div>
+                <div class="pl-4 text-zinc-400 space-y-1">
+                  <div><strong class="text-amber-400">Edge Cases:</strong> Empty data → render disabled | Invalid data → do not render interactive state | Rapid updates → debounce execution.</div>
+                  <div><strong class="text-zinc-200">Limits:</strong> Minimum width: 80px | Border radius: 3px | Max actions (segmented): 6 | Latency &lt; 100ms.</div>
+                  <div><strong class="text-emerald-400">Acceptance Criteria:</strong> All states MUST be testable; all transitions MUST be deterministic; all constraints MUST be enforceable.</div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-zinc-800 text-zinc-300 italic">
+                <strong>17. Summary:</strong> The Button component guarantees deterministic, accessible, and user-controlled action triggering with safe AI augmentation for labeling and prioritization.
+              </div>
+
+            </div>
+
+            <!-- Complete spec-template.md Content -->
+            <div class="content-template hidden space-y-6">
+              <div class="border-b border-zinc-800 pb-3">
+                <div class="text-purple-400 text-base font-bold"># AI Component Behavioral Specification Template (Enterprise)</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 0. Intent of This Document</div>
+                <p class="text-zinc-300 pl-4">This document defines a <strong class="text-white">complete behavioral contract</strong> for an AI-enabled UI component.</p>
+                <div class="text-zinc-400 pl-4 space-y-1">
+                  <div>It MUST:</div>
+                  <div>• Define behavior as the primary source of truth (NOT visuals)</div>
+                  <div>• Eliminate ambiguity between design, engineering, and AI systems</div>
+                  <div>• Enforce deterministic outcomes</div>
+                  <div>• Establish control hierarchy: <span class="text-purple-300 font-bold">User &gt; System &gt; AI</span></div>
+                  <div>• Enable direct implementation without interpretation</div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-cyan-400 font-bold">## 1. Component Definition</div>
+                <div class="pl-4 space-y-2">
+                  <div><span class="text-amber-400 font-bold">### 1.1 Name</span><br><span class="text-zinc-400">&lt;Component Name&gt;</span></div>
+                  <div><span class="text-amber-400 font-bold">### 1.2 Purpose</span><br><span class="text-zinc-400">Describe what the component does in <strong>one clear sentence</strong>.</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content: cursor-llm-rules.md -->
+            <div class="content-prompt hidden space-y-4">
+              <div class="text-purple-400 text-base font-bold"># LLM System Rules: Design Contract Injection</div>
+              <p class="text-zinc-400">Append this header block to LLM system prompts (Cursor / Copilot / Claude) to enforce behavioral boundaries during front-end code generation:</p>
+              <div class="p-4 rounded bg-zinc-900 border border-zinc-800 text-emerald-400">
+                <pre class="whitespace-pre-wrap font-mono text-[11px] leading-relaxed">
+[SYSTEM RULE INJECTION: DESIGN_CONTRACT_ENFORCEMENT]
+You are constructing enterprise UI components governed by strict behavioral contracts.
+Rule 1: Always enforce control hierarchy (User > System > AI).
+Rule 2: AI MUST NEVER trigger destructive state changes without user confirmation.
+Rule 3: Low AI confidence (&lt;0.70) MUST fallback to default system defaults.
+Rule 4: Components must be strictly typed matching section 5.1 input schema.
+Rule 5: State transitions MUST adhere to Section 3 state machine specs.
+                </pre>
+              </div>
+            </div>
+
+            <!-- Content: architecture-rationale.md -->
+            <div class="content-rationale hidden space-y-4">
+              <div class="text-purple-400 text-base font-bold"># Architecture Rationale: Why Behavioral Contracts?</div>
+              <div class="text-zinc-300">
+                When AI systems interact with UI components, static visual specifications fail because they do not account for probabilistic inputs, non-deterministic latency, or varying confidence thresholds.
+              </div>
+              <div class="text-zinc-400 pl-4 space-y-2">
+                <div>1. Visual tools (Figma) document visual states but cannot enforce execution boundaries.</div>
+                <div>2. Behavioral contracts establish strict acceptance criteria that engineering can test directly in code.</div>
+                <div>3. Enforcing User &gt; System &gt; AI prevents autonomous overreach in enterprise SaaS platforms.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BEHAVIORAL STATE DEMO -->
+    <section class="space-y-6 pt-6 border-t border-zinc-800/80">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">// Interactive Proof of Concept</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Contract Authority Tier Execution
+        </h2>
+        <p class="text-zinc-400 text-sm max-w-3xl">
+          Toggle between control authority tiers to see how the component behavioral contract responds deterministically under varying runtime conditions.
+        </p>
+      </div>
+
+      <!-- State Controller Radios -->
+      <input type="radio" name="demo-states" id="demo-user" class="hidden" checked>
+      <input type="radio" name="demo-states" id="demo-system" class="hidden">
+      <input type="radio" name="demo-states" id="demo-ai" class="hidden">
+
+      <div class="demo-nav flex flex-wrap gap-3">
+        <label for="demo-user" class="btn-demo-user flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-mono font-semibold cursor-pointer transition hover:border-purple-500">
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          Tier 1: User Priority State
+        </label>
+        <label for="demo-system" class="btn-demo-system flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-mono font-semibold cursor-pointer transition hover:border-cyan-500">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Tier 2: System Boundary Override
+        </label>
+        <label for="demo-ai" class="btn-demo-ai flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-mono font-semibold cursor-pointer transition hover:border-amber-500">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          Tier 3: AI Augmentation State
+        </label>
+      </div>
+
+      <div class="demo-stage p-8 rounded-2xl bg-zinc-950 border border-zinc-800 min-h-[180px] flex items-center justify-center relative overflow-hidden">
+        
+        <!-- State 1: User Priority -->
+        <div class="state-user hidden flex-col sm:flex-row items-center gap-6 w-full justify-between">
+          <div class="space-y-1 text-left">
+            <div class="text-xs font-mono text-purple-400 font-bold">STATE: EXPLICIT_USER_ACTION</div>
+            <div class="text-sm text-zinc-300">User clicks "Approve Order". User authority overrides AI recommendations.</div>
+          </div>
+          <button class="px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-medium text-sm transition shadow-lg shrink-0">
+            Approve Order
+          </button>
+        </div>
+
+        <!-- State 2: System Boundary -->
+        <div class="state-system hidden flex-col sm:flex-row items-center gap-6 w-full justify-between">
+          <div class="space-y-1 text-left">
+            <div class="text-xs font-mono text-cyan-400 font-bold">STATE: SYSTEM_VALIDATION_LOCK</div>
+            <div class="text-sm text-zinc-300">System locks interaction due to missing approval credentials. User and AI inputs disabled.</div>
+          </div>
+          <button disabled class="px-5 py-2.5 rounded-lg bg-zinc-800 text-zinc-500 cursor-not-allowed text-sm border border-zinc-700/50 shrink-0 flex items-center gap-2">
+            <svg class="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Approve Order (Locked)
+          </button>
+        </div>
+
+        <!-- State 3: AI Augmentation -->
+        <div class="state-ai hidden flex-col sm:flex-row items-center gap-6 w-full justify-between">
+          <div class="space-y-1 text-left">
+            <div class="text-xs font-mono text-amber-400 font-bold">STATE: AI_HIGH_CONFIDENCE_SUGGESTION</div>
+            <div class="text-sm text-zinc-300">AI suggests priority action based on procurement history. High confidence (&gt;0.88). Requires user click.</div>
+          </div>
+          <button class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium text-sm transition shadow-lg shrink-0 flex items-center gap-2 ring-2 ring-purple-500/50">
+            <span class="text-xs font-mono bg-purple-950 px-1.5 py-0.5 rounded text-purple-300">AI ✨</span>
+            Auto-Fill &amp; Approve
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 1 SPECIFICATION INVENTORY -->
+    <section class="space-y-6">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">// System Integration Inventory</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Phase 1 Contract Coverage (12 Core Components)
+        </h2>
+        <p class="text-zinc-400 text-sm max-w-3xl">
+          Standardized behavioral contracts authored across the enterprise UI design system library:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 font-mono text-xs">
+        <div class="p-3 rounded-xl bg-zinc-900/60 border border-purple-500/30 text-purple-300 font-semibold flex items-center justify-between">
+          <span>01. Button</span>
+          <span class="text-[10px] text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded">Active</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>02. Data Table</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>03. TextInput</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>04. Modal Drawer</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>05. Dropdown Select</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>06. Filter Chip</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>07. Notification</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>08. Tooltip</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>09. Search Input</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>10. Accordion</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>11. Progress Bar</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+        <div class="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800 text-zinc-300 flex items-center justify-between">
+          <span>12. Badge Label</span>
+          <span class="text-[10px] text-zinc-500">Spec Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CONTEXT & LEADERSHIP CHALLENGE -->
+    <section class="space-y-6 pt-6 border-t border-zinc-800/80">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">// 01. Context &amp; The Leadership Challenge</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Bridging Ungoverned AI Engineering with System Architecture
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-300 text-sm leading-relaxed">
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+          <div class="text-rose-400 font-semibold flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            The Problem: Zero AI Rules &amp; System Drift
+          </div>
+          <p>
+            Early AI interface development lacked defined behavioral rules or boundaries. Engineering was implementing AI-generated UI elements ad hoc—resulting in interface patterns that bore no relationship to our core enterprise design system, inconsistent state management, and unpredictable component behavior.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-purple-500/20 space-y-3">
+          <div class="text-purple-300 font-semibold flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 10 0118 0z"></path></svg>
+            My Execution: Multi-Component Phase 1 Standardization
+          </div>
+          <p>
+            I led the initiative to create the <strong>Design.MD Behavioral Specification Framework</strong>, establishing explicit, deterministic rules for how AI interacts with UI components. Moving beyond static visual documentation, I authored and standardized Phase 1 contracts for roughly a dozen core system components to realign production builds with our design system logic.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ARCHITECTURAL GOVERNANCE -->
+    <section class="space-y-6">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-purple-400 uppercase tracking-wider font-mono">// 02. Core Framework</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Establishing System Boundaries (User &gt; System &gt; AI)
+        </h2>
+        <p class="text-zinc-400 text-sm max-w-3xl">
+          To eliminate engineering interpretation drift and prevent unprompted UI states, I defined a strict control hierarchy across all authored component specifications.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-950">
+        <table class="w-full text-left text-xs text-zinc-300 font-mono">
+          <thead class="bg-zinc-900 text-zinc-400 text-[11px] uppercase tracking-wider border-b border-zinc-800">
+            <tr>
+              <th class="py-3 px-4">Authority Tier</th>
+              <th class="py-3 px-4">Operational Scope</th>
+              <th class="py-3 px-4">Behavioral Constraint</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-zinc-800/60">
+            <tr class="hover:bg-zinc-900/40">
+              <td class="py-3 px-4 text-purple-300 font-bold">1. User</td>
+              <td class="py-3 px-4">Explicit interactions, clicks, and manual parameter inputs</td>
+              <td class="py-3 px-4 text-emerald-400">Must always override AI suggestions and system defaults</td>
+            </tr>
+            <tr class="hover:bg-zinc-900/40">
+              <td class="py-3 px-4 text-cyan-300 font-bold">2. System</td>
+              <td class="py-3 px-4">Validation rules, security schemas, state machines</td>
+              <td class="py-3 px-4 text-amber-400">Enforces valid state transitions and component boundaries</td>
+            </tr>
+            <tr class="hover:bg-zinc-900/40">
+              <td class="py-3 px-4 text-zinc-400 font-bold">3. AI Agent</td>
+              <td class="py-3 px-4">Dynamic label suggestions, intent hierarchy, contextual priority</td>
+              <td class="py-3 px-4 text-rose-400">Restricted to non-executing suggestions; cannot bypass system limits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ENTERPRISE EDGE CASES & FAILURE MODES -->
+    <section class="space-y-6">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-purple-400 uppercase tracking-wider font-mono">// 03. Resilience &amp; Reliability</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Edge Case Rules &amp; Failure Mode Specifications
+        </h2>
+        <p class="text-zinc-400 text-sm max-w-3xl">
+          Behavioral specifications explicitly define system fallbacks under non-ideal runtime scenarios:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs leading-relaxed">
+        <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 space-y-2">
+          <div class="text-amber-400 font-mono font-bold">High AI Latency (&gt;800ms)</div>
+          <p class="text-zinc-300">
+            System suppresses AI dynamic label suggestions and renders default, static system text immediately to maintain UI interaction speed (&lt;100ms response).
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 space-y-2">
+          <div class="text-amber-400 font-mono font-bold">Low Confidence Threshold (&lt;0.70)</div>
+          <p class="text-zinc-300">
+            Component falls back to secondary presentation styling, requiring explicit user confirmation before executing any bound action.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 space-y-2">
+          <div class="text-amber-400 font-mono font-bold">Network Offline / Disconnect</div>
+          <p class="text-zinc-300">
+            Component automatically locks AI-suggested triggers, displaying native offline tooltip indicators while maintaining deterministic local button behavior.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: VALIDATION & OUTCOMES -->
+    <section class="space-y-6 pt-6 border-t border-zinc-800/80">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">// 04. Validation &amp; Outcomes</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Phase 1 Rollout &amp; System Realignment
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-2">
+          <div class="text-2xl font-extrabold text-purple-300 font-mono">12+</div>
+          <div class="text-sm font-semibold text-white">Phase 1 Components Authored</div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Authored behavioral contracts across a dozen core design system elements, establishing standard governance beyond single component use cases.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-2">
+          <div class="text-2xl font-extrabold text-cyan-300 font-mono">100%</div>
+          <div class="text-sm font-semibold text-white">Design System Alignment</div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Successfully realigned production UI with established enterprise standards, replacing arbitrary engineering implementations.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-2">
+          <div class="text-2xl font-extrabold text-emerald-300 font-mono">Direct</div>
+          <div class="text-sm font-semibold text-white">Production Testing</div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Validated behavioral specs through hands-on engineering implementation inside the product, testing and refining contract rules during active build cycles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/80 bg-[#09090b] py-8 text-xs text-zinc-400">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© Herb Harden II • Senior Enterprise UI/UX Product Designer • AI Design Engineer</div>
+      <div class="flex gap-6">
+        <a href="https://linkedin.com/in/herbharden" target="_blank" class="hover:text-white transition">LinkedIn</a>
+        <span class="text-zinc-500">Last Updated: August 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://herbharden.com/nav.js"></script>
+</body>
+</html>
