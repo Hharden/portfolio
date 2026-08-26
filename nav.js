@@ -8,16 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div>
             <span class="font-bold tracking-tight text-white block text-sm">Herb Harden</span>
-            <span class="text-xs text-zinc-400 block -mt-0.5">AI Product Design Leader & Engineer</span>
+            <span class="text-xs text-zinc-400 block -mt-0.5">Product Design Leader & AI Design Engineer</span>
           </div>
         </a>
         
         <nav class="hidden md:flex items-center gap-1 bg-zinc-900/90 p-1 rounded-full border border-zinc-800">
-          <a href="https://herbharden.com/herbert_harden_resume.docx" target="_blank" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">Resume</a>
+          <a href="https://herbharden.com/#case-studies" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">Featured Case Studies</a>
+          <a href="https://herbharden.com/certifications.html" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">Certifications</a>
           <a href="https://linkedin.com/in/herbharden" target="_blank" class="px-4 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition">LinkedIn ↗</a>
         </nav>
 
-        <div class="flex items-center gap-4 text-xs font-medium">
+        <div class="flex items-center gap-3 text-xs font-medium">
           <a href="mailto:harden.herb@gmail.com" class="px-3.5 py-2 rounded-lg bg-white text-zinc-950 font-semibold hover:bg-zinc-200 transition shadow-sm">Contact Me</a>
         </div>
       </div>
