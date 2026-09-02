@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div>
             <span class="font-bold tracking-tight text-white block text-sm">Herb Harden</span>
-            <span class="text-xs text-zinc-400 block -mt-0.5">Product Design Leader & AI Design Engineer</span>
+            <span class="text-xs text-zinc-400 block -mt-0.5">Product Design Leader</span>
           </div>
         </a>
         
