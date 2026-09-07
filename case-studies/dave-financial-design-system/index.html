@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dave Financial: Transforming a Public Company's Design System for the Generative AI Era</title>
+  <title>Dave Financial: Transforming a Design System for the Generative AI Era</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -30,13 +30,17 @@
     }
 
     @keyframes heroCrossfade {
-      0%, 28% { opacity: 1; z-index: 10; transform: scale(1); }
-      33%, 95% { opacity: 0; z-index: 1; transform: scale(1.02); }
+      0%, 11.4% { opacity: 1; z-index: 10; transform: scale(1); }
+      14.2%, 97.1% { opacity: 0; z-index: 1; transform: scale(1.02); }
       100% { opacity: 1; z-index: 10; transform: scale(1); }
     }
-    .hero-slide-1 { animation: heroCrossfade 18s infinite 0s ease-in-out; }
-    .hero-slide-2 { animation: heroCrossfade 18s infinite 6s ease-in-out; }
-    .hero-slide-3 { animation: heroCrossfade 18s infinite 12s ease-in-out; }
+    .hero-slide-1 { animation: heroCrossfade 35s infinite 0s ease-in-out; }
+    .hero-slide-2 { animation: heroCrossfade 35s infinite 5s ease-in-out; }
+    .hero-slide-3 { animation: heroCrossfade 35s infinite 10s ease-in-out; }
+    .hero-slide-4 { animation: heroCrossfade 35s infinite 15s ease-in-out; }
+    .hero-slide-5 { animation: heroCrossfade 35s infinite 20s ease-in-out; }
+    .hero-slide-6 { animation: heroCrossfade 35s infinite 25s ease-in-out; }
+    .hero-slide-7 { animation: heroCrossfade 35s infinite 30s ease-in-out; }
   </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +59,7 @@
   <main class="max-w-5xl mx-auto px-6 pt-12 pb-24">
 
     <!-- Hero Section -->
-    <section class="space-y-8 mb-16">
+    <section class="space-y-8 mb-12">
       
       <div class="space-y-4">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-xs font-semibold">
@@ -64,7 +68,7 @@
         </div>
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-          Dave Financial: <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">Transforming a Public Company's Design System for the Generative AI Era</span>
+          Dave Financial: <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">Transforming a Design System for the Generative AI Era</span>
         </h1>
       </div>
 
@@ -75,7 +79,7 @@
           <!-- Slide 1 -->
           <div class="absolute inset-0 transition-all duration-700 hero-slide-1">
             <img 
-              src="https://herbharden.com/case-studies/jaggaer-design-system/jaggaer-design-system-prompt.png" 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/flowchart.jpeg" 
               alt="Zero-Touch Pipeline Architecture" 
               class="w-full h-full object-cover object-top"
             />
@@ -88,84 +92,115 @@
           <!-- Slide 2 -->
           <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-2">
             <img 
-              src="https://herbharden.com/case-studies/jaggaer-design-system/jaggaer-design-system-colors1.png" 
-              alt="Token Architecture & Primitive Mapping" 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/figma-semantics.png" 
+              alt="Figma Semantics & Variable Tokens" 
               class="w-full h-full object-cover object-top"
             />
             <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
-              <span class="font-medium">Token Architecture & Primitive Mapping</span>
-              <span class="text-cyan-400 font-mono text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">zeroheight + MCP</span>
+              <span class="font-medium">Token Hierarchy & Semantic Aliasing</span>
+              <span class="text-purple-400 font-mono text-[11px] bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">Variables Panel</span>
             </div>
           </div>
 
           <!-- Slide 3 -->
           <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-3">
             <img 
-              src="https://herbharden.com/case-studies/jaggaer-design-system/jaggaer-design-system-layouts-patterns1.png" 
-              alt="AI Behavioral Contract & Component Output" 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/figma-auto-layout-component.png" 
+              alt="Figma Auto-Layout Box Model Physics" 
               class="w-full h-full object-cover object-top"
             />
             <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
-              <span class="font-medium">AI Behavioral Contract & Component Output</span>
-              <span class="text-indigo-400 font-mono text-[11px] bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">1:1 Visual Parity</span>
+              <span class="font-medium">Auto-Layout Physics & Dynamic Constraints</span>
+              <span class="text-purple-400 font-mono text-[11px] bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">Layout Engine</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-4">
+            <img 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/zero-height-flex-component.png" 
+              alt="zeroheight Token Specifications" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">zeroheight Documentation & MCP Layer</span>
+              <span class="text-cyan-400 font-mono text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">Live Knowledge Base</span>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-5">
+            <img 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/design-md.png" 
+              alt="design.md Contract Spec" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">AI Behavioral Contract (design.md)</span>
+              <span class="text-indigo-400 font-mono text-[11px] bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">Structural Rules</span>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-6">
+            <img 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/deepseek.png" 
+              alt="DeepSeek Prompt Generation" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">DeepSeek Model Orchestration</span>
+              <span class="text-indigo-400 font-mono text-[11px] bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">Context Prompting</span>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-7">
+            <img 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/cursor-output.png" 
+              alt="AI Behavioral Contract & Sandbox Output" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Cursor Output & Live React Render</span>
+              <span class="text-indigo-400 font-mono text-[11px] bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">Clean React Sandbox</span>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Static Table of Contents (White Title & White Icon) -->
+      <!-- Static Table of Contents -->
       <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800/80">
         <div class="flex items-center gap-2 text-sm uppercase tracking-wider text-white font-bold mb-3">
           <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           Table of Contents
         </div>
         <nav class="flex flex-col space-y-2 text-sm font-medium">
-          <a href="#executive-summary" class="text-purple-400 hover:text-purple-300 transition-colors">1. Executive Summary</a>
-          <a href="#challenge" class="text-purple-400 hover:text-purple-300 transition-colors">2. The Challenge & Paradigm Shift</a>
-          <a href="#strategy-solution" class="text-purple-400 hover:text-purple-300 transition-colors">3. Strategy & Solution</a>
-          <a href="#execution-impact" class="text-purple-400 hover:text-purple-300 transition-colors">4. Execution & Impact</a>
+          <a href="#overview" class="text-purple-400 hover:text-purple-300 transition-colors">1. Overview</a>
+          <a href="#executive-summary" class="text-purple-400 hover:text-purple-300 transition-colors">2. Executive Summary</a>
+          <a href="#challenge" class="text-purple-400 hover:text-purple-300 transition-colors">3. The Challenge & Paradigm Shift</a>
+          <a href="#strategy-solution" class="text-purple-400 hover:text-purple-300 transition-colors">4. Strategy & Solution</a>
+          <a href="#execution-impact" class="text-purple-400 hover:text-purple-300 transition-colors">5. Execution & Impact</a>
         </nav>
       </div>
     </section>
 
     <!-- Article Content Body -->
-    <article class="space-y-12 text-zinc-300 text-sm sm:text-base leading-relaxed max-w-4xl mx-auto">
+    <article class="space-y-12 text-zinc-300 text-sm sm:text-base leading-relaxed w-full">
 
-      <!-- Section 1: Executive Summary -->
-      <section id="executive-summary" class="space-y-6">
+      <!-- Section 1: Overview -->
+      <section id="overview" class="space-y-6">
         <div>
-          <h2 class="text-2xl font-bold text-white tracking-tight">1. Executive Summary</h2>
-          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Bridging human design systems and automated AI code generation</p>
+          <h2 class="text-2xl font-bold text-white tracking-tight">1. Overview</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Project metadata, scope, and technical stack</p>
         </div>
 
-        <!-- Single-Column Metadata Card (Placed at the top of Executive Summary) -->
+        <!-- Standalone Overview Metadata Card -->
         <div class="p-6 rounded-2xl bg-zinc-900/85 border border-zinc-800/80 shadow-2xl flex flex-col space-y-6 my-6">
           <div>
             <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">Role</div>
             <div class="text-sm font-bold text-white mt-1">Lead Design System Architect / AI Design Engineer</div>
-          </div>
-          
-          <div class="border-t border-zinc-800/80 pt-6">
-            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Scope</div>
-            <ul class="text-sm font-bold text-white space-y-1">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
-                End-to-end Figma token architecture audit and variable primitive refactoring.
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
-                zeroheight documentation sync via Model Context Protocol (MCP).
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
-                Authoring machine-readable AI behavioral contracts (<code class="text-xs font-mono bg-zinc-800 px-1 py-0.5 rounded text-purple-300">design.md</code>).
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
-                Local Vite/React verification testbed setup for deterministic prompt testing.
-              </li>
-            </ul>
           </div>
 
           <div class="border-t border-zinc-800/80 pt-6">
@@ -193,6 +228,28 @@
               </li>
             </ul>
           </div>
+          
+          <div class="border-t border-zinc-800/80 pt-6">
+            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Scope</div>
+            <ul class="text-sm font-bold text-white space-y-1">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                End-to-end Figma token architecture audit and variable primitive refactoring.
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                zeroheight documentation sync via Model Context Protocol (MCP).
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Authoring machine-readable AI behavioral contracts (<code class="text-xs font-mono bg-zinc-800 px-1 py-0.5 rounded text-purple-300">design.md</code>).
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Local Vite/React verification testbed setup for deterministic prompt testing.
+              </li>
+            </ul>
+          </div>
 
           <div class="border-t border-zinc-800/80 pt-6">
             <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Key Outcome</div>
@@ -212,25 +269,88 @@
             </ul>
           </div>
         </div>
+      </section>
+
+     <!-- Section 2: Executive Summary -->
+      <section id="executive-summary" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">2. Executive Summary</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Bridging human design systems and automated AI code generation</p>
+        </div>
         
         <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          <!-- Inline Image Floating Left -->
+          <span class="float-left mr-5 mb-3 w-48 sm:w-124 rounded-xl border border-zinc-800 bg-zinc-950/80 p-1.5 overflow-hidden shadow-xl">
+            <img 
+              src="https://herbharden.com/case-studies/dave-financial-design-system/dave-screenshot.jpg" 
+              alt="Dave Financial Mobile and Web Interface" 
+              class="w-full rounded-lg object-cover"
+            />
+            <span class="block p-1.5 text-[10px] sm:text-xs text-zinc-400 font-mono text-center bg-zinc-900/60 rounded-b-lg mt-1.5">
+              Dave Financial Platform Interface
+            </span>
+          </span>
+
           Dave Financial operates at the forefront of digital banking, serving millions of users with automated cash advances and financial management tools. While the design ecosystem featured rich Figma components and React Native implementations, the underlying architecture lacked unified variable tokenization for typography and spacing. Crucially, pattern layout logic remained unwritten—relying heavily on designer intuition.
         </p>
         <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
           To prepare Dave's design system for the AI-assisted development era without modifying production repos or requesting extra engineering spend, I designed and executed a zero-touch pipeline architecture. By restructuring token primitives, connecting zeroheight directly to local IDEs via Model Context Protocol (MCP), and creating a strict AI behavioral contract (<code class="text-xs font-mono text-purple-300">design.md</code>), I proved that AI agents can translate visual designs into pixel-perfect React components with absolute structural fidelity.
         </p>
+        
+        <!-- Clear floating styles for subsequent content -->
+        <div class="clear-both"></div>
       </section>
 
-      <!-- Section 2: The Challenge & Paradigm Shift -->
+      <!-- Section 3: The Challenge & Paradigm Shift -->
       <section id="challenge" class="space-y-6">
         <div>
-          <h2 class="text-2xl font-bold text-white tracking-tight">2. The Challenge & Paradigm Shift</h2>
+          <h2 class="text-2xl font-bold text-white tracking-tight">3. The Challenge & Paradigm Shift</h2>
           <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Moving from human-interpreted UI kits to machine-deterministic design contracts</p>
         </div>
         
         <p>
           Traditional design systems are built for human eyes. Designers and developers naturally fill in missing details, infer alignment physics, and manually tweak CSS when a layout breaks. Generative AI models lack this human context. When tasked with translating design assets into code, LLMs generate code based on probability—leading to visual drift, broken flex containers, and hardcoded overrides.
         </p>
+
+        <!-- Before vs After Comparison Card -->
+        <div class="my-6 rounded-xl border border-zinc-800 bg-zinc-950/90 p-4 shadow-xl">
+          <div class="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3 font-mono">
+            Paradigm Shift • Naive Prompting vs. Contract-Driven Output
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-red-950/20 border border-red-900/40 space-y-2">
+              <div class="flex justify-between items-center text-xs font-mono text-red-400">
+                <span>Without Behavioral Contract</span>
+                <span class="bg-red-950 px-2 py-0.5 rounded border border-red-800">Visual Drift</span>
+              </div>
+              <div class="font-mono text-xs text-red-200/70 bg-zinc-950 p-3 rounded border border-red-950/80 space-y-1">
+                <p class="text-zinc-500">// Hardcoded styles & broken flex wrap</p>
+                <p class="text-red-300">&lt;div style={{ padding: '15px', display: 'block' }}&gt;</p>
+                <p class="pl-4 text-red-300">&lt;span className="badge-wrapped"&gt;Today&lt;/span&gt;</p>
+                <p class="pl-4 text-red-300">&lt;span className="badge-wrapped"&gt;$50&lt;/span&gt;</p>
+                <p class="text-red-300">&lt;/div&gt;</p>
+              </div>
+              <p class="text-xs text-zinc-400">LLM guesses component hierarchy, wraps badges onto multiple lines, and uses hardcoded inline styles.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-purple-950/20 border border-purple-900/40 space-y-2">
+              <div class="flex justify-between items-center text-xs font-mono text-purple-400">
+                <span>With design.md Contract</span>
+                <span class="bg-purple-950 px-2 py-0.5 rounded border border-purple-800">100% Fidelity</span>
+              </div>
+              <div class="font-mono text-xs text-purple-200/80 bg-zinc-950 p-3 rounded border border-purple-950/80 space-y-1">
+                <p class="text-zinc-500">// Token-bound semantic components</p>
+                <p class="text-purple-300">&lt;CardContainer width="var(--spacing-440)"&gt;</p>
+                <p class="pl-4 text-purple-300">&lt;PillRow flexWrap="nowrap" gap="var(--gap-8)"&gt;</p>
+                <p class="pl-8 text-purple-300">Today • $50</p>
+                <p class="pl-4 text-purple-300">&lt;/PillRow&gt;</p>
+                <p class="text-purple-300">&lt;/CardContainer&gt;</p>
+              </div>
+              <p class="text-xs text-zinc-400">Deterministic slot rules enforce single-line badge rows and bound token properties[cite: 2].</p>
+            </div>
+          </div>
+        </div>
 
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
@@ -254,22 +374,84 @@
         </ul>
       </section>
 
-      <!-- Section 3: Strategy & Solution -->
+      <!-- Section 4: Strategy & Solution -->
       <section id="strategy-solution" class="space-y-8">
         <div>
-          <h2 class="text-2xl font-bold text-white tracking-tight">3. Strategy & Solution</h2>
-          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">A six-stage architectural blueprint for deterministic, contract-driven component output</p>
+          <h2 class="text-2xl font-bold text-white tracking-tight">4. Strategy & Solution</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">A architectural blueprint for deterministic, contract-driven component output</p>
+        </div>
+
+        <!-- Architecture Flow Diagram -->
+        <div class="my-8 rounded-xl border border-zinc-800 bg-zinc-950/80 p-6 shadow-xl">
+          <div class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-4 font-mono">
+            System Architecture • Zero-Touch Pipeline Flow
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3 relative">
+            <div class="p-4 rounded-lg bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+              <div class="text-xs font-mono text-zinc-400">01. DESIGN</div>
+              <div class="text-sm font-bold text-white mt-1">Figma Tokens</div>
+              <div class="text-[11px] text-zinc-400 mt-2">Primitives & Auto-Layout Rules</div>
+            </div>
+            
+            <div class="p-4 rounded-lg bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+              <div class="text-xs font-mono text-cyan-400">02. KNOWLEDGE</div>
+              <div class="text-sm font-bold text-white mt-1">zeroheight + MCP</div>
+              <div class="text-[11px] text-zinc-400 mt-2">Live Token Querying Layer</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+              <div class="text-xs font-mono text-indigo-400">03. CONTRACT</div>
+              <div class="text-sm font-bold text-white mt-1">design.md</div>
+              <div class="text-[11px] text-zinc-400 mt-2">AI Structural Constraints</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-purple-950/40 border border-purple-800/60 flex flex-col justify-between">
+              <div class="text-xs font-mono text-purple-300">04. OUTPUT</div>
+              <div class="text-sm font-bold text-white mt-1">Cursor / DeepSeek</div>
+              <div class="text-[11px] text-purple-200 mt-2">Zero-Touch React Code</div>
+            </div>
+          </div>
         </div>
 
         <div class="space-y-8">
           <!-- Step 1 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.1</span> Figma: Tokenization, Primitives, & Auto-Layout Physics
+              <span class="text-purple-400 font-mono text-base">4.1</span> Figma: Tokenization, Primitives, & Auto-Layout Physics
             </h3>
             <p>
               I performed an architectural audit of Dave's Figma assets to isolate hardcoded parameters. I separated visual attributes into a clean two-tier hierarchy: raw <strong>Primitives</strong> (hex colors, pixel values) and <strong>Semantic Aliases</strong> (<code class="text-xs font-mono text-purple-300">--color-bg-card</code>, <code class="text-xs font-mono text-purple-300">--spacing-card-padding</code>). Next, I refactored key composite components—such as <code class="text-xs font-mono text-white">Balance Summary Card</code> and <code class="text-xs font-mono text-white">Flex Advance Card</code>—with strict Auto-Layout rules, establishing a 440px max-width container bound directly to semantic spatial tokens.
             </p>
+
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/figma-semantics.png" 
+                alt="Figma Semantics Variable Collection" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>Figma Semantics & Token Mapping Panel</span>
+                <span class="text-purple-400">Two-Tier Token Hierarchy</span>
+              </div>
+            </div>
+
+            <p>
+              Layout components rely on auto-layout physics mapped directly to web browser flexbox rules, ensuring fluid container behavior and deterministic gap/padding values.
+            </p>
+
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/figma-auto-layout-component.png" 
+                alt="Figma Auto-Layout Box Model Physics" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>Auto-Layout Component Physics & Constraints</span>
+                <span class="text-purple-400">314 Fill × 29 Hug</span>
+              </div>
+            </div>
+
             <ul class="space-y-2 text-xs sm:text-sm">
               <li class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
@@ -289,11 +471,25 @@
           <!-- Step 2 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.2</span> zeroheight & MCP: Building an AI-Accessible Knowledge Layer
+              <span class="text-purple-400 font-mono text-base">4.2</span> zeroheight & MCP: Building an AI-Accessible Knowledge Layer
             </h3>
             <p>
               Publishing design tokens to zeroheight created a cloud-based source of truth. To bridge documentation directly into developer workflows, I configured a <strong>Model Context Protocol (MCP)</strong> server. This empowered AI coding assistants to programmatically query live zeroheight specs during generation, converting traditional documentation into an active runtime data layer.
             </p>
+
+            <!-- zeroheight Image Figure Block -->
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/zero-height-flex-component.png" 
+                alt="zeroheight System Guidelines & Token Specifications" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>zeroheight • Token Specs & Component Guidelines</span>
+                <span class="text-cyan-400">MCP Live Data Layer</span>
+              </div>
+            </div>
+
             <ul class="space-y-2 text-xs sm:text-sm">
               <li class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
@@ -313,7 +509,7 @@
           <!-- Step 3 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.3</span> Local Architecture: Lightweight Vite/React Verification Sandbox
+              <span class="text-purple-400 font-mono text-base">4.3</span> Local Architecture: Lightweight Vite/React Verification Sandbox
             </h3>
             <p>
               To evaluate AI code generation safely without touching production environments, I set up an isolated Vite + React sandbox. Global CSS custom properties mirroring zeroheight semantic tokens were injected directly into <code class="text-xs font-mono text-purple-300">index.html</code>. This provided a fast, hot-reloading environment to test whether generated JSX correctly resolved tokens without external library overhead.
@@ -337,11 +533,24 @@
           <!-- Step 4 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.4</span> design.md: Authoring the AI Behavioral Contract
+              <span class="text-purple-400 font-mono text-base">4.4</span> design.md: Authoring the AI Behavioral Contract
             </h3>
             <p>
               The key innovation was <code class="text-xs font-mono text-purple-300">design.md</code>—a system prompt contract defining structural constraints, slot anatomies, and strict string schemas for dynamic data. Rather than trusting the LLM to guess component architecture, <code class="text-xs font-mono text-purple-300">design.md</code> explicitly forbade destructive flex-wrapping and mandated exact prop-to-token bindings.
             </p>
+
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/design-md.png" 
+                alt="Structured design.md Contract Spec in Editor" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>design.md - Behavioral Contract Specifications</span>
+                <span class="text-purple-400">Machine-Readable Specs</span>
+              </div>
+            </div>
+
             <ul class="space-y-2 text-xs sm:text-sm">
               <li class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
@@ -361,11 +570,24 @@
           <!-- Step 5 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.5</span> DeepSeek & Cursor: Closed-Loop Upstream Iteration
+              <span class="text-purple-400 font-mono text-base">4.5</span> DeepSeek & Cursor: Closed-Loop Upstream Iteration
             </h3>
             <p>
               Using Cursor Composer connected to DeepSeek models (V3/R1), I initiated component generation. Crucially, I adopted a strict governance rule: <strong>never touch generated code by hand</strong>. When visual flaws occurred (like a wrapped pill badge), I edited the upstream specification in <code class="text-xs font-mono text-purple-300">design.md</code> and re-prompted until the output rendered perfectly.
             </p>
+
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/deepseek.png" 
+                alt="DeepSeek Context Injection and JSX Generation" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>DeepSeek Chat - Contract Context & Code Generation</span>
+                <span class="text-purple-400">Zero-Touch Code Output</span>
+              </div>
+            </div>
+
             <ul class="space-y-2 text-xs sm:text-sm">
               <li class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
@@ -385,11 +607,24 @@
           <!-- Step 6 -->
           <div class="space-y-3">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="text-purple-400 font-mono text-base">3.6</span> Final UI Output & Parity Verification
+              <span class="text-purple-400 font-mono text-base">4.6</span> Final UI Output & Parity Verification
             </h3>
             <p>
               The resulting components achieved 1:1 pixel and structural parity with Figma designs. The rendered cards maintained exact container dimensions (440px), padding math (20px), typography scales, and a flawless single-line four-item badge pill row.
             </p>
+
+            <div class="my-4 rounded-xl border border-zinc-800 bg-zinc-950/80 p-2 overflow-hidden shadow-lg">
+              <img 
+                src="https://herbharden.com/case-studies/dave-financial-design-system/cursor-output.png" 
+                alt="Live React Sandbox Delivery in Cursor" 
+                class="w-full rounded-lg object-cover"
+              />
+              <div class="p-2.5 text-xs text-zinc-400 font-mono flex justify-between items-center bg-zinc-900/60 rounded-b-lg mt-2">
+                <span>Cursor Editor - Live React Rendered Sandbox</span>
+                <span class="text-purple-400">100% Fidelity</span>
+              </div>
+            </div>
+
             <ul class="space-y-2 text-xs sm:text-sm">
               <li class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
@@ -408,10 +643,10 @@
         </div>
       </section>
 
-      <!-- Section 4: Execution & Impact -->
+      <!-- Section 5: Execution & Impact -->
       <section id="execution-impact" class="space-y-6 border-t border-zinc-800/80 pt-10">
         <div>
-          <h2 class="text-2xl font-bold text-white tracking-tight">4. Execution & Impact</h2>
+          <h2 class="text-2xl font-bold text-white tracking-tight">5. Execution & Impact</h2>
           <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Transforming design operations into an automated, AI-first engine</p>
         </div>
 
@@ -447,7 +682,7 @@
 
   <footer class="border-t border-zinc-800/80 bg-[#09090b] py-8 text-xs text-zinc-400">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div>© Herb Harden II • Senior Enterprise UI/UX Product Designer & AI Design Engineer</div>
+      <div>© Herb Harden II • Senior Product Designer & AI Design Engineer</div>
       <div class="flex gap-6">
         <a href="https://linkedin.com/in/herbharden" target="_blank" class="hover:text-white transition">LinkedIn</a>
         <a href="mailto:harden.herb@gmail.com" class="hover:text-white transition">Email</a>
