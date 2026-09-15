@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise GraphQL & AI Agentic Workflow Studio | Herb Harden</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7C3AED',
+              cyan: '#06B6D4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      background-color: #09090b !important;
+      color: #f4f4f5 !important;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes heroCrossfade {
+      0%, 20% { opacity: 1; z-index: 10; transform: scale(1); }
+      25%, 95% { opacity: 0; z-index: 1; transform: scale(1.02); }
+      100% { opacity: 1; z-index: 10; transform: scale(1); }
+    }
+    .hero-slide-1 { animation: heroCrossfade 20s infinite 0s ease-in-out; }
+    .hero-slide-2 { animation: heroCrossfade 20s infinite 5s ease-in-out; }
+    .hero-slide-3 { animation: heroCrossfade 20s infinite 10s ease-in-out; }
+    .hero-slide-4 { animation: heroCrossfade 20s infinite 15s ease-in-out; }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#09090b] text-zinc-100 font-['Inter',sans-serif] antialiased min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+  <!-- Ambient Glowing Radial Backgrounds -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/30 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-0 w-[500px] h-[500px] bg-cyan-950/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <div id="global-header"></div>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-6 pt-12 pb-24">
+
+    <!-- Hero Section -->
+    <section class="space-y-8 mb-12">
+      
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+          STAFF PRODUCT DESIGN & AI DESIGN ENGINEERING
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Enterprise SaaS: <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">GraphQL & Agentic Workflow Studio</span>
+        </h1>
+
+        <!-- Subtitle focused on Lead Design & UI Engineering -->
+        <p class="text-base sm:text-lg text-zinc-300 max-w-3xl font-normal leading-relaxed">
+          Designed for <strong>Enterprise API Engineers, Platform Architects, and Product Teams</strong> who need real-time governance, visual observability, and safe execution boundaries when exposing complex GraphQL schemas to autonomous, non-deterministic AI agents.
+        </p>
+      </div>
+
+      <!-- Hero Slideshow -->
+      <div class="relative rounded-2xl border border-purple-500/30 bg-zinc-950/90 p-2 sm:p-3 shadow-2xl shadow-purple-950/40 overflow-hidden group">
+        <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden bg-zinc-900">
+          
+          <!-- Slide 1 -->
+          <div class="absolute inset-0 transition-all duration-700 hero-slide-1">
+            <img 
+              src="https://herbharden.com/case-studies/graphql/canvas.png" 
+              alt="React Flow Dynamic Canvas" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">React Flow Canvas & Custom Node Relationship Engine</span>
+              <span class="text-purple-400 font-mono text-[11px] bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">React Flow Canvas</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-2">
+            <img 
+              src="https://herbharden.com/case-studies/graphql/human-in-the-loop-modal.png" 
+              alt="Human-in-the-Loop Intercept Modal" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Human-in-the-Loop Governance & Intercept Modal UX</span>
+              <span class="text-cyan-400 font-mono text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">Governance Engine</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-3">
+            <img 
+              src="https://herbharden.com/case-studies/graphql/active-execution.png" 
+              alt="Active Agent Execution Path" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Active Path Visualizer & Live AI Contract Inspector</span>
+              <span class="text-indigo-400 font-mono text-[11px] bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">Active Execution</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-4">
+            <img 
+              src="https://herbharden.com/case-studies/graphql/schema-inspection.png" 
+              alt="Monaco Schema Inspection Drawer" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Client-Side SDL Parser & Integrated Monaco Sandbox</span>
+              <span class="text-emerald-400 font-mono text-[11px] bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">Monaco Sandbox</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Functional Table of Contents -->
+      <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800/80">
+        <div class="flex items-center gap-2 text-sm uppercase tracking-wider text-white font-bold mb-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          Table of Contents
+        </div>
+        <nav class="flex flex-col space-y-2 text-sm font-medium">
+          <a href="#overview" class="text-purple-400 hover:text-purple-300 transition-colors">1. Executive Overview & Scope</a>
+          <a href="#challenge" class="text-purple-400 hover:text-purple-300 transition-colors">2. Strategic Opportunity & Paradigm Shift</a>
+          <a href="#design-process" class="text-purple-400 hover:text-purple-300 transition-colors">3. AI-Driven Design Process & Build Methodology</a>
+          <a href="#ui-engineering" class="text-purple-400 hover:text-purple-300 transition-colors">4. UI Engineering & Technical Execution</a>
+          <a href="#impact-outcomes" class="text-purple-400 hover:text-purple-300 transition-colors">5. Key Outcomes & Design Leverage</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Article Content Body -->
+    <article class="space-y-12 text-zinc-300 text-sm sm:text-base leading-relaxed w-full">
+
+      <!-- Section 1: Executive Overview -->
+      <section id="overview" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">1. Executive Overview & Scope</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Role, core UI engineering stack, and architectural ownership</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          As enterprise GraphQL APIs transition to support autonomous AI agents acting on behalf of users, a new design challenge emerges: <strong>how to give engineers and operators real-time visual control and governance over agentic graph traversals</strong>. I designed and engineered a production-grade prototype sandbox that visualizes non-deterministic AI agent execution against enterprise GraphQL schemas.
+        </p>
+
+        <!-- Metadata Card -->
+        <div class="p-6 rounded-2xl bg-zinc-900/85 border border-zinc-800/80 shadow-2xl flex flex-col space-y-6 my-6">
+          <div>
+            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">My Role & Approach</div>
+            <div class="text-sm font-bold text-white mt-1">Lead Enterprise Product Designer & AI Design Engineer</div>
+            <div class="text-xs text-zinc-400 mt-1">Self-directed problem identification, AI-assisted architecture mapping, visual design system, and Next.js front-end implementation.</div>
+          </div>
+
+          <div class="border-t border-zinc-800/80 pt-6">
+            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">UI Engineering & AI Tooling Stack</div>
+            <ul class="text-sm font-bold text-white space-y-1">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Next.js (App Router), React 18, & TypeScript
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                React Flow (Custom Node & Edge Rendering Engine)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Monaco Editor & Client-Side GraphQL AST Parser
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                AI Acceleration: Gemini (Architecture & Logic Synthesis) & Cursor (IDE & Implementation)
+              </li>
+            </ul>
+          </div>
+          
+          <div class="border-t border-zinc-800/80 pt-6">
+            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Strategic Design Scope</div>
+            <ul class="text-sm font-bold text-white space-y-1">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Dynamic graph canvas for mapping agent prompt intent into executable GraphQL operation paths.
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Human-in-the-Loop (HITL) safety patterns for real-time mutation authorization and audit trails.
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                Live behavioral contract inspector (JSON/YAML policy guardrails and schema validation).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Strategic Opportunity -->
+      <section id="challenge" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">2. Strategic Opportunity & Paradigm Shift</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Designing for the Next API Consumer: Autonomous AI Agents</p>
+        </div>
+        
+        <p>
+          What consumes an API is fundamentally shifting. Increasingly, it is not a human clicking a UI component, but an AI agent traversing a graph to execute complex workflows. Without visual governance tools, developers cannot verify what schema branches an agent can reach or inspect real-time tool calls before dangerous mutations hit production databases.
+        </p>
+
+        
+      </section>
+
+      <!-- Section 3: AI-Driven Design Process & Build Methodology -->
+      <section id="design-process" class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">3. AI-Driven Design Process & Build Methodology</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">From strategic framing to live code via Gemini and Cursor</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          Inspired by Apollo GraphQL's vision of powering agentic graph experiences, I moved directly from problem articulation into code using advanced AI tooling. Rather than waiting for static requirements, I leveraged <strong>Gemini</strong> to synthesize complex backend schemas into intuitive UX patterns and <strong>Cursor</strong> to pair-engineer a fully functional prototype sandbox.
+        </p>
+
+        <!-- Process Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-3">
+            <div class="text-xs font-mono text-purple-400 font-bold uppercase">Phase 01 • Strategic Problem Framing</div>
+            <h3 class="text-base font-bold text-white">Apollo Vision & Opportunity</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Analyzed how GraphQL schemas serve as ideal context graphs for AI agents, identifying the core UX leverage point: visual observability and HITL governance for agent traversals.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-3">
+            <div class="text-xs font-mono text-cyan-400 font-bold uppercase">Phase 02 • Conceptual AI Synthesis</div>
+            <h3 class="text-base font-bold text-white">Gemini System Architecture</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Used Gemini to model interaction flows, design behavioral contract JSON schemas, and structure the state machine for multi-branch GraphQL node path execution.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-3">
+            <div class="text-xs font-mono text-indigo-400 font-bold uppercase">Phase 03 • AI Design Engineering</div>
+            <h3 class="text-base font-bold text-white">Cursor Code Implementation</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Paired with Cursor to write modular Next.js components, integrate React Flow custom edges, embed Monaco Editor, and build high-fidelity interactive sandboxes directly in code.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: UI Engineering & Technical Execution -->
+      <section id="ui-engineering" class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">4. UI Engineering & Technical Execution</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Building high-fidelity interactive systems with Next.js, React Flow, and Monaco</p>
+        </div>
+
+        <div class="space-y-12">
+          
+          <!-- Deep Dive 1 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-base">4.1</span> Custom React Flow Node Engine & Dynamic Path Highlighting
+            </h3>
+            <p>
+              I extended React Flow with custom node renderers tailored to GraphQL entity relationships. When an agent processes a user prompt, the canvas dynamically highlights active execution paths with CSS glows while dimming unselected schema branches.
+            </p>
+
+            <!-- Full Size Image 1 -->
+            <div class="my-6 rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/graphql/canvas.png" 
+                alt="React Flow Dynamic Canvas" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>React Flow Node Architecture • Real-Time Dynamic Edge Glows</span>
+                <span class="text-purple-400">UI Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Dive 2 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-base">4.2</span> AI Behavioral Contract Inspector & JSON Guardrail Engine
+            </h3>
+            <p>
+              I engineered an inspector drawer that displays live behavioral contracts alongside execution paths. This allows developers to inspect policy boundaries—such as max step depth, execution timeouts, and scope limits—in real-time.
+            </p>
+
+            <!-- Full Size Image 2 -->
+            <div class="my-6 rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/graphql/active-execution.png" 
+                alt="Active Agent Execution Path & Contract Inspector" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>Contract Inspector • Live Policy JSON Inspection Drawer</span>
+                <span class="text-purple-400">Policy UX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Dive 3 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-base">4.3</span> Human-in-the-Loop Intercept Modal & Audit Signature Workflow
+            </h3>
+            <p>
+              To address developer trust and security, I designed and implemented an intercept modal. When an agent attempts high-risk GraphQL mutations, execution halts, enabling operators to inspect parameters, modify inputs, or authorize actions with audit signatures.
+            </p>
+
+            <!-- Full Size Image 3 -->
+            <div class="my-6 rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/graphql/human-in-the-loop-modal.png" 
+                alt="Human-in-the-Loop Intercept Modal" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>HITL Engine • Intercept Modal with Manual Sign-off & Audit Logs</span>
+                <span class="text-cyan-400">Governance UX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Dive 4 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-base">4.4</span> Client-Side GraphQL SDL Parser & Monaco Editor Integration
+            </h3>
+            <p>
+              I integrated Monaco Editor into the studio alongside a client-side SDL parser. Engineers can paste raw GraphQL schema definitions to auto-generate node graphs instantly for sandbox testing.
+            </p>
+
+            <!-- Full Size Image 4 -->
+            <div class="my-6 rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/graphql/schema-inspection.png" 
+                alt="Monaco Schema Inspection Drawer" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>Monaco Editor Integration • Live GraphQL SDL Syntax Highlighting</span>
+                <span class="text-emerald-400">Front-End Engineering</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 5: Impact & Outcomes -->
+      <section id="impact-outcomes" class="space-y-6 border-t border-zinc-800/80 pt-10">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">5. Key Outcomes & Design Leverage</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Proving value through proactive execution and code-level design craft</p>
+        </div>
+
+        <p>
+          By taking full ownership from problem identification through Next.js prototype delivery, this project demonstrates how design engineering accelerates product discovery for emerging AI surfaces.
+        </p>
+
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+            <div>
+              <strong class="text-white">Proactive Problem Ownership:</strong> Transformed an ambiguous problem space (governing agentic API calls) into a tangible visual interaction model without needing upstream product specs.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+            <div>
+              <strong class="text-white">AI Tooling Acceleration:</strong> Demonstrated how combining Gemini (for logic synthesis) and Cursor (for code implementation) compresses weeks of exploration into functional design prototypes.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400 shrink-0 mt-2"></span>
+            <div>
+              <strong class="text-white">Developer Experience Standards:</strong> Established repeatable, reusable UI components for Human-in-the-Loop governance and schema node visualizers.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="border-t border-zinc-800/80 bg-[#09090b] py-8 text-xs text-zinc-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© Herb Harden II • Lead Enterprise Product Designer & AI Design Engineer</div>
+      <div class="flex gap-6">
+        <a href="https://linkedin.com/in/herbharden" target="_blank" class="hover:text-white transition">LinkedIn</a>
+        <a href="mailto:harden.herb@gmail.com" class="hover:text-white transition">Email</a>
+        <span class="text-zinc-500">Updated: September 2026</span>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://herbharden.com/nav.js"></script>
+</body>
+</html>
