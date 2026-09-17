@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    html, body { 
+      background-color: #09090b !important; 
+      margin: 0; 
+      padding: 0; 
+      min-height: 100vh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* CSS-ONLY MODAL STATE CONTROL */
+    #toggle-confidence:checked ~ #modal-confidence,
+    #toggle-alert-1:checked ~ #modal-alert-1,
+    #toggle-alert-2:checked ~ #modal-alert-2,
+    #toggle-alert-3:checked ~ #modal-alert-3,
+    #toggle-alert-4:checked ~ #modal-alert-4,
+    #toggle-alert-5:checked ~ #modal-alert-5,
+    #toggle-alert-6:checked ~ #modal-alert-6,
+    #toggle-alert-7:checked ~ #modal-alert-7 {
+      display: flex !important;
+    }
+
+    /* CSS-ONLY SMOOTH LIVE FEED DATA SIMULATION ANIMATIONS */
+    @keyframes liveMoisture {
+      0%, 100% { content: "50.3"; }
+      25% { content: "50.8"; }
+      50% { content: "49.9"; }
+      75% { content: "50.2"; }
+    }
+    @keyframes liveDensity {
+      0%, 100% { content: "40.1"; }
+      30% { content: "40.3"; }
+      60% { content: "39.9"; }
+    }
+    @keyframes liveCapacity {
+      0%, 100% { content: "78"; }
+      50% { content: "79"; }
+    }
+    @keyframes liveFeedrate {
+      0%, 100% { content: "94"; }
+      40% { content: "95"; }
+      80% { content: "93"; }
+    }
+    @keyframes liveVolume {
+      0%, 100% { content: "425"; }
+      50% { content: "426"; }
+    }
+    @keyframes livePine {
+      0%, 100% { content: "480"; }
+      50% { content: "481"; }
+    }
+    @keyframes liveFir {
+      0%, 100% { content: "336"; }
+      50% { content: "335"; }
+    }
+    @keyframes liveSpruce {
+      0%, 100% { content: "144"; }
+      50% { content: "145"; }
+    }
+
+    #moisture-val::after { content: "50.3"; animation: liveMoisture 6s ease-in-out infinite; }
+    #density-val::after { content: "40.1"; animation: liveDensity 8s ease-in-out infinite; }
+    #capacity-val::after { content: "78"; animation: liveCapacity 5s ease-in-out infinite; }
+    #feedrate-val::after { content: "94"; animation: liveFeedrate 7s ease-in-out infinite; }
+    #volume-val::after { content: "425"; animation: liveVolume 10s ease-in-out infinite; }
+    #pine-val::after { content: "480"; animation: livePine 9s ease-in-out infinite; }
+    #fir-val::after { content: "336"; animation: liveFir 9s ease-in-out infinite; }
+    #spruce-val::after { content: "144"; animation: liveSpruce 9s ease-in-out infinite; }
+  </style>
+</head>
+<body class="min-h-screen w-full bg-zinc-950 text-zinc-100 font-sans antialiased flex flex-col select-none">
+
+  <!-- HIDDEN CHECKBOX TRIGGERS FOR CSS MODALS -->
+  <input type="checkbox" id="toggle-confidence" class="hidden">
+  <input type="checkbox" id="toggle-alert-1" class="hidden">
+  <input type="checkbox" id="toggle-alert-2" class="hidden">
+  <input type="checkbox" id="toggle-alert-3" class="hidden">
+  <input type="checkbox" id="toggle-alert-4" class="hidden">
+  <input type="checkbox" id="toggle-alert-5" class="hidden">
+  <input type="checkbox" id="toggle-alert-6" class="hidden">
+  <input type="checkbox" id="toggle-alert-7" class="hidden">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="h-13 border-b border-zinc-800/80 bg-zinc-900/90 px-4 py-3 flex items-center justify-between shrink-0 text-sm shadow-md sticky top-0 z-20 backdrop-blur-md">
+    
+    <!-- System Branding -->
+    <div class="flex items-center gap-3">
+      <div class="flex h-8 w-8 items-center justify-center rounded-md border border-indigo-500/40 bg-indigo-950/60 text-indigo-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="1"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <span class="font-bold tracking-wider text-zinc-100 uppercase text-xs">HEXION AI</span>
+        <span class="text-zinc-700">|</span>
+        <span class="text-xs text-zinc-400 font-medium tracking-wide">Sawmill Intelligence System</span>
+      </div>
+    </div>
+
+    <!-- Live Telemetry & Header Controls -->
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2 border-r border-zinc-800 pr-4 text-xs text-zinc-400">
+        <span>Model Engine:</span>
+        <span class="text-indigo-400 font-semibold font-mono">WOOD_AI_v2.4</span>
+      </div>
+      
+      <!-- Systems Running Tag (Muted Green) -->
+      <div class="flex items-center gap-2 bg-emerald-950/40 border border-emerald-700/40 px-2.5 py-1 rounded-md">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-65"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+        </span>
+        <span class="font-bold text-emerald-500 text-[11px] tracking-wide">SYSTEMS RUNNING</span>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- MAIN THREE-COLUMN LAYOUT -->
+  <div class="flex-1 grid grid-cols-12 relative divide-x divide-zinc-800/80">
+
+    <!-- COLUMN 1: LEFT SIDEBAR - STATION MATRIX -->
+    <aside class="col-span-12 lg:col-span-2 bg-zinc-900/50 p-3 flex flex-col justify-between relative">
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">Station Matrix</span>
+        </div>
+
+        <div class="space-y-1 text-xs">
+          <!-- Step 01 -->
+          <div class="p-2.5 rounded-md border border-indigo-500/50 bg-indigo-950/40 font-semibold text-indigo-200 shadow-sm flex items-center justify-between">
+            <span>01. Log Yard</span>
+            <span class="text-[10px] bg-indigo-950 text-indigo-300 px-1.5 py-0.5 rounded font-mono border border-indigo-500/30">ACTIVE</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-300 flex items-center justify-between hover:bg-zinc-800/40 transition-colors">
+            <span>02. Debarking</span>
+            <span class="text-[10px] text-zinc-400 font-mono">READY</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-300 flex items-center justify-between hover:bg-zinc-800/40 transition-colors">
+            <span>03. Primary Breakdown</span>
+            <span class="text-[10px] text-zinc-400 font-mono">READY</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-300 flex items-center justify-between hover:bg-zinc-800/40 transition-colors">
+            <span>04. Edging / Trimming</span>
+            <span class="text-[10px] text-zinc-400 font-mono">READY</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-300 flex items-center justify-between hover:bg-zinc-800/40 transition-colors">
+            <span>05. Green Sort & Stack</span>
+            <span class="text-[10px] text-zinc-400 font-mono">READY</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-500 flex items-center justify-between">
+            <span>06. Kiln Drying</span>
+            <span class="text-[10px] text-zinc-600 font-mono">QUEUED</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-500 flex items-center justify-between">
+            <span>07. Cooling & Storage</span>
+            <span class="text-[10px] text-zinc-600 font-mono">QUEUED</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-500 flex items-center justify-between">
+            <span>08. Planing</span>
+            <span class="text-[10px] text-zinc-600 font-mono">QUEUED</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-500 flex items-center justify-between">
+            <span>09. Final Quality Grade</span>
+            <span class="text-[10px] text-zinc-600 font-mono">QUEUED</span>
+          </div>
+
+          <div class="p-2.5 rounded-md border border-zinc-800/60 bg-zinc-900/30 text-zinc-500 flex items-center justify-between">
+            <span>10. Residuals / Energy</span>
+            <span class="text-[10px] text-zinc-600 font-mono">QUEUED</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLUMN 2: CENTER WORKSPACE -->
+    <main class="col-span-12 lg:col-span-6 bg-zinc-950 p-5 space-y-5">
+      
+      <!-- AI SUMMARY CARD -->
+      <div class="border border-indigo-500/50 bg-gradient-to-br from-indigo-950/40 via-zinc-900/80 to-indigo-950/30 p-4 rounded-lg shadow-[0_0_25px_rgba(99,102,241,0.15)] space-y-3 relative overflow-hidden">
+        
+        <div class="absolute inset-0 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none"></div>
+        <div class="absolute -right-12 -top-12 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between border-b border-indigo-500/30 pb-2 relative z-10">
+          <div class="flex items-center gap-2">
+            <div class="relative flex h-3.5 w-3.5 items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400 relative z-10"><path d="M12 2v8"/><path d="m4.93 10.93 4.24 4.24"/><path d="M2 18h8"/><path d="M20 18h2"/><path d="m19.07 10.93-4.24 4.24"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/></svg>
+            </div>
+            <span class="text-xs font-extrabold text-indigo-300 uppercase tracking-widest">AI Summary</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-indigo-950/90 border border-indigo-500/40 px-2.5 py-0.5 rounded font-mono text-[10px] text-indigo-300 shadow-sm">
+            <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+            <span>LIVE WEIGHTS: v2.4-OPT</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 relative z-10">
+          <h4 class="text-xs font-bold text-zinc-100 flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="text-indigo-400">⚡</span> Yield Variance Forecast: High Resin Pine Intake
+            </span>
+            <span class="text-[10px] font-mono text-emerald-500 bg-emerald-950/40 border border-emerald-700/40 px-1.5 py-0.2 rounded">CONFIDENCE: 98.7%</span>
+          </h4>
+          <p class="text-xs text-zinc-300 leading-relaxed font-sans">
+            Batch #842 density and acoustic telemetry indicate higher-than-average sap concentration. Predictive breakdown models suggest increasing primary band saw kerf clearance by <strong class="text-indigo-300 font-mono font-bold">0.4mm</strong> to prevent pitch buildup and optimize recovery by <strong class="text-indigo-300 font-mono font-bold">+2.8%</strong>.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between pt-2 border-t border-indigo-500/20 text-[11px] font-mono text-zinc-400 relative z-10">
+          <div class="flex items-center gap-2">
+            <span class="text-zinc-500">Vector Status:</span>
+            <span class="text-indigo-300 font-semibold">OPTIMIZING KERF PARAMETERS...</span>
+          </div>
+          <span class="text-indigo-300 hover:text-indigo-200 cursor-pointer transition-colors flex items-center gap-1 font-sans text-xs font-bold bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 px-2.5 py-1 rounded">
+            Apply Recipe <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 2. LIVE SENSOR CARDS -->
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span class="animate-pulse absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-50"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-400 shadow-[0_0_8px_rgba(129,140,248,0.8)]"></span>
+            </span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-zinc-300">LIVE SENSOR TELEMETRY STREAM</span>
+          </div>
+
+          <span class="text-xs font-mono text-indigo-300 font-semibold bg-indigo-950/80 border border-indigo-500/30 px-2.5 py-0.5 rounded">10Hz Streaming</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          
+          <!-- Card 1: Moisture -->
+          <div class="p-3.5 bg-zinc-900/90 border border-amber-500/40 rounded-lg shadow-sm space-y-2.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Avg Log Moisture</span>
+              <span class="text-amber-400 font-extrabold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                ABOVE RANGE
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <p class="text-3xl font-bold text-amber-300 font-mono"><span id="moisture-val"></span><span class="text-sm font-normal text-zinc-400 ml-0.5">%</span></p>
+              <span class="text-[11px] text-zinc-400">Target: <strong class="text-zinc-200 font-mono">38%–44%</strong></span>
+            </div>
+            
+            <div class="space-y-1 pt-1">
+              <div class="relative h-2 w-full bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80">
+                <div class="absolute left-[30%] w-[35%] h-full bg-zinc-700/80 border-x border-zinc-500"></div>
+                <div class="absolute top-1/2 -translate-y-1/2 left-[82%] -ml-1">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] text-zinc-400">
+                <span>20%</span>
+                <span class="text-zinc-300 font-medium">Target Zone</span>
+                <span>70%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Density -->
+          <div class="p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-lg shadow-sm space-y-2.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Wood Density</span>
+              <span class="text-emerald-500 font-semibold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                WITHIN RANGE
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <p class="text-3xl font-bold text-zinc-100 font-mono"><span id="density-val"></span><span class="text-sm font-normal text-zinc-400 ml-1">lbs/ft³</span></p>
+              <span class="text-[11px] text-zinc-400">Target: <strong class="text-zinc-200 font-mono">36–45</strong></span>
+            </div>
+
+            <div class="space-y-1 pt-1">
+              <div class="relative h-2 w-full bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80">
+                <div class="absolute left-[25%] w-[45%] h-full bg-emerald-950/40 border-x border-emerald-700/40"></div>
+                <div class="absolute top-1/2 -translate-y-1/2 left-[48%] -ml-1">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-65"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] text-zinc-400">
+                <span>20</span>
+                <span class="text-emerald-500 font-medium">Nominal Range</span>
+                <span>60</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Yard Capacity -->
+          <div class="p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-lg shadow-sm space-y-2.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Yard Capacity</span>
+              <span class="text-emerald-500 font-semibold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                OPTIMAL RANGE
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <p class="text-3xl font-bold text-zinc-100 font-mono"><span id="capacity-val"></span><span class="text-sm font-normal text-zinc-400 ml-0.5">%</span></p>
+              <span class="text-[11px] text-zinc-400">Ideal: <strong class="text-zinc-200 font-mono">60%–85%</strong></span>
+            </div>
+
+            <div class="space-y-1 pt-1">
+              <div class="relative h-2 w-full bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80">
+                <div class="absolute left-[40%] w-[45%] h-full bg-emerald-950/40 border-x border-emerald-700/40"></div>
+                <div class="absolute top-1/2 -translate-y-1/2 left-[68%] -ml-1">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-65"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] text-zinc-400">
+                <span>0%</span>
+                <span class="text-emerald-500 font-medium">Optimal Fill</span>
+                <span>100%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Intake Feed Rate -->
+          <div class="p-3.5 bg-zinc-900/90 border border-amber-500/40 rounded-lg shadow-sm space-y-2.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Intake Feed Rate</span>
+              <span class="text-amber-400 font-extrabold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                BELOW TARGET
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <p class="text-3xl font-bold text-amber-300 font-mono"><span id="feedrate-val"></span><span class="text-sm font-normal text-zinc-400 ml-1">Logs/hr</span></p>
+              <span class="text-[11px] text-zinc-400">Target: <strong class="text-zinc-200 font-mono">110–130</strong></span>
+            </div>
+
+            <div class="space-y-1 pt-1">
+              <div class="relative h-2 w-full bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80">
+                <div class="absolute left-[35%] w-[40%] h-full bg-zinc-700/80 border-x border-zinc-500"></div>
+                <div class="absolute top-1/2 -translate-y-1/2 left-[24%] -ml-1">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] text-zinc-400">
+                <span>50</span>
+                <span class="text-amber-300 font-medium">Target Zone (110–130)</span>
+                <span>180</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Daily Inbound Volume -->
+          <div class="p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-lg shadow-sm space-y-2.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Daily Inbound Volume</span>
+              <span class="text-emerald-500 font-semibold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                ON PACE
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <p class="text-3xl font-bold text-zinc-100 font-mono"><span id="volume-val"></span><span class="text-xs font-normal text-zinc-400 ml-1">MBF</span></p>
+              <span class="text-[11px] text-zinc-400">Target: <strong class="text-zinc-200 font-mono">500 MBF/day</strong></span>
+            </div>
+
+            <div class="space-y-1 pt-1">
+              <div class="relative h-2 w-full bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80">
+                <div class="absolute left-[0%] w-[85%] h-full bg-emerald-950/40 border-r border-emerald-700/40"></div>
+                <div class="absolute top-1/2 -translate-y-1/2 left-[85%] -ml-1">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-65"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] text-zinc-400">
+                <span>0 MBF</span>
+                <span class="text-emerald-500 font-medium">85% Daily Goal</span>
+                <span>500 MBF</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Log Count by Species/Grade -->
+          <div class="p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-lg shadow-sm space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-medium text-zinc-300">Log Count by Species / Grade</span>
+              <span class="text-indigo-200 font-semibold text-[10px] flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                MIX MATCHED
+              </span>
+            </div>
+
+            <div class="space-y-1.5 pt-0.5 text-xs font-mono">
+              <div class="flex justify-between items-center bg-zinc-950/80 p-1.5 rounded border border-zinc-800/80">
+                <span class="text-zinc-400 text-[11px]">Yellow Pine (Grade 1)</span>
+                <span class="text-indigo-300 font-bold"><span id="pine-val"></span> <span class="text-[10px] font-normal text-zinc-500">(50%)</span></span>
+              </div>
+              <div class="flex justify-between items-center bg-zinc-950/80 p-1.5 rounded border border-zinc-800/80">
+                <span class="text-zinc-400 text-[11px]">Douglas Fir (Grade 2)</span>
+                <span class="text-zinc-200 font-bold"><span id="fir-val"></span> <span class="text-[10px] font-normal text-zinc-500">(35%)</span></span>
+              </div>
+              <div class="flex justify-between items-center bg-zinc-950/80 p-1.5 rounded border border-zinc-800/80">
+                <span class="text-zinc-400 text-[11px]">White Spruce (Grade 3)</span>
+                <span class="text-zinc-200 font-bold"><span id="spruce-val"></span> <span class="text-[10px] font-normal text-zinc-500">(15%)</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 1. OPERATIONAL STATUS CARD -->
+      <div class="border border-indigo-500/40 bg-indigo-950/20 p-4 rounded-lg shadow-sm space-y-3 relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex items-center justify-between border-b border-indigo-500/20 pb-2">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2v8"/><path d="m4.93 10.93 4.24 4.24"/><path d="M2 18h8"/><path d="M20 18h2"/><path d="m19.07 10.93-4.24 4.24"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/></svg>
+            <span class="text-xs font-bold text-indigo-300 uppercase tracking-wider">LOG YARD OPERATING STATUS</span>
+          </div>
+          <span class="text-[10px] font-mono font-bold text-emerald-500 flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse"></span> ACTIVE
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-0.5">
+          <div class="bg-zinc-950/80 border border-zinc-800/80 p-2.5 rounded-md">
+            <span class="text-[10px] uppercase font-semibold text-zinc-500 block">Intake Line</span>
+            <span class="text-xs font-mono font-bold text-zinc-100">Line 01</span>
+          </div>
+          <div class="bg-zinc-950/80 border border-zinc-800/80 p-2.5 rounded-md">
+            <span class="text-[10px] uppercase font-semibold text-zinc-500 block">Current Batch</span>
+            <span class="text-xs font-mono font-bold text-indigo-300">#842</span>
+          </div>
+          <div class="bg-zinc-950/80 border border-zinc-800/80 p-2.5 rounded-md">
+            <span class="text-[10px] uppercase font-semibold text-zinc-500 block">Material Grade</span>
+            <span class="text-xs font-mono font-bold text-zinc-100">Pine Stock</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 border-t border-indigo-500/20 text-xs">
+          <div class="flex justify-between items-center text-zinc-400">
+            <span>Shift Target:</span>
+            <span class="font-mono text-zinc-200 font-semibold">1,200 Logs</span>
+          </div>
+          <div class="flex justify-between items-center text-zinc-400">
+            <span>Infeed Velocity:</span>
+            <span class="font-mono text-amber-300 font-semibold">1.4 m/s</span>
+          </div>
+          <div class="flex justify-between items-center text-zinc-400">
+            <span>Est. Completion:</span>
+            <span class="font-mono text-amber-300 font-semibold">15:05 CST</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- COLUMN 3: RIGHT PANEL - APPROVAL QUEUE ALERTS -->
+    <aside class="col-span-12 lg:col-span-4 bg-zinc-900/90 p-4 flex flex-col justify-between space-y-4">
+      
+      <div class="space-y-4">
+        
+        <!-- Panel Title -->
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-2.5">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+            <span class="text-xs font-semibold text-zinc-100 uppercase tracking-wider">Approval Queue</span>
+          </div>
+          <span class="text-[11px] font-mono font-bold bg-zinc-800 text-indigo-300 border border-zinc-700 px-2 py-0.5 rounded">
+            1 ACTIVE
+          </span>
+        </div>
+
+        <!-- 1. TOP SECTION: ACTIVE ALERT CARD -->
+        <div class="p-4 rounded-xl border border-amber-500/60 bg-zinc-950 space-y-3.5 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+          
+          <div class="flex items-center justify-between border-b border-zinc-800/80 pb-2.5">
+            <span class="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-amber-950/40 border border-amber-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+              NEEDS ATTENTION
+            </span>
+            <span class="text-[11px] font-mono text-zinc-400">10:34:12 AM</span>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">High Moisture Spike Detected in Incoming Logs</h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              Acoustic sensors identified unseasoned timber (+8.2% moisture) in Bay 03.
+            </p>
+            
+            <div class="p-2.5 bg-amber-950/20 border border-amber-500/40 rounded-lg space-y-1">
+              <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                <span>⚡</span> Recommended Action:
+              </span>
+              <p class="text-xs text-amber-200 font-medium leading-relaxed">
+                Pre-route to Bay 03 and pre-heat Step 06 Kilns immediately.
+              </p>
+            </div>
+          </div>
+
+          <!-- Metric Row with CLICKABLE AI CONFIDENCE -->
+          <div class="grid grid-cols-2 gap-2 text-xs bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
+            
+            <label for="toggle-confidence" class="text-left p-1.5 rounded hover:bg-zinc-800/90 border border-indigo-500/30 transition-all group cursor-pointer block">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] text-zinc-400 font-semibold uppercase tracking-wider group-hover:text-indigo-300">AI Confidence</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              </div>
+              <p class="text-indigo-300 font-bold font-mono text-xs flex items-center gap-1 mt-0.5">
+                96.4% <span class="text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-500/30 px-1 py-0.2 rounded font-normal">High</span>
+              </p>
+            </label>
+
+            <div class="p-1.5">
+              <span class="text-[10px] text-zinc-400 font-semibold uppercase tracking-wider">Impact</span>
+              <p class="text-amber-300 font-bold font-mono text-xs mt-0.5">Step 06 Kilns</p>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+          <div class="flex gap-2.5 text-xs pt-1">
+            <button class="flex-1 h-9 bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-400 font-bold rounded-lg flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>APPROVE</span>
+            </button>
+            <button class="flex-1 h-9 bg-red-950/80 hover:bg-red-600 border border-red-500/60 text-red-200 hover:text-white font-bold rounded-lg flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+              <span>DENY</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- 2. STREAMLINED PREVIOUS ALERTS LIST (Boxless Approved/Overridden Tags) -->
+        <div class="space-y-2 border-t border-zinc-800 pt-3">
+
+          <div class="space-y-2">
+            
+            <!-- Alert 1 -->
+            <label for="toggle-alert-1" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-500 bg-emerald-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    APPROVED
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 17 • 08:15 AM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-indigo-300 transition-colors leading-relaxed pt-0.5">
+                  Debarker Line 02 High Amp Strain
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 3 -->
+            <label for="toggle-alert-3" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-500 bg-emerald-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    APPROVED
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 16 • 11:20 AM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-indigo-300 transition-colors leading-relaxed pt-0.5">
+                  Step 05 Feed Speed Optimization
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 7 -->
+            <label for="toggle-alert-7" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-red-400 bg-red-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    OVERRIDDEN
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 14 • 10:15 AM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-red-300 transition-colors leading-relaxed pt-0.5">
+                  Bypass Hydraulic Filter Flush Cycle
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 4 -->
+            <label for="toggle-alert-4" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-500 bg-emerald-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    APPROVED
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 15 • 02:10 PM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-indigo-300 transition-colors leading-relaxed pt-0.5">
+                  Auto-Balance Primary Saw Blade Tension
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 5 -->
+            <label for="toggle-alert-5" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-500 bg-emerald-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    APPROVED
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 15 • 09:45 AM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-indigo-300 transition-colors leading-relaxed pt-0.5">
+                  Calibrate Infeed Scanner Optical Lens
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 2 -->
+            <label for="toggle-alert-2" class="w-full text-left p-2.5 rounded-lg border border-transparent bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-800 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-red-400 bg-red-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    OVERRIDDEN
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 16 • 04:42 PM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-red-300 transition-colors leading-relaxed pt-0.5">
+                  Re-route Softwood Stack to Bay 04
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+            <!-- Alert 6 -->
+            <label for="toggle-alert-6" class="w-full text-left p-2.5 rounded-lg border border-zinc-800 bg-zinc-950/80 hover:bg-zinc-900 hover:border-zinc-700 transition-all group flex items-start justify-between cursor-pointer block">
+              <div class="space-y-1 flex-1 pr-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-500 bg-emerald-950/30 px-1.5 py-0.5 rounded flex items-center gap-1 font-mono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    APPROVED
+                  </span>
+                  <span class="text-[10px] text-zinc-500 font-mono">SEP 14 • 03:30 PM</span>
+                </div>
+                <p class="text-xs text-zinc-300 group-hover:text-indigo-300 transition-colors leading-relaxed pt-0.5">
+                  Adjust Planer Head Clearance (-0.2mm)
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-500 group-hover:text-zinc-200 transition-colors mt-0.5"><path d="m9 18 6-6-6-6"/></svg>
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-zinc-800 pt-3 mt-4 flex items-center justify-between text-[11px] text-zinc-500">
+        <span>HITL AUDIT LOG SYNCED</span>
+        <span class="text-indigo-400 font-mono font-medium">ALL PLC LOGS SECURE</span>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- BOTTOM STATUS FOOTER BAR -->
+  <footer class="h-8 border-t border-zinc-800/80 bg-zinc-900/90 px-4 py-2 flex items-center justify-between font-mono text-[11px] text-zinc-400 shadow-md">
+    <div class="flex items-center gap-4">
+      <span class="text-indigo-400 font-medium flex items-center gap-1.5">
+        <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span> STEP 01: LOG YARD ACTIVE
+      </span>
+      <span>|</span>
+      <span>PLC_GATEWAY: CONNECTED</span>
+    </div>
+    <div>
+      <span>HEXION WOOD_AI PLATFORM v2.4</span>
+    </div>
+  </footer>
+
+  <!-- HISTORICAL ALERT MODALS -->
+  <div id="modal-alert-1" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-1" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-emerald-500">APPROVED</span>
+          <span class="text-zinc-400">SEP 17 • 08:15 AM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Debarker Line 02 High Amp Strain</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Motor draw on Debarker Line 02 spiked to 142 Amps due to oversized hardwood bark buildup. System recommended reducing line feed rate by 5%.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Operator approved adjustment at 08:15 AM. Setpoint parameter push to PLC verified.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-1" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-2" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-2" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-red-400">OVERRIDDEN</span>
+          <span class="text-zinc-400">SEP 16 • 04:42 PM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Re-route Softwood Stack to Bay 04</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Predictive shift inventory model suggested re-routing softwoods to Bay 04 to balance yard forklift transit distances.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Manual Override by Operator: Bay 04 reserved for scheduled weekly maintenance sweep.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-2" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-3" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-3" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-emerald-500">APPROVED</span>
+          <span class="text-zinc-400">SEP 16 • 11:20 AM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Step 05 Feed Speed Optimization</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Intake throughput model suggested increasing Green Sort conveyor speed by 4% due to low downstream queue latency.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Operator approved speed adjustment at 11:20 AM. Throughput optimized by +3.8%.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-3" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-4" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-4" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-emerald-500">APPROVED</span>
+          <span class="text-zinc-400">SEP 15 • 02:10 PM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Auto-Balance Primary Saw Blade Tension</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Vibration sensors detected minor harmonic drift on primary band saw. System proposed a 1.2% hydraulic tension re-balance.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Operator approved at 02:10 PM. Harmonic balance restored; blade wear rate normalized.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-4" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-5" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-5" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-emerald-500">APPROVED</span>
+          <span class="text-zinc-400">SEP 15 • 09:45 AM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Calibrate Infeed Scanner Optical Lens</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Optical vision model flagged minor dust occlusion on Log Yard Scanner 01 lens. System recommended air-blast purge sequence.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Purge sequence executed at 09:45 AM. Image clarity restored to 99.8% baseline.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-5" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-6" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-6" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-emerald-500">APPROVED</span>
+          <span class="text-zinc-400">SEP 14 • 03:30 PM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Adjust Planer Head Clearance (-0.2mm)</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Thickness gauge telemetries detected slight oversized variance (+0.25mm) on 2x4 dimensions coming off downstream line.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Clearance micro-adjustment approved at 03:30 PM. Board dimension target achieved.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-6" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alert-7" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-alert-7" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <span class="text-xs font-bold text-red-400">OVERRIDDEN</span>
+          <span class="text-zinc-400">SEP 14 • 10:15 AM</span>
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Bypass Hydraulic Filter Flush Cycle</h3>
+      </div>
+
+      <div class="space-y-3 text-xs text-zinc-300">
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">AI Event Description</span>
+          <p class="leading-relaxed text-zinc-300">Automated maintenance agent suggested deferring hydraulic filter flush by 4 hours to prioritize log batch output.</p>
+        </div>
+
+        <div class="p-3 bg-zinc-950 rounded-lg border border-zinc-800 space-y-1">
+          <span class="text-[10px] text-zinc-500 uppercase font-semibold tracking-wider">Operator Action & Audit Trail</span>
+          <p class="leading-relaxed text-zinc-300 font-mono text-[11px]">Manual Override by Operator: Scheduled immediate manual filter change to prevent pump cavitation.</p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-alert-7" class="px-4 h-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Close Audit Record
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI CONFIDENCE BREAKDOWN MODAL DIALOG -->
+  <div id="modal-confidence" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-900 border border-indigo-500/40 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative">
+      <label for="toggle-confidence" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 p-1 rounded-md hover:bg-zinc-800 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </label>
+
+      <div class="space-y-1">
+        <div class="flex items-center gap-1.5 text-xs font-mono text-indigo-400 font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0-.556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a3 3 0 1 0-6 0"/><path d="M12 10v3"/></svg>
+          AI CONFIDENCE ANALYSIS
+        </div>
+        <h3 class="text-base font-bold text-zinc-100">Score Matrix: 96.4% High Certainty</h3>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <p class="text-zinc-300 leading-relaxed">
+          The confidence score is synthesized across three concurrent sensor models:
+        </p>
+
+        <div class="space-y-2 font-mono">
+          <div class="p-2.5 bg-zinc-950 rounded-lg border border-zinc-800 flex justify-between items-center">
+            <span class="text-zinc-400">Acoustic Resonator</span>
+            <span class="text-indigo-300 font-bold">98.2%</span>
+          </div>
+          <div class="p-2.5 bg-zinc-950 rounded-lg border border-zinc-800 flex justify-between items-center">
+            <span class="text-zinc-400">Infrared Surface Density</span>
+            <span class="text-indigo-300 font-bold">95.1%</span>
+          </div>
+          <div class="p-2.5 bg-zinc-950 rounded-lg border border-zinc-800 flex justify-between items-center">
+            <span class="text-zinc-400">Historical Batch Correlation</span>
+            <span class="text-indigo-300 font-bold">95.9%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <label for="toggle-confidence" class="px-4 h-8 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-center">
+          Dismiss Analysis
+        </label>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
