@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise AI Operations Platform | Hexion Intelligence OS Case Study</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7C3AED',
+              cyan: '#06B6D4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      background-color: #09090b !important;
+      color: #f4f4f5 !important;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes heroCrossfade {
+      0%, 45% { opacity: 1; z-index: 10; transform: scale(1); }
+      50%, 95% { opacity: 0; z-index: 1; transform: scale(1.02); }
+      100% { opacity: 1; z-index: 10; transform: scale(1); }
+    }
+    .hero-slide-1 { animation: heroCrossfade 12s infinite 0s ease-in-out; }
+    .hero-slide-2 { animation: heroCrossfade 12s infinite 6s ease-in-out; }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#09090b] text-zinc-100 font-['Inter',sans-serif] antialiased min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+  <!-- Ambient Glowing Radial Backgrounds -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/35 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-0 w-[500px] h-[500px] bg-cyan-950/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <div id="global-header"></div>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-6 pt-12 pb-24">
+
+    <!-- Hero Section -->
+    <section class="space-y-8 mb-12">
+      
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-xs font-semibold">
+  <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+  CONCEPT PROTOTYPE
+</div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Hexion Intelligence OS: <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">Designing an Enterprise AI & Real-Time Telemetry Dashboard with HITL Workflows for Industrial IoT</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-zinc-300 max-w-3xl font-normal leading-relaxed">
+          An enterprise AI operations platform designed for shift supervisors and mill operators in industrial lumber manufacturing, bridging raw IoT sensor data with autonomous industrial control.
+        </p>
+      </div>
+
+      <div class="pt-2">
+  <a 
+    href="https://www.herbharden.com/case-studies/hexion/app" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-purple-950/50 hover:shadow-purple-900/50 group"
+  >
+    <span>Live Prototype</span>
+    <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  </a>
+</div>
+
+      <!-- Hero Slideshow -->
+      <div class="relative rounded-2xl border border-purple-500/30 bg-zinc-950/90 p-2 sm:p-3 shadow-2xl shadow-purple-950/40 overflow-hidden group">
+        <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden bg-zinc-900">
+          
+          <!-- Slide 1 -->
+          <div class="absolute inset-0 transition-all duration-700 hero-slide-1"> 
+            <img 
+              src="https://herbharden.com/case-studies/hexion/screenshot-1.png" 
+              alt="Hexion Intelligence OS Main Dashboard" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">10-Stage Station Matrix & Real-Time Telemetry Stream</span>
+              <span class="text-purple-400 font-mono text-[11px] bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">Operations Dashboard</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-2">
+            <img 
+              src="https://herbharden.com/case-studies/hexion/screenshot-modal.png" 
+              alt="Human-in-the-Loop AI Confidence Analysis Modal" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Human-in-the-Loop (HITL) AI Confidence Analysis Modal</span>
+              <span class="text-cyan-400 font-mono text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">Governance Engine</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Functional Table of Contents -->
+      <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800/80">
+        <div class="flex items-center gap-2 text-sm uppercase tracking-wider text-white font-bold mb-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          Table of Contents
+        </div>
+        <nav class="flex flex-col space-y-2 text-sm font-medium">
+          <a href="#executive-summary" class="text-purple-400 hover:text-purple-300 transition-colors">1. Executive Summary & Role</a>
+          <a href="#product-vision" class="text-purple-400 hover:text-purple-300 transition-colors">2. Product Vision & Core Value Proposition</a>
+          <a href="#user-personas" class="text-purple-400 hover:text-purple-300 transition-colors">3. User Personas & Target Workflows</a>
+          <a href="#ui-decisions" class="text-purple-400 hover:text-purple-300 transition-colors">4. Key UI Design Decisions & Architecture</a>
+          <a href="#impact-results" class="text-purple-400 hover:text-purple-300 transition-colors">5. Quantifiable Impact & Tech Stack</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Article Content Body -->
+    <article class="space-y-12 text-zinc-300 text-sm sm:text-base leading-relaxed w-full">
+
+      <!-- Section 1: Executive Summary -->
+      <section id="executive-summary" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">1. Executive Summary & Role</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Platform overview, operational context, and design engineering ownership</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          Hexion Intelligence OS is an enterprise AI operations platform designed for shift supervisors and mill operators in industrial lumber manufacturing. The product bridges the gap between raw IoT sensor data and autonomous industrial control by continuously streaming real-time telemetry across a 10-stage milling process—from initial log yard intake to final residual energy management.
+        </p>
+
+        <!-- Metadata Card -->
+        <div class="p-6 rounded-2xl bg-zinc-900/85 border border-zinc-800/80 shadow-2xl flex flex-col space-y-6 my-6">
+          <div>
+            <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">My Role: From Strategy to Production</div>
+            <div class="text-sm font-bold text-white mt-1">Enterprise Product Designer & AI Design Engineer</div>
+            <div class="text-xs text-zinc-400 mt-1">Bridging the gap between high-level advisory and hands-on code delivery, translating upstream discovery insights into fully functional, high-performance React prototypes deployed via Vercel and GitHub.</div>
+          </div>
+
+          <div class="border-t border-zinc-800/80 pt-6 space-y-4">
+            <div>
+              <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-1">Strategic Advisory & Discovery</div>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                As the product design lead, the engagement began upstream—facilitating client discovery sessions with C360 and Hexion stakeholders, identifying user trust as the primary bottleneck to AI adoption, and defining the core architectural framework across four strategic workstreams.
+              </p>
+            </div>
+            <div>
+              <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-1">Product Discovery Facilitator</div>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                Driving the client discovery engagement with C360 and Hexion stakeholders, structuring key discussions around hardware form factors, environmental constraints, alert fatigue, and system autonomy.
+              </p>
+            </div>
+            <div>
+              <div class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-1">Design Engineering Execution</div>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                Leveraging a modern tech stack—including React, TypeScript, Tailwind CSS, and Radix UI—custom high-density interfaces, micro-interactions, and live data simulations were coded and deployed via Vercel and GitHub. This hands-on prototyping approach proved that complex industrial telemetry could be transformed into glanceable, high-performance web applications ready for ruggedized floor environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Product Vision & Core Value Proposition -->
+      <section id="product-vision" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">2. Product Vision & Core Value Proposition</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Problem space, industrial friction, and human-AI synergy</p>
+        </div>
+        
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-white">Problem Space & Industrial Friction</h3>
+          <p>
+            Modern lumber manufacturing deals with unpredictable, biological raw materials. Natural variances like sudden moisture spikes or high sap concentrations in incoming timber create severe operational friction. Without real-time visibility, these anomalies lead to heavy machinery strain, unexpected downtime, severe production bottlenecks, and lower overall recovery yields.
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-2">
+          <h3 class="text-lg font-bold text-white">AI-Driven Product Solution</h3>
+          <p>
+            The platform acts as a unified industrial intelligence engine that ingests continuous 10Hz IoT sensor data across the milling lifecycle. By blending live telemetry streams with predictive machine learning models, the system actively identifies physical anomalies and translates them into actionable guidance for shift supervisors and mill operators.
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-2">
+          <h3 class="text-lg font-bold text-white">Core Value & Human-AI Synergy</h3>
+          <p>
+            Hexion Intelligence OS successfully bridges the gap between fully autonomous machine control and human operational accountability. It empowers operators with data-backed recommendations—such as precision saw kerf adjustments—driving higher lumber recovery percentages, protecting high-value capital equipment from wear, and ensuring daily production quotas are met.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: User Personas & Target Workflows -->
+      <section id="user-personas" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">3. User Personas & Target Workflows</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Shift supervisors, operators, and core feature capabilities</p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-3">
+          <div class="text-xs font-mono text-purple-400 font-bold uppercase">Primary Persona</div>
+          <h3 class="text-base font-bold text-white">Shift Supervisor / Mill Floor Operator</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            The primary user responsible for managing physical throughput, monitoring machine health, and hitting shift targets (e.g., 1,200 logs/shift).
+          </p>
+          <div class="pt-2 border-t border-zinc-800/80">
+            <div class="text-xs font-semibold text-white mb-2">Workflow Loop:</div>
+            <ul class="text-xs text-zinc-300 space-y-1.5">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <strong>Monitor:</strong> Continuously track macro facility health (Station Matrix) and granular telemetry (moisture, density, feed rates).
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <strong>Diagnose:</strong> Review AI-generated predictive insights (e.g., Yield Variance Forecasts).
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <strong>Action:</strong> Execute or override automated recommendations via Human-in-the-Loop (HITL) approval gates.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-4 pt-4">
+          <h3 class="text-xl font-bold text-white">Key Product Features & Functional Capabilities</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80 space-y-2">
+              <h4 class="text-sm font-bold text-white">End-to-End Process Mapping (Station Matrix)</h4>
+              <p class="text-xs text-zinc-400 leading-relaxed">A 10-stage sequential tracking framework providing instant visual awareness across the entire milling lifecycle (from Log Yard to Residuals).</p>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80 space-y-2">
+              <h4 class="text-sm font-bold text-white">Predictive Intelligence & Recipe Optimization</h4>
+              <p class="text-xs text-zinc-400 leading-relaxed">Algorithmic forecasting that translates raw sensor data into concrete mechanical adjustments (e.g., increasing kerf clearance by 0.4mm to boost recovery by +2.8%).</p>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80 space-y-2">
+              <h4 class="text-sm font-bold text-white">Real-time Telemetry Grid</h4>
+              <p class="text-xs text-zinc-400 leading-relaxed">Continuous streaming of critical physical metrics, with automated conditional highlighting (amber flags) for out-of-tolerance conditions like timber moisture anomalies.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80 space-y-2">
+              <h4 class="text-sm font-bold text-white">Human-in-the-Loop (HITL) Approval Engine</h4>
+              <p class="text-xs text-zinc-400 leading-relaxed">A safety-critical decision queue allowing operators to vet, approve, or deny high-impact AI interventions backed by transparent confidence metrics (e.g., 96.4%).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Key UI Design Decisions & Architectural Rationale -->
+      <section id="ui-decisions" class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">4. Key UI Design Decisions & Architectural Rationale</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Designing for high-stress, high-throughput industrial control rooms</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          As the Lead Enterprise Product Designer & AI Design Engineer for this initiative, the design objective was to build an enterprise-grade Intelligence OS that bridges the gap between raw, high-frequency IoT data and human-in-the-loop (HITL) industrial operations. Mill floor operators and shift supervisors manage high-stress, high-throughput environments where split-second decisions prevent equipment damage and maximize lumber yield.
+        </p>
+
+        <div class="space-y-8 pt-4">
+          
+          <!-- UI Decision 1 -->
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-xs">01</span> Industrial Stone Canvas & Contrast Hierarchy
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              <strong>Design Decision:</strong> Built directly on top of the existing Hexion design system, we established a neutral, industrial-grade canvas (#d4d4d8 Zinc 300) paired with structured structural panels (#eaeaea) to minimize eye fatigue during extended 8-to-10-hour shifts.
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong>Rationale:</strong> Standard consumer dark modes or stark white enterprise themes fail in industrial control rooms. Adapting the existing Hexion design tokens, the zinc-toned architectural palette provides a calm, industrial aesthetic that anchors high-priority status indicators without causing glare.
+            </p>
+          </div>
+
+          <!-- UI Decision 2 -->
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-xs">02</span> Context-Driven Layout Architecture (Three-Column Layout)
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              <strong>Design Decision:</strong> The interface utilizes an asymmetric 3-column layout: a left-hand Station Matrix (10-stage process map), a central operational workspace (Shift Briefings, AI Summaries, and 10Hz Sensor Streams), and a dedicated right-hand Approval Queue.
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong>Rationale:</strong> This mirrors the mental model of a shift supervisor: macro-level spatial orientation on the left, active execution and telemetry in the center, and exception handling/gatekeeping on the right.
+            </p>
+          </div>
+
+          <!-- UI Decision 3 -->
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-xs">03</span> Progressive Disclosure & State-Driven Telemetry Cards
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              <strong>Design Decision:</strong> Sensor cards utilize conditional state formatting—neutral tones for optimal ranges (#6A7B53 accents) and prominent, high-urgency amber borders with pulsing indicator nodes for out-of-spec conditions (e.g., moisture spikes).
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong>Rationale:</strong> In a sea of data, operators need to spot anomalies at a glance. Color-coding and animated ping indicators draw immediate visual attention to parameters that require human intervention without cluttering the dashboard.
+            </p>
+          </div>
+
+          <!-- UI Decision 4 -->
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-xs">04</span> Human-in-the-Loop (HITL) Safety & Transparency Patterns
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              <strong>Design Decision:</strong> Critical AI recommendations are placed directly in the active approval workflow alongside explicit, clickable confidence metrics (e.g., "96.4% High") that trigger transparent modal breakdowns of underlying acoustic and infrared models.
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong>Rationale:</strong> Industrial AI cannot operate as a black box. By surfacing multi-model confidence scores and pairing them with unmistakable action gates (APPROVE / DENY), the UI builds trust and enforces strict operational accountability.
+            </p>
+          </div>
+
+          <!-- UI Decision 5 -->
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400 font-mono text-xs">05</span> Micro-Interactions & Live Data Simulation
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              <strong>Design Decision:</strong> Incorporated CSS-driven live data animations and pseudo-elements (@keyframes) simulating 10Hz streaming updates across metrics like log moisture and density.
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong>Rationale:</strong> Real-time feedback reassures operators that the pipeline is actively streaming and healthy, eliminating the ambiguity of static dashboards in fast-moving manufacturing flows.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Embedded Screenshots -->
+        <div class="space-y-8 pt-6">
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-white">Full Platform Architecture View</h4>
+            <div class="rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/hexion/screenshot-1.png" 
+                alt="Hexion Intelligence OS Main Dashboard" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>10-Stage Station Matrix • Central Workspace • Approval Queue</span>
+                <span class="text-purple-400">UI Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-white">Human-in-the-Loop Intercept & Confidence Breakdown</h4>
+            <div class="rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/hexion/screenshot-modal.png" 
+                alt="Human-in-the-Loop AI Confidence Analysis Modal" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>Multi-Model AI Confidence Analysis • Acoustic & Infrared Resonator Breakdown</span>
+                <span class="text-cyan-400">Governance UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Section 5: Quantifiable Impact & Tech Stack -->
+      <section id="impact-results" class="space-y-6 border-t border-zinc-800/80 pt-10">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">5. Quantifiable Impact & Tech Stack</h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Projected business results and engineering tools used</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white">Yield & Recovery Uplift</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Projected increase in lumber recovery yield by translating raw, uncalibrated sensor anomalies into precise mechanical adjustments (such as automated saw kerf clearance modifications).</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white">Operational Efficiency & Time-to-Action</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Accelerated shift response times by packaging complex 10Hz IoT telemetry and predictive AI forecasts into glanceable, 1-click approval workflows, drastically reducing the delay between anomaly detection and floor-level corrective action.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white">Risk Mitigation & Asset Protection</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Prevented catastrophic machine jams, pitch buildup, and unexpected downtime through early anomaly detection and continuous telemetry streaming.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white">Alert Fatigue Reduction</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Designed a tiered notification hierarchy and explainable AI (XAI) confidence scoring model that filters out low-priority noise, ensuring operators only intercept critical high-variance events.</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-zinc-900/85 border border-zinc-800/80 shadow-2xl space-y-4">
+          <h3 class="text-sm font-semibold text-zinc-400 uppercase tracking-wider">Tech Stack & Tools Used</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">HTML5</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">CSS3</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Tailwind CSS</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Javascript</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">TypeScript</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">React</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Radix UI</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Gemini</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">GitHub</span>
+            <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Vercel</span>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="border-t border-zinc-800/80 bg-[#09090b] py-8 text-xs text-zinc-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© Herb Harden II • Enterprise Product Designer & AI Design Engineer</div>
+      <div class="flex gap-6">
+        <a href="https://linkedin.com/in/herbharden" target="_blank" class="hover:text-white transition">LinkedIn</a>
+        <a href="mailto:harden.herb@gmail.com" class="hover:text-white transition">Email</a>
+        <span class="text-zinc-500">Updated: September 2026</span>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://herbharden.com/nav.js"></script>
+</body>
+</html>
