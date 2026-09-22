@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GE Vernova: Designing the Future of Autonomous Asset Management</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7C3AED',
+              cyan: '#06B6D4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      background-color: #09090b !important;
+      color: #f4f4f5 !important;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes heroCrossfade {
+      0%, 45% { opacity: 1; z-index: 10; transform: scale(1); }
+      50%, 95% { opacity: 0; z-index: 1; transform: scale(1.02); }
+      100% { opacity: 1; z-index: 10; transform: scale(1); }
+    }
+    .hero-slide-1 { animation: heroCrossfade 12s infinite 0s ease-in-out; }
+    .hero-slide-2 { animation: heroCrossfade 12s infinite 6s ease-in-out; }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#09090b] text-zinc-100 font-['Inter',sans-serif] antialiased min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+  <!-- Ambient Glowing Radial Backgrounds -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/35 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-0 w-[500px] h-[500px] bg-cyan-950/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-6 pt-12 pb-24">
+
+    <!-- Hero Section -->
+    <section class="space-y-8 mb-12">
+      
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+          ENTERPRISE INDUSTRIAL AI
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          GE Vernova: <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-300 bg-clip-text text-transparent">Designing the Future of Autonomous Asset Management</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-zinc-300 max-w-3xl font-normal leading-relaxed">
+          An enterprise AI-augmented monitoring dashboard bridging raw industrial IoT sensor telemetry with autonomous reliability engineering for GE Vernova infrastructure.
+        </p>
+      </div>
+
+      <div class="pt-2">
+        <a 
+          href="https://www.herbharden.com/case-studies/assetguardian/app" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-purple-950/50 hover:shadow-purple-900/50 group"
+        >
+          <span>View Concept Prototype</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Hero Slideshow -->
+      <div class="relative rounded-2xl border border-purple-500/30 bg-zinc-950/90 p-2 sm:p-3 shadow-2xl shadow-purple-950/40 overflow-hidden group">
+        <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden bg-zinc-900">
+          
+          <!-- Slide 1 -->
+          <div class="absolute inset-0 transition-all duration-700 hero-slide-1"> 
+            <img 
+              src="https://herbharden.com/case-studies/ge-vernova-asset-guardian/asset-guardian-fullscreen.png" 
+              alt="AssetGuardian AI 3D Asset Diagnostics Fullscreen View" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Interactive Fullscreen Telemetry Matrix & Diagnostics</span>
+              <span class="text-purple-400 font-mono text-[11px] bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">Operations Dashboard</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="absolute inset-0 transition-all duration-700 opacity-0 hero-slide-2">
+            <img 
+              src="https://herbharden.com/case-studies/ge-vernova-asset-guardian/asset-guardian-product-modal.png" 
+              alt="AssetGuardian Product Modal & Automated Remediation Controls" 
+              class="w-full h-full object-cover object-top"
+            />
+            <div class="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 backdrop-blur-md text-xs text-zinc-300">
+              <span class="font-medium">Component Modal Inspection & AI Remediation Controls</span>
+              <span class="text-cyan-400 font-mono text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">Remediation Engine</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Hero Metadata Table -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl text-slate-200">
+        <div>
+          <span class="block text-xs font-semibold tracking-wider text-slate-400 uppercase mb-1">Role</span>
+          <span class="block text-sm font-medium text-slate-100">Lead Enterprise Product Designer & AI Design Engineer</span>
+        </div>
+        <div>
+          <span class="block text-xs font-semibold tracking-wider text-slate-400 uppercase mb-1">Domain</span>
+          <span class="block text-sm font-medium text-slate-100">Industrial IoT & Enterprise Asset Management</span>
+        </div>
+        <div>
+          <span class="block text-xs font-semibold tracking-wider text-slate-400 uppercase mb-1">Focus</span>
+          <span class="block text-sm font-medium text-slate-100">Workflow modernization, facility node hierarchies, & component scaling</span>
+        </div>
+        <div>
+          <span class="block text-xs font-semibold tracking-wider text-slate-400 uppercase mb-1">Impact</span>
+          <span class="block text-sm font-medium text-slate-100">Streamlined critical asset monitoring & reduced operator cognitive load</span>
+        </div>
+      </div>
+
+      <!-- Tech Stack Card -->
+      <div class="p-6 rounded-2xl bg-zinc-900/85 border border-zinc-800/80 shadow-2xl space-y-4">
+        <div class="flex items-center gap-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          Tech Stack & Tools Used
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">HTML5</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">CSS3</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Tailwind CSS</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Javascript</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">TypeScript</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">React</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">WebGL</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Three.js</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Chart.js</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Gemini</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">StackBlitz</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">GitHub</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-800 text-zinc-200 text-xs font-mono">Vercel</span>
+        </div>
+      </div>
+
+      <!-- Functional Table of Contents (4 Sections) -->
+      <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800/80">
+        <div class="flex items-center gap-2 text-sm uppercase tracking-wider text-white font-bold mb-3">
+          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          Table of Contents
+        </div>
+        <nav class="flex flex-col space-y-2 text-sm font-medium">
+          <a href="#executive-summary" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>1. Executive Summary</a>
+          <a href="#the-challenge" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>2. The Challenge</a>
+          <a href="#solution-execution" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>3. The Solution and Execution</a>
+          <a href="#business-impact" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>4. Targeted Business Impact</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Article Content Body (4 Sections) -->
+    <article class="space-y-12 text-zinc-300 text-sm sm:text-base leading-relaxed w-full">
+
+      <!-- Section 1: Executive Summary -->
+      <section id="executive-summary" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">
+            1. Executive Summary
+          </h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Platform overview and strategic design leadership</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          AssetGuardian AI represents a paradigm shift in industrial asset management, fusing high-throughput IoT telemetry streams with immersive WebGL 3D asset health viewports and intelligent automation guardrails. As a Staff Enterprise Product Designer, my mandate spanned orchestrating complex enterprise workflows across multi-node facilities, defining scalable design system architectures, and establishing human-AI interaction patterns that mitigate automation bias in high-stakes operational environments.
+        </p>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          By aligning product strategy with deep reliability engineering constraints, we transformed siloed diagnostic processes into an intuitive, proactive command center. The result significantly compresses triage cycles, eliminates false-positive alert fatigue, and protects multi-million-dollar physical infrastructure through transparent, verifiable AI governance.
+        </p>
+      </section>
+
+      <!-- Section 2: The Challenge -->
+      <section id="the-challenge" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">
+            2. The Challenge
+          </h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Operational bottlenecks and enterprise UI friction</p>
+        </div>
+
+        <!-- The Product Challenge -->
+        <div class="space-y-2">
+          <div class="text-xs font-mono font-semibold text-purple-400 uppercase tracking-wider">The Product</div>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Heavy machinery like gas turbine compressors and industrial generators experience micro-vibrations that precede component wear. Maintenance teams miss early degradation signals when parsing siloed CSV logs or manual inspection schedules.
+          </p>
+        </div>
+
+        <!-- The Design Challenge -->
+        <div class="space-y-4 pt-2">
+          <div class="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider">The Design</div>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Enterprise operators faced acute UI complexity and interaction friction when navigating dense facility architectures under extreme time constraints:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+            <div class="p-5 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+              <div class="w-8 h-8 rounded-lg bg-red-950/80 border border-red-700/60 flex items-center justify-center text-red-400 font-bold text-xs font-mono">01</div>
+              <h3 class="text-sm font-bold text-white">Siloed Data</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed">Data was trapped across disconnected legacy tools, requiring manual cross-referencing to diagnose equipment stress.</p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-950/80 border border-amber-700/60 flex items-center justify-center text-amber-400 font-bold text-xs font-mono">02</div>
+              <h3 class="text-sm font-bold text-white">Severe Alert Fatigue</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed">Platforms generated overwhelming false-positive alarms daily, obscuring true degradation warnings.</p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+              <div class="w-8 h-8 rounded-lg bg-purple-950/80 border border-purple-700/60 flex items-center justify-center text-purple-400 font-bold text-xs font-mono">03</div>
+              <h3 class="text-sm font-bold text-white">Context Switching Overhead</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed">Operators had to constantly pivot between disparate monitoring tools, buried directory hierarchies, and legacy manuals during active failure responses.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: The Solution and Execution -->
+      <section id="solution-execution" class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">
+            3. The Solution and Execution
+          </h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Staff-level design architecture, unified telemetry systems, and AI governance</p>
+        </div>
+
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+          As a staff enterprise product designer, my approach centered on translating complex algorithmic outputs into intuitive, high-velocity decision workflows. Rather than simply skinning raw telemetry feeds, I architected a holistic design system framework that bridges real-time IoT event streams with spatial 3D visualization. By establishing rigorous human-AI interaction contracts, setting up predictable component scaling guidelines, and partnering closely with engineering stakeholders, we delivered a resilient command architecture that empowers operators to act with absolute confidence during critical facility events.
+        </p>
+
+        <!-- Horizontally Stacked Solution Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <div class="text-purple-400 font-mono text-xs mb-2">PILLAR 01</div>
+              <h3 class="text-sm font-bold text-white mb-2">Spatial Priority Grid & WebGL Viewports</h3>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                Pinned high-priority assets front-and-center, paired directly with live Three.js 3D models featuring pulsing anomaly hotspots for rapid visual root-cause identification.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-3 p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <div class="text-purple-400 font-mono text-xs mb-2">PILLAR 02</div>
+              <h3 class="text-sm font-bold text-white mb-2">Industrial Design Tokens</h3>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                Adapted official GE Vernova brand guidelines into robust design tokens, utilizing deep industrial teals for structural frames alongside high-contrast warning colors.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-3 p-5 rounded-xl bg-purple-950/20 border border-purple-700/50 flex flex-col justify-between">
+            <div>
+              <div class="text-purple-400 font-mono text-xs mb-2">PILLAR 03</div>
+              <h3 class="text-sm font-bold text-white mb-2">AI Governance & Safety Interlocks</h3>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                Engineered transparent probabilistic confidence scores and two-step verification modals requiring manual validation before triggering safety interlocks on physical hardware.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Embedded Screenshots -->
+        <div class="space-y-8 pt-6">
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              3D Asset Diagnostics & Spatial Layout View
+            </h4>
+            <div class="rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/ge-vernova-asset-guardian/asset-guardian-fullscreen.png" 
+                alt="AssetGuardian AI Fullscreen View" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>WebGL 3D Viewport • Priority Asset Grid • GE Vernova Teal Architecture</span>
+                <span class="text-purple-400">UI Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              Facility Node & AI Remediation Controls
+            </h4>
+            <div class="rounded-2xl border border-zinc-800/80 bg-zinc-950 p-3 sm:p-4 shadow-2xl">
+              <img 
+                src="https://herbharden.com/case-studies/ge-vernova-asset-guardian/asset-guardian-product-modal.png" 
+                alt="AssetGuardian Product Modal View" 
+                class="w-full h-auto rounded-xl border border-zinc-900 pointer-events-none select-none"
+              />
+              <div class="flex justify-between items-center text-xs text-zinc-400 font-mono px-1 mt-3">
+                <span>AI Confidence Scoring • Safety Interlocks • Real-Time Telemetry</span>
+                <span class="text-cyan-400">Remediation Engine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Section 4: Targeted Business Impact (Unchanged) -->
+      <section id="business-impact" class="space-y-6 border-t border-zinc-800/80 pt-10">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">
+            4. Targeted Business Impact
+          </h2>
+          <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mt-1">Downtime mitigation, operational efficiency, and ROI</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Reduction in Alert Triage Time
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Drastically streamlines telemetry parsing and anomaly root-cause isolation down to seconds through intelligent pattern matching.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Decrease in Unplanned Downtime
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Accurately estimates Remaining Useful Life (RUL) hours well in advance of structural component fatigue across multi-node facilities.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Capital Asset Protection
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Prevents multi-million-dollar secondary damage by automatically engaging safety interlocks upon detecting out-of-spec harmonic variances.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Alert Fatigue Eradication
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Filters out false-positive background vibration noise, ensuring operators only intercept high-severity structural anomalies.</p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="border-t border-zinc-800/80 bg-[#09090b] py-8 text-xs text-zinc-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© Herb Harden II • Enterprise Product Designer & AI Design Engineer</div>
+      <div class="flex gap-6">
+        <a href="https://linkedin.com/in/herbharden" target="_blank" class="hover:text-white transition">LinkedIn</a>
+        <a href="mailto:harden.herb@gmail.com" class="hover:text-white transition">Email</a>
+        <span class="text-zinc-500">Updated: September 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
