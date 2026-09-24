@@ -4,25 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="https://herbharden.com" class="flex items-center gap-3">
 
-          <!-- HH Logo Icon (Sized up to h-11 w-11 with dynamic drop-shadow glow) -->
+          <!-- HH Logo Icon (h-11 w-11) -->
           <div class="h-11 w-11 flex items-center justify-center bg-transparent shrink-0">
-            <svg class="w-full h-full filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-full h-full" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <!-- High-Impact Sweeping Gradient -->
+                <!-- Smooth Ambient Shimmer using headline colors -->
                 <linearGradient id="hh-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <animate attributeName="x1" values="0%;100%;0%" dur="2.5s" repeatCount="indefinite" />
-                  <animate attributeName="y1" values="0%;100%;0%" dur="2.5s" repeatCount="indefinite" />
-                  <animate attributeName="x2" values="100%;0%;100%" dur="2.5s" repeatCount="indefinite" />
-                  <animate attributeName="y2" values="100%;0%;100%" dur="2.5s" repeatCount="indefinite" />
-
-                  <stop offset="0%" stop-color="#a855f7">
-                    <animate attributeName="stop-color" values="#a855f7; #06b6d4; #ec4899; #a855f7" dur="2.5s" repeatCount="indefinite" />
+                  <stop offset="0%" stop-color="#a78bfa">
+                    <animate attributeName="stop-color" values="#a78bfa; #38bdf8; #60a5fa; #a78bfa" dur="6s" repeatCount="indefinite" />
                   </stop>
-                  <stop offset="50%" stop-color="#06b6d4">
-                    <animate attributeName="stop-color" values="#06b6d4; #ec4899; #a855f7; #06b6d4" dur="2.5s" repeatCount="indefinite" />
+                  <stop offset="50%" stop-color="#60a5fa">
+                    <animate attributeName="stop-color" values="#60a5fa; #a78bfa; #38bdf8; #60a5fa" dur="6s" repeatCount="indefinite" />
                   </stop>
-                  <stop offset="100%" stop-color="#3b82f6">
-                    <animate attributeName="stop-color" values="#3b82f6; #a855f7; #06b6d4; #3b82f6" dur="2.5s" repeatCount="indefinite" />
+                  <stop offset="100%" stop-color="#38bdf8">
+                    <animate attributeName="stop-color" values="#38bdf8; #60a5fa; #a78bfa; #38bdf8" dur="6s" repeatCount="indefinite" />
                   </stop>
                 </linearGradient>
               </defs>
