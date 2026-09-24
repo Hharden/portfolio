@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
             Featured Case Studies
           </a>
 
+          <a href="https://herbharden.com/#meta-skills" class="px-3.5 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+  <polyline points="2 17 12 22 22 17" />
+  <polyline points="2 12 12 17 22 12" />
+</svg>
+            Capabilities & Stack
+          </a>
+
           <a href="https://herbharden.com/certifications.html" class="px-3.5 py-1.5 text-xs font-medium text-zinc-400 hover:text-white transition flex items-center gap-1.5">
             <!-- Diploma & Seal Icon (Bright Cyan) -->
             <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
