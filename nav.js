@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#09090b]/90 border-b border-zinc-800/80">
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="https://herbharden.com" class="flex items-center gap-3">
-          <div class="h-9 w-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center overflow-hidden shadow-md shadow-purple-900/20">
-            <img src="https://herbharden.com/images/hh-logo.png" alt="Herb Harden Logo" class="w-full h-full object-contain p-1" />
-          </div>
+           <div class="h-9 w-9 rounded-lg bg-transparent flex items-center justify-center font-bold text-sm">
+  <span class="bg-gradient-to-br from-purple-600 to-cyan-500 bg-clip-text text-transparent">HH</span>
+</div>
           <div>
             <span class="font-bold tracking-tight text-white block text-sm">Herb Harden</span>
-            <span class="text-xs text-zinc-400 block -mt-0.5">AI Product Design Leader</span>
+            <span class="text-xs text-zinc-400 block -mt-0.5">AI-Native Product Design Leader</span>
           </div>
         </a>
         
