@@ -5,30 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="https://herbharden.com" class="flex items-center gap-3">
 
 
-        <div class="h-9 w-9 flex items-center justify-center bg-transparent">
-  <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="h-9 w-9 flex items-center justify-center bg-transparent shrink-0">
+  <svg class="w-full h-full" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <!-- Purple to Cyan Gradient -->
-      <linearGradient id="hh-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#8b5cf6" />
-        <stop offset="100%" stop-color="#06b6d4" />
+      <!-- Animated Shimmer Gradient -->
+      <linearGradient id="hh-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8b5cf6">
+          <animate attributeName="stop-color" values="#8b5cf6; #06b6d4; #8b5cf6" dur="4s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#06b6d4">
+          <animate attributeName="stop-color" values="#06b6d4; #8b5cf6; #06b6d4" dur="4s" repeatCount="indefinite" />
+        </stop>
       </linearGradient>
     </defs>
 
     <!-- Left 'H' Outer Stem -->
-    <polygon points="12,10 20,10 20,70 12,65" fill="url(#hh-grad)" />
-    <!-- Left 'H' Crossbar & Center Join -->
-    <polygon points="20,38 42,48 42,57 20,47" fill="url(#hh-grad)" />
-    <!-- Left 'H' Inner Stem / Center Fold -->
-    <polygon points="34,20 42,20 42,80 34,75" fill="url(#hh-grad)" />
+    <polygon points="12,5 20,5 20,55 12,50" fill="url(#hh-shimmer)" />
+    <!-- Left 'H' Crossbar -->
+    <polygon points="20,28 42,38 42,47 20,37" fill="url(#hh-shimmer)" />
+    <!-- Left 'H' Inner Stem -->
+    <polygon points="34,15 42,15 42,65 34,60" fill="url(#hh-shimmer)" />
+    
     <!-- Center V-Notch Connector -->
-    <polygon points="42,48 50,53 58,48 58,57 50,62 42,57" fill="url(#hh-grad)" opacity="0.9" />
-    <!-- Right 'H' Inner Stem / Center Fold -->
-    <polygon points="58,20 66,20 66,75 58,80" fill="url(#hh-grad)" />
-    <!-- Right 'H' Crossbar & Center Join -->
-    <polygon points="80,38 58,48 58,57 80,47" fill="url(#hh-grad)" />
+    <polygon points="42,38 50,43 58,38 58,47 50,52 42,47" fill="url(#hh-shimmer)" opacity="0.9" />
+    
+    <!-- Right 'H' Inner Stem -->
+    <polygon points="58,15 66,15 66,60 58,65" fill="url(#hh-shimmer)" />
+    <!-- Right 'H' Crossbar -->
+    <polygon points="80,28 58,38 58,47 80,37" fill="url(#hh-shimmer)" />
     <!-- Right 'H' Outer Stem -->
-    <polygon points="80,10 88,10 88,65 80,70" fill="url(#hh-grad)" />
+    <polygon points="80,5 88,5 88,50 80,55" fill="url(#hh-shimmer)" />
   </svg>
 </div>
 
