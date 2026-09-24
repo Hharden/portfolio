@@ -4,17 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="https://herbharden.com" class="flex items-center gap-3">
 
-          <!-- HH Logo Icon (Increased to h-10 w-10) -->
-          <div class="h-10 w-10 flex items-center justify-center bg-transparent shrink-0">
-            <svg class="w-full h-full" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- HH Logo Icon (Sized up to h-11 w-11 with dynamic drop-shadow glow) -->
+          <div class="h-11 w-11 flex items-center justify-center bg-transparent shrink-0">
+            <svg class="w-full h-full filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <!-- Animated Shimmer Gradient -->
+                <!-- High-Impact Sweeping Gradient -->
                 <linearGradient id="hh-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#8b5cf6">
-                    <animate attributeName="stop-color" values="#8b5cf6; #06b6d4; #8b5cf6" dur="4s" repeatCount="indefinite" />
+                  <animate attributeName="x1" values="0%;100%;0%" dur="2.5s" repeatCount="indefinite" />
+                  <animate attributeName="y1" values="0%;100%;0%" dur="2.5s" repeatCount="indefinite" />
+                  <animate attributeName="x2" values="100%;0%;100%" dur="2.5s" repeatCount="indefinite" />
+                  <animate attributeName="y2" values="100%;0%;100%" dur="2.5s" repeatCount="indefinite" />
+
+                  <stop offset="0%" stop-color="#a855f7">
+                    <animate attributeName="stop-color" values="#a855f7; #06b6d4; #ec4899; #a855f7" dur="2.5s" repeatCount="indefinite" />
                   </stop>
-                  <stop offset="100%" stop-color="#06b6d4">
-                    <animate attributeName="stop-color" values="#06b6d4; #8b5cf6; #06b6d4" dur="4s" repeatCount="indefinite" />
+                  <stop offset="50%" stop-color="#06b6d4">
+                    <animate attributeName="stop-color" values="#06b6d4; #ec4899; #a855f7; #06b6d4" dur="2.5s" repeatCount="indefinite" />
+                  </stop>
+                  <stop offset="100%" stop-color="#3b82f6">
+                    <animate attributeName="stop-color" values="#3b82f6; #a855f7; #06b6d4; #3b82f6" dur="2.5s" repeatCount="indefinite" />
                   </stop>
                 </linearGradient>
               </defs>
@@ -27,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <polygon points="34,15 42,15 42,65 34,60" fill="url(#hh-shimmer)" />
               
               <!-- Center V-Notch Connector -->
-              <polygon points="42,38 50,43 58,38 58,47 50,52 42,47" fill="url(#hh-shimmer)" opacity="0.9" />
+              <polygon points="42,38 50,43 58,38 58,47 50,52 42,47" fill="url(#hh-shimmer)" opacity="0.95" />
               
               <!-- Right 'H' Inner Stem -->
               <polygon points="58,15 66,15 66,60 58,65" fill="url(#hh-shimmer)" />
