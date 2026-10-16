@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthOS — Herb Harden</title>
+  <meta name="description" content="HealthOS is an independent agentic healthcare product design concept exploring how AI can observe, understand, explain, and support action through a patient-centered health experience.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --surface: #111115;
+      --surface-raised: #17171d;
+      --border: #292932;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --subtle: #71717a;
+      --purple: #a78bfa;
+      --purple-bright: #8b5cf6;
+      --cyan: #67e8f9;
+      --green: #86efac;
+      --max-width: 1024px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(139, 92, 246, 0.13), transparent 42rem),
+        radial-gradient(ellipse at 100% 45%, rgba(34, 211, 238, 0.045), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .page {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      color: var(--purple);
+    }
+
+    .top-link {
+      color: var(--muted);
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .top-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      position: relative;
+      padding: 82px 0 44px;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--purple);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple);
+      box-shadow: 0 0 14px rgba(167, 139, 250, 0.8);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -0.065em;
+      font-weight: 700;
+    }
+
+    .gradient-text {
+      color: var(--purple);
+      background: linear-gradient(100deg, #c4b5fd 0%, #a78bfa 45%, #67e8f9 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 710px;
+      color: #c4c4cc;
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 10px 17px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .button-primary {
+      color: #09090b;
+      background: #c4b5fd;
+      border-color: #c4b5fd;
+    }
+
+    .button-primary:hover {
+      background: #ddd6fe;
+      border-color: #ddd6fe;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .button-secondary:hover {
+      border-color: #555565;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .hero-image {
+      position: relative;
+      margin-top: 46px;
+      padding: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(167, 139, 250, 0.22);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(34, 211, 238, 0.035));
+      box-shadow: 0 24px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-image img {
+      border-radius: 9px;
+      background: var(--surface);
+    }
+
+    .metadata {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 34px 0 26px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(17, 17, 21, 0.8);
+    }
+
+    .metadata-item {
+      min-width: 0;
+      padding: 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .metadata-item:last-child {
+      border-right: 0;
+    }
+
+    .metadata-label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--subtle);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .metadata-value {
+      color: #e4e4e7;
+      font-size: 12px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .stack-card,
+    .callout,
+    .content-card,
+    .image-card,
+    .patient-card,
+    .outcome-card {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(17, 17, 21, 0.78);
+    }
+
+    .stack-card {
+      padding: 20px 22px;
+      margin-bottom: 52px;
+    }
+
+    .stack-heading {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border: 1px solid #343440;
+      border-radius: 6px;
+      color: #d4d4dc;
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .toc {
+      margin-bottom: 70px;
+      padding: 25px 27px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: linear-gradient(120deg, rgba(139, 92, 246, 0.07), rgba(17, 17, 21, 0.82) 55%);
+    }
+
+    .toc-title {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .toc ol {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .toc li {
+      counter-increment: toc;
+    }
+
+    .toc a {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      color: #d4d4dc;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a::before {
+      content: "0" counter(toc);
+      color: var(--purple);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+    }
+
+    .toc a:hover {
+      color: white;
+    }
+
+    .case-section {
+      padding: 0 0 68px;
+      margin-bottom: 62px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--purple);
+    }
+
+    h2 {
+      max-width: 780px;
+      margin-bottom: 20px;
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.18;
+      letter-spacing: -0.045em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: #b8b8c2;
+    }
+
+    .lead {
+      max-width: 780px;
+      color: #dedee5;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .section-copy {
+      max-width: 790px;
+    }
+
+    .section-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .content-card {
+      padding: 23px;
+    }
+
+    .card-number {
+      display: inline-block;
+      margin-bottom: 13px;
+      color: var(--purple);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+    }
+
+    .content-card p {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .callout {
+      position: relative;
+      margin: 28px 0;
+      padding: 24px 26px;
+      overflow: hidden;
+      background: linear-gradient(110deg, rgba(139, 92, 246, 0.09), rgba(17, 17, 21, 0.85) 75%);
+    }
+
+    .callout::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      content: "";
+      background: linear-gradient(to bottom, var(--purple), var(--cyan));
+    }
+
+    .callout p {
+      margin: 0;
+      color: #e4e4eb;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .image-card {
+      margin: 28px 0;
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .image-card img {
+      border-radius: 7px;
+      background: #141419;
+    }
+
+    .image-caption {
+      padding: 13px 10px 8px;
+      color: var(--subtle);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .image-caption strong {
+      color: #d4d4dc;
+      font-weight: 600;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .image-grid .image-card {
+      margin: 0;
+    }
+
+    .image-grid .image-card img {
+      height: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      object-position: top center;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    .workflow-step {
+      padding: 17px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .workflow-step .step-index {
+      display: block;
+      margin-bottom: 15px;
+      color: var(--purple);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+    }
+
+    .workflow-step h3 {
+      margin-bottom: 7px;
+      font-size: 13px;
+    }
+
+    .workflow-step p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .patient-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .patient-card {
+      overflow: hidden;
+    }
+
+    .patient-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-raised);
+    }
+
+    .patient-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .patient-content {
+      padding: 18px;
+    }
+
+    .patient-content .patient-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--purple);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .patient-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .patient-content p {
+      margin-bottom: 0;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .stat-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: rgba(17, 17, 21, 0.78);
+    }
+
+    .stat-value {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--cyan);
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .outcome-card {
+      padding: 22px;
+    }
+
+    .outcome-card h3 {
+      color: #e4e4e7;
+    }
+
+    .outcome-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .disclaimer {
+      margin-top: 26px;
+      padding: 18px 20px;
+      border: 1px solid #343440;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 0 42px;
+    }
+
+    .footer-name {
+      margin-bottom: 5px;
+      color: #e4e4e7;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      color: var(--subtle);
+      font-size: 11px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(calc(100% - 30px), var(--max-width));
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .metadata {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metadata-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .metadata-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .patient-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .patient-card {
+        display: grid;
+        grid-template-columns: 130px minmax(0, 1fr);
+      }
+
+      .patient-image {
+        height: 100%;
+        min-height: 145px;
+        aspect-ratio: auto;
+        border-right: 1px solid var(--border);
+        border-bottom: 0;
+      }
+
+      .patient-image img {
+        height: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topbar {
+        padding: 20px 0;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      .metadata-item {
+        padding: 15px;
+      }
+
+      .stack-card,
+      .toc {
+        padding: 19px;
+      }
+
+      .two-column,
+      .image-grid,
+      .outcomes,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        gap: 8px;
+      }
+
+      .workflow-step {
+        padding: 14px 12px;
+      }
+
+      .case-section {
+        padding-bottom: 48px;
+        margin-bottom: 45px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!--<header class="topbar">
+      <a class="brand" href="https://www.herbharden.com">HERB <span>HARDEN</span></a>
+      <a class="top-link" href="https://www.herbharden.com">← Back to portfolio</a>
+    </header>-->
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Independent product design concept</div>
+        <h1>HealthOS: Designing an <span class="gradient-text">agentic health experience</span></h1>
+        <p class="hero-copy">
+          Exploring how an AI health agent could connect signals, personal context, and explainable insights into a more proactive, human-centered healthcare experience.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://healthos-woad-xi.vercel.app/" target="_blank">Launch the Prototype ↗</a>
+          <a class="button button-secondary" href="#approach">Read the case study</a>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://herbharden.com/case-studies/baylor-health-os/health-os-dashboard-fullscreen.png"
+            alt="HealthOS patient dashboard showing health signals, personalized context, and agent insights"
+            fetchpriority="high"
+          >
+        </div>
+      </section>
+
+      <section class="metadata" aria-label="Project details">
+        <div class="metadata-item">
+          <span class="metadata-label">Role</span>
+          <div class="metadata-value">Product strategy, UX and UI design, prototyping</div>
+        </div>
+        <div class="metadata-item">
+          <span class="metadata-label">Ownership</span>
+          <div class="metadata-value">Solo concept and prototype</div>
+        </div>
+        <div class="metadata-item">
+          <span class="metadata-label">Project type</span>
+          <div class="metadata-value">Independent portfolio concept</div>
+        </div>
+        <div class="metadata-item">
+          <span class="metadata-label">Implementation</span>
+          <div class="metadata-value">Interactive web prototype</div>
+        </div>
+      </section>
+
+      <section class="stack-card" aria-label="Tools and technology">
+        <div class="stack-heading">Tools &amp; technology</div>
+        <div class="chips">
+          <span class="chip">Product Strategy</span>
+          <span class="chip">UX / UI Design</span>
+          <span class="chip">Agentic UX</span>
+          <span class="chip">Next.js 16</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS v4</span>
+          <span class="chip">shadcn / Base UI</span>
+          <span class="chip">Lucide React</span>
+          <span class="chip">Recharts</span>
+        </div>
+      </section>
+
+      <nav class="toc" aria-label="Table of contents">
+        <div class="toc-title">On this page</div>
+        <ol>
+          <li><a href="#summary">Executive summary</a></li>
+          <li><a href="#challenge">The challenge</a></li>
+          <li><a href="#approach">Product strategy &amp; solution</a></li>
+          <li><a href="#prototype">Prototype &amp; implementation</a></li>
+          <li><a href="#outcomes">Outcomes &amp; next steps</a></li>
+        </ol>
+      </nav>
+
+      <section class="case-section" id="summary">
+        <span class="section-kicker">01 / Executive summary</span>
+        <h2>A dashboard is a window into the agent’s work.</h2>
+
+        <div class="section-copy">
+          <p class="lead">
+            HealthOS explores a shift from passive health dashboards to a personalized health operating layer: an experience where an agent interprets changing signals in context, explains what it notices, and helps a person decide what to do next.
+          </p>
+          <p>
+            Rather than treating AI as a chatbot bolted onto a dashboard, the concept connects the agent to a shared patient state. The dashboard, insight cards, evidence, and conversation all reflect the same selected patient and the same underlying context.
+          </p>
+          <p>
+            The experience is organized around a simple principle: <strong>Observe → Understand → Explain → Act.</strong> The agent can surface a potential area of attention, make its reasoning visible, and present a possible next step while leaving review and approval with the person.
+          </p>
+        </div>
+
+        <div class="callout">
+          <p>
+            <strong>Design thesis:</strong> Trustworthy agentic healthcare is not just about producing an answer. It is about making the answer understandable, showing the evidence behind it, and preserving human agency over what happens next.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section" id="challenge">
+        <span class="section-kicker">02 / The challenge</span>
+        <h2>Move beyond fragmented signals and isolated answers.</h2>
+
+        <div class="section-copy">
+          <p>
+            Personal health information can come from many places: wearable devices, measurements, medications, appointments, and clinical results. A collection of metrics may show what changed, but it does not necessarily help someone understand how those changes relate to their own baseline or what deserves attention.
+          </p>
+          <p>
+            A conversational assistant can answer questions, but a conversation alone may not provide a clear view of the underlying evidence, the patient context being considered, or the status of an action. A dashboard can display information, but it may leave the user to interpret the pieces themselves.
+          </p>
+          <p>
+            HealthOS investigates how these experiences could work together: a persistent view of the person’s health context, an agent that explains what it notices, and a transparent path from insight to action.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <article class="content-card">
+            <span class="card-number">01 / Fragmented context</span>
+            <h3>Signals without the full picture</h3>
+            <p>
+              A single measurement is difficult to interpret in isolation. Trends, personal baselines, recent activity, sleep, medications, and upcoming appointments can change the meaning of a signal.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">02 / Opaque intelligence</span>
+            <h3>Answers without enough explanation</h3>
+            <p>
+              An agent needs to communicate what it noticed, what information informed its interpretation, where uncertainty remains, and which actions still require human review.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">03 / Disconnected action</span>
+            <h3>Insights without a clear next step</h3>
+            <p>
+              Identifying a potential concern is only part of the experience. People also need a comprehensible way to review options, approve an action, or continue monitoring.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">04 / One-size-fits-all UX</span>
+            <h3>Experiences that ignore individual context</h3>
+            <p>
+              The same interface must accommodate different health situations without forcing every person into the same priorities, data, or agent responses.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" id="approach">
+        <span class="section-kicker">03 / Product strategy &amp; solution</span>
+        <h2>Design the agent and the experience as one system.</h2>
+
+        <div class="section-copy">
+          <p class="lead">
+            The central design decision was to treat patient context as shared state across the entire experience, rather than designing separate dashboards or independent conversations for each scenario.
+          </p>
+          <p>
+            A selectable patient context changes the information, metrics, agent insight, and relevant workflow together. This creates a consistent product model while allowing the experience to respond to different needs.
+          </p>
+        </div>
+
+        <div class="callout">
+          <p>
+            <strong>Experience model:</strong> Observe → Understand → Explain → Act. Each stage gives the user a clearer view of what the agent is doing and how to participate in the decision.
+          </p>
+        </div>
+
+        <div class="workflow" aria-label="HealthOS agent workflow">
+          <div class="workflow-step">
+            <span class="step-index">STEP 01</span>
+            <h3>Observe</h3>
+            <p>Bring together signals, trends, and personal baselines.</p>
+          </div>
+          <div class="workflow-step">
+            <span class="step-index">STEP 02</span>
+            <h3>Understand</h3>
+            <p>Interpret changes in the context of the selected patient.</p>
+          </div>
+          <div class="workflow-step">
+            <span class="step-index">STEP 03</span>
+            <h3>Explain</h3>
+            <p>Present the insight, supporting evidence, and uncertainty.</p>
+          </div>
+          <div class="workflow-step">
+            <span class="step-index">STEP 04</span>
+            <h3>Act</h3>
+            <p>Let the person review, approve, or continue monitoring.</p>
+          </div>
+        </div>
+
+        <h3>Make the agent’s work visible</h3>
+        <p>
+          The dashboard acts as a window into the agent’s work. A dedicated agent insight surfaces the current area of attention, a patient-specific explanation, and a confidence indicator. The user can open the insight to explore the explanation and move through a simulated review workflow.
+        </p>
+
+        <div class="image-grid">
+          <figure class="image-card">
+            <img
+              src="https://herbharden.com/case-studies/baylor-health-os/health-os-agent-1.png"
+              alt="HealthOS agent insight showing a patient-specific area of attention"
+              loading="lazy"
+            >
+            <figcaption class="image-caption">
+              <strong>Agent insight</strong> — Bring the most relevant context into view instead of making the user interpret every metric independently.
+            </figcaption>
+          </figure>
+
+          <figure class="image-card">
+            <img
+              src="https://herbharden.com/case-studies/baylor-health-os/health-os-agent-2.png"
+              alt="HealthOS agent explanation and review workflow"
+              loading="lazy"
+            >
+            <figcaption class="image-caption">
+              <strong>Explain and review</strong> — Connect the agent’s interpretation to a workflow the user can inspect and control.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h3>Connect conversation to the dashboard</h3>
+        <p>
+          The conversational agent is designed as part of the product experience rather than a separate destination. Suggested prompts help users explore changes and results, while the conversation remains grounded in the currently selected patient’s illustrative data.
+        </p>
+        <p>
+          This relationship is important to the concept: the user can ask a question in natural language, but can also return to the dashboard to see the larger context around the response.
+        </p>
+
+        <figure class="image-card">
+          <img
+            src="https://herbharden.com/case-studies/baylor-health-os/health-os-chat-agent-1.png"
+            alt="HealthOS conversational agent interface connected to the patient dashboard"
+            loading="lazy"
+          >
+          <figcaption class="image-caption">
+            <strong>Conversational agent</strong> — A natural-language interface designed to work alongside the persistent health context.
+          </figcaption>
+        </figure>
+
+        <h3>Design for different patient contexts</h3>
+        <p>
+          Three fictional patient scenarios make the shared-state concept tangible. Switching patients changes the dashboard’s content and the agent’s focus, illustrating how one product framework can adapt without becoming three disconnected experiences.
+        </p>
+
+        <div class="patient-grid">
+          <article class="patient-card">
+            <div class="patient-image">
+              <img
+                src="https://herbharden.com/case-studies/baylor-health-os/jordan.jpg"
+                alt="Illustrative profile image for Jordan"
+                loading="lazy"
+              >
+            </div>
+            <div class="patient-content">
+              <span class="patient-label">Scenario 01</span>
+              <h3>Jordan</h3>
+              <p>
+                Resting heart rate rises from 57 to 62 over approximately 10 days alongside reduced sleep and activity. The scenario focuses on contextual interpretation without presenting the change as an urgent signal.
+              </p>
+            </div>
+          </article>
+
+          <article class="patient-card">
+            <div class="patient-image">
+              <img
+                src="https://herbharden.com/case-studies/baylor-health-os/maya.jpg"
+                alt="Illustrative profile image for Maya"
+                loading="lazy"
+              >
+            </div>
+            <div class="patient-content">
+              <span class="patient-label">Scenario 02</span>
+              <h3>Maya</h3>
+              <p>
+                At pregnancy week 24, Maya’s context includes a prenatal appointment on Thursday, blood pressure in range, and prenatal vitamin adherence of 6 out of 7 days.
+              </p>
+            </div>
+          </article>
+
+          <article class="patient-card">
+            <div class="patient-image">
+              <img
+                src="https://herbharden.com/case-studies/baylor-health-os/alex.jpg"
+                alt="Illustrative profile image for Alex"
+                loading="lazy"
+              >
+            </div>
+            <div class="patient-content">
+              <span class="patient-label">Scenario 03</span>
+              <h3>Alex</h3>
+              <p>
+                Alex’s type 2 diabetes scenario includes overnight glucose above baseline, time in range of 71%, and an A1c value of 7.1% to demonstrate a different pattern of agent attention.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <figure class="image-card">
+          <img
+            src="https://herbharden.com/case-studies/baylor-health-os/health-os-alex.png"
+            alt="HealthOS dashboard example for Alex's illustrative diabetes context"
+            loading="lazy"
+          >
+          <figcaption class="image-caption">
+            <strong>Patient-specific experience</strong> — The same product structure adapts its information and agent focus to a different health scenario.
+          </figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img
+            src="https://herbharden.com/case-studies/baylor-health-os/health-os-maya.png"
+            alt="HealthOS dashboard example for Maya's illustrative pregnancy context"
+            loading="lazy"
+          >
+          <figcaption class="image-caption">
+            <strong>Context changes the experience</strong> — Relevant appointments, measurements, and routines inform what the dashboard brings forward.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section" id="prototype">
+        <span class="section-kicker">04 / Prototype &amp; implementation</span>
+        <h2>Turn the product model into a working interactive prototype.</h2>
+
+        <div class="section-copy">
+          <p class="lead">
+            HealthOS was implemented as a front-end prototype to demonstrate the relationship between patient context, dashboard content, and an agent-guided workflow.
+          </p>
+          <p>
+            The prototype uses a shared patient data model for Jordan, Maya, and Alex. Patient selection updates the displayed information and the agent experience, making the underlying product behavior tangible rather than relying on static mockups alone.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <article class="content-card">
+            <span class="card-number">01 / Shared state</span>
+            <h3>One product, multiple contexts</h3>
+            <p>
+              Patient information follows a consistent schema, allowing the interface to render the appropriate metrics, signals, baselines, appointments, and agent insight for the selected scenario.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">02 / Agent workflow</span>
+            <h3>A connected interaction model</h3>
+            <p>
+              The prototype demonstrates investigation, explanation, evidence review, approval, and monitoring states through local interaction rather than a live AI service.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">03 / Responsive interface</span>
+            <h3>A dashboard with a conversational layer</h3>
+            <p>
+              The interface combines structured health information with a conversational agent, keeping the broader patient context visible while the user explores an insight.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-number">04 / Front-end implementation</span>
+            <h3>Real interface behavior</h3>
+            <p>
+              Built with Next.js, React, TypeScript, Tailwind CSS, shadcn/Base UI, Lucide React, and Recharts, using local state and illustrative data to power the experience.
+            </p>
+          </article>
+        </div>
+
+        <figure class="image-card">
+          <img
+            src="https://herbharden.com/case-studies/baylor-health-os/health-os-dashboard-fullscreen.png"
+            alt="Full HealthOS dashboard prototype"
+            loading="lazy"
+          >
+          <figcaption class="image-caption">
+            <strong>Working dashboard prototype</strong> — A connected view of patient context, health signals, personal baselines, and agent insight.
+          </figcaption>
+        </figure>
+
+        <h3>Scope and implementation boundaries</h3>
+        <p>
+          The experience is intentionally a concept prototype, not a production healthcare application. It does not connect to an electronic health record, wearable device, real AI model, backend service, or scheduling system. Patient switching and agent workflow behavior are simulated with local data and state.
+        </p>
+        <p>
+          This scope made it possible to explore the product architecture and interaction model without suggesting that clinical intelligence, medical recommendations, or real-world actions had been validated.
+        </p>
+      </section>
+
+      <section class="case-section" id="outcomes">
+        <span class="section-kicker">05 / Outcomes &amp; next steps</span>
+        <h2>A tangible foundation for exploring agentic healthcare UX.</h2>
+
+        <div class="section-copy">
+          <p class="lead">
+            The result is an interactive portfolio concept that demonstrates how a patient-aware agent could be integrated into a health dashboard through shared context, visible reasoning, and human-in-the-loop interaction.
+          </p>
+        </div>
+
+        <div class="outcomes">
+          <article class="outcome-card">
+            <h3>Shared patient context</h3>
+            <p>
+              Three fictional scenarios use a common product framework, demonstrating how patient switching can change dashboard content and agent behavior together.
+            </p>
+          </article>
+
+          <article class="outcome-card">
+            <h3>Explainable interaction</h3>
+            <p>
+              Agent insights connect to an explanation and review workflow, making the path from a surfaced signal to a possible action visible.
+            </p>
+          </article>
+
+          <article class="outcome-card">
+            <h3>Conversational integration</h3>
+            <p>
+              The simulated chat experience is part of the broader dashboard rather than an isolated interface with no persistent context.
+            </p>
+          </article>
+
+          <article class="outcome-card">
+            <h3>Functional front-end prototype</h3>
+            <p>
+              The concept is implemented in a working web interface, allowing the product structure and core interaction patterns to be explored directly.
+            </p>
+          </article>
+        </div>
+
+        <h3>What I would validate next</h3>
+        <p>
+          The next phase would focus on evaluating whether people can understand an agent’s explanation, identify the evidence behind an insight, and maintain an appropriate sense of control over next steps.
+        </p>
+        <p>
+          I would test the experience with patients and clinicians, explore how confidence and uncertainty should be communicated, and define clinical, privacy, and safety guardrails before connecting the concept to real health data or actions.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Key takeaway:</strong> Designing an agentic product means designing more than a conversation. It means defining the shared context, visible reasoning, interaction states, and human decisions that make the agent understandable and useful.
+          </p>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Project disclaimer:</strong> HealthOS is an independent portfolio concept inspired by healthcare experiences. It is not an official Baylor Scott &amp; White Health product and is not affiliated with, endorsed by, or developed in partnership with Baylor Scott &amp; White Health. All patient scenarios and data are fictional and illustrative. This prototype is not a medical device, does not provide validated clinical recommendations, and has not been clinically validated or formally user-tested.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-name">Herb Harden</div>
+        <div class="footer-note">Product design · UX strategy · AI experiences</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.herbharden.com">Portfolio</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://herbharden.com/nav.js"></script>
+
+</body>
+</html>
